@@ -35,7 +35,7 @@ class AuthScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Text(
-                'If you\'re a new user, please sign up or log in through Facebook.',
+                'New user? Please sign up.',
                 style: TextStyle(fontSize: 18),
                 textAlign: TextAlign.center,
               ),
