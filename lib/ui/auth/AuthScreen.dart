@@ -17,10 +17,10 @@ class AuthScreen extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(top: 200.0, bottom: 20.0),
                 child: Image.asset(
-                  'assets/images/test.png', //fractastic logo
+                  'assets/images/logo_ver1.png',
                   //color: Color(Constants.COLOR_PRIMARY),
-                  width: 100,
-                  height: 100,
+                  width: 80,
+                  height: 80,
                 ),
               ),
             ),
@@ -36,7 +36,7 @@ class AuthScreen extends StatelessWidget {
               padding: const EdgeInsets.all(16.0),
               child: Text(
                 'New user? Please sign up.',
-                style: TextStyle(fontSize: 18),
+                style: TextStyle(fontSize: 15),
                 textAlign: TextAlign.center,
               ),
             ),
