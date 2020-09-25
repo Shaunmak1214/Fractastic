@@ -16,15 +16,16 @@ class AuthScreen extends StatelessWidget {
             Center(
               child: Padding(
                 padding: const EdgeInsets.only(top: 200.0, bottom: 20.0),
-                child: Icon(
-                  Icons.phone_iphone,
-                  size: 150,
-                  color: Color(Constants.COLOR_PRIMARY),
+                child: Image.asset(
+                  'assets/images/test.png', //fractastic logo
+                  //color: Color(Constants.COLOR_PRIMARY),
+                  width: 100,
+                  height: 100,
                 ),
               ),
             ),
             Text(
-              'Say Hello To Your New App!',
+              'Welcome to Fractastic!',
               textAlign: TextAlign.center,
               style: TextStyle(
                   color: Color(Constants.COLOR_PRIMARY),
@@ -34,7 +35,7 @@ class AuthScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(16.0),
               child: Text(
-                'You\'ve just saved a week of development and headaches.',
+                'If you\'re a new user, please sign up or log in through Facebook.',
                 style: TextStyle(fontSize: 18),
                 textAlign: TextAlign.center,
               ),
