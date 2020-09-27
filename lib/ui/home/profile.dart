@@ -167,7 +167,7 @@ class ProfileScreen extends StatelessWidget {
                       ),
                       ProfileListItem(
                         icon: LineAwesomeIcons.user_plus,
-                        text: 'Invite a Friend',
+                        text: 'Invite a Student',
                       ),
                       ProfileListItem(
                         icon: LineAwesomeIcons.alternate_sign_out,
