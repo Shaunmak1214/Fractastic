@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fractastic/ui/home/constants.dart';
+import 'package:fractastic/ui/home/profile_list_item.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
-import 'package:student_fractastic/constants.dart';
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
-import 'package:student_fractastic/profile_list_item.dart';
+
 
 class Profile extends StatelessWidget {
   // This widget is the root of your application.
