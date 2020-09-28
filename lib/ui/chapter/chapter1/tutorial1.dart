@@ -11,7 +11,7 @@ class Tutorial extends StatelessWidget {
           backgroundColor: Colors.lightBlue[250],
         ),
         body: Center(
-          child: Image(image: AssetImage('assets/Tutorial1.png')),
+          child: Image(image: AssetImage('assets/intro-tutorial.png')),
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.lightBlue[250],
