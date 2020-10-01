@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fractastic/ui/home/constants.dart';
-import 'package:fractastic/ui/home/profile_list_item.dart';
+import 'package:fractastic/ui/home/Profile_list_item.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'package:animated_theme_switcher/animated_theme_switcher.dart';
-
 
 class Profile extends StatelessWidget {
   // This widget is the root of your application.
@@ -155,15 +154,15 @@ class ProfileScreen extends StatelessWidget {
                       ),
                       ProfileListItem(
                         icon: LineAwesomeIcons.history,
-                        text: 'Purchase History',
+                        text: 'Name',
                       ),
                       ProfileListItem(
                         icon: LineAwesomeIcons.question_circle,
-                        text: 'Help & Support',
+                        text: 'Learning Progress',
                       ),
                       ProfileListItem(
-                        icon: LineAwesomeIcons.cog,
-                        text: 'Settings',
+                        icon: LineAwesomeIcons.envelope,
+                        text: 'Email',
                       ),
                       ProfileListItem(
                         icon: LineAwesomeIcons.user_plus,
