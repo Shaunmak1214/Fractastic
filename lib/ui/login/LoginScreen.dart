@@ -209,10 +209,46 @@ class _LoginScreen extends State<LoginScreen> {
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.only(right: 40.0, left: 40.0, top: 40),
+              child: ConstrainedBox(
+                constraints: const BoxConstraints(minWidth: double.infinity),
+                child: RaisedButton(
+                  color: Color(Constants.COLOR_PRIMARY),
+                  child: Text(
+                    'Sign In Anonymous',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  textColor: Colors.white,
+                  splashColor: Color(Constants.COLOR_PRIMARY),
+                  onPressed: () async {
+                    await signIn();
+                  },
+                  padding: EdgeInsets.only(top: 12, bottom: 12),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25.0),
+                      side: BorderSide(color: Color(Constants.COLOR_PRIMARY))),
+                ),
+              ),
+            ),
           ],
         ),
       ),
     );
+  }
+
+  Future signIn() async {
+    try {
+      FirebaseAuth _auth = FirebaseAuth.instance;
+      AuthResult result = await _auth.signInAnonymously();
+      User user = result.user as User;
+      setState(() {
+        _validate = true;
+      });
+      pushAndRemoveUntil(context, HomeScreen(user: user), true);
+    } catch (e) {
+      print(e.toString());
+    }
   }
 
   onClick(String email, String password) async {
