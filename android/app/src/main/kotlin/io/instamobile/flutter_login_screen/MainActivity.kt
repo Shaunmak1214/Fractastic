@@ -1,4 +1,4 @@
-package io.instamobile.flutter_login_screen
+package com.Fractastic.fractastic_fraction_learning_app
 
 import androidx.annotation.NonNull
 import io.flutter.embedding.android.FlutterActivity
