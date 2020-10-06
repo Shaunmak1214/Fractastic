@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fractastic/model/User.dart';
-import 'package:fractastic/ui/home/HomeScreen.dart';
+import 'package:fractastic/ui/teacher/TeacherHomeScreen.dart';
 import 'package:fractastic/ui/services/Authenticate.dart';
 import 'package:fractastic/ui/utils/helper.dart';
 import 'package:image_picker/image_picker.dart';
@@ -25,7 +25,12 @@ class _SignUpState extends State<SignUpScreenTeacher> {
   TextEditingController _passwordController = new TextEditingController();
   GlobalKey<FormState> _key = new GlobalKey();
   bool _validate = false;
-  String firstName, lastName, email, password, confirmPassword;
+  String firstName,
+      lastName,
+      email,
+      password,
+      confirmPassword,
+      userType = 'Teacher';
 
   @override
   Widget build(BuildContext context) {
@@ -340,14 +345,15 @@ class _SignUpState extends State<SignUpScreenTeacher> {
             active: true,
             lastName: lastName,
             settings: Settings(allowPushNotifications: true),
-            profilePictureURL: profilePicUrl);
+            profilePictureURL: profilePicUrl,
+            userType: 'Teacher');
         await FireStoreUtils.firestore
             .collection(Constants.USERS)
             .document(result.user.uid)
             .setData(user.toJson());
         hideProgress();
         MyAppState.currentUser = user;
-        pushAndRemoveUntil(context, HomeScreen(user: user), false);
+        pushAndRemoveUntil(context, TeacherHomeScreen(user: user), false);
       } catch (error) {
         hideProgress();
         (error as PlatformException).code != 'ERROR_EMAIL_ALREADY_IN_USE'

@@ -25,7 +25,13 @@ class _SignUpState extends State<SignUpScreenStudent> {
   TextEditingController _passwordController = new TextEditingController();
   GlobalKey<FormState> _key = new GlobalKey();
   bool _validate = false;
-  String firstName, lastName, email, guardianEmail, password, confirmPassword;
+  String firstName,
+      lastName,
+      email,
+      guardianEmail,
+      password,
+      confirmPassword,
+      userType = 'Student';
 
   @override
   Widget build(BuildContext context) {
@@ -369,7 +375,8 @@ class _SignUpState extends State<SignUpScreenStudent> {
             active: true,
             lastName: lastName,
             settings: Settings(allowPushNotifications: true),
-            profilePictureURL: profilePicUrl);
+            profilePictureURL: profilePicUrl,
+            userType: 'Student');
         await FireStoreUtils.firestore
             .collection(Constants.USERS)
             .document(result.user.uid)

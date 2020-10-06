@@ -14,18 +14,19 @@ class User {
   String profilePictureURL = '';
   bool selected = false;
   String appIdentifier = 'Flutter Login Screen ${Platform.operatingSystem}';
+  String userType = '';
 
-  User({
-    this.email,
-    this.firstName,
-    this.lastName,
-    this.guardianEmail,
-    this.active,
-    this.lastOnlineTimestamp,
-    this.settings,
-    this.userID,
-    this.profilePictureURL,
-  });
+  User(
+      {this.email,
+      this.firstName,
+      this.lastName,
+      this.guardianEmail,
+      this.active,
+      this.lastOnlineTimestamp,
+      this.settings,
+      this.userID,
+      this.profilePictureURL,
+      this.userType});
 
   get uid => this.userID;
 
@@ -44,7 +45,8 @@ class User {
         settings: Settings.fromJson(
             parsedJson['settings'] ?? {'allowPushNotifications': true}),
         userID: parsedJson['id'] ?? parsedJson['userID'] ?? '',
-        profilePictureURL: parsedJson['profilePictureURL'] ?? "");
+        profilePictureURL: parsedJson['profilePictureURL'] ?? "",
+        userType: parsedJson['userType'] ?? '');
   }
 
   Map<String, dynamic> toJson() {
@@ -58,7 +60,8 @@ class User {
       'active': this.active,
       'lastOnlineTimestamp': this.lastOnlineTimestamp,
       "profilePictureURL": this.profilePictureURL,
-      'appIdentifier': this.appIdentifier
+      'appIdentifier': this.appIdentifier,
+      'userType': this.userType
     };
   }
 }
