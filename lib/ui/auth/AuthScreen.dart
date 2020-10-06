@@ -4,8 +4,6 @@ import 'package:fractastic/ui/signUp/SignUpIdentity.dart';
 import 'package:fractastic/ui/utils/helper.dart';
 
 import '../../constants.dart' as Constants;
-import '../login/LoginScreen.dart';
-import '../signUp/SignUpScreen.dart';
 
 class AuthScreen extends StatelessWidget {
   @override
