@@ -11,6 +11,7 @@ import 'package:fractastic/ui/services/Authenticate.dart';
 import 'package:fractastic/ui/utils/helper.dart';
 
 import '../../main.dart';
+import '../../constants.dart' as Constants;
 
 FireStoreUtils _fireStoreUtils = FireStoreUtils();
 
@@ -74,7 +75,7 @@ class _HomeState extends State<HomeScreen> {
             style: TextStyle(color: Colors.black),
           ),
           iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Colors.white,
+          backgroundColor: Color(Constants.COLOR_PRIMARY),
           centerTitle: true,
         ),
         body: Center(
