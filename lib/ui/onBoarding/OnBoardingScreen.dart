@@ -9,21 +9,21 @@ import '../auth/AuthScreen.dart';
 final _currentPageNotifier = ValueNotifier<int>(0);
 
 final List<String> _titlesList = [
-  'Flutter Onboarding',
-  'Firebase Auth',
-  'Facebook Login'
+  'Self Scheduling',
+  'Tutorials and Quizzes',
+  'Mini Fraction Games'
 ];
 
 final List<String> _subtitlesList = [
-  'Build your onboarding flow in seconds.',
-  'Use Firebase for user managements.',
-  'Leaverage Facebook to log in user easily.'
+  'Want to learn fraction at your own pace?',
+  'Need extra guidance on fraction?',
+  'Hope to play while learning fraction?'
 ];
 
 final List<IconData> _imageList = [
-  Icons.developer_mode,
-  Icons.layers,
-  Icons.account_circle
+  Icons.access_time,
+  Icons.class_,
+  Icons.videogame_asset
 ];
 final List<Widget> _pages = [];
 
@@ -100,13 +100,13 @@ Widget getLastPage(BuildContext context) {
               Padding(
                 padding: const EdgeInsets.all(40.0),
                 child: new Icon(
-                  Icons.code,
+                  Icons.apps,
                   color: Colors.white,
                   size: 120,
                 ),
               ),
               Text(
-                'Jump straight into the action.',
+                'Let your imagination turn into reality.',
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 20.0,
