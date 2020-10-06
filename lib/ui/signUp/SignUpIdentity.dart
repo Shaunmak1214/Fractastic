@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fractastic/ui/signUp/SignUpScreen.dart';
+import 'package:fractastic/ui/signUp/SignUpScreenStudent.dart';
+import 'package:fractastic/ui/signUp/SignUpScreenTeacher.dart';
 
 class SignUpIdentity extends StatelessWidget {
   @override
@@ -16,7 +17,7 @@ class SignUpIdentity extends StatelessWidget {
       ),
       backgroundColor: Colors.white54,
       body: Padding(
-        padding: const EdgeInsets.all(75.0),
+        padding: const EdgeInsets.all(100.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
@@ -26,8 +27,10 @@ class SignUpIdentity extends StatelessWidget {
                 print('I got clicked');
                 //Navigator.popAndPushNamed(context, "/signUp/SignUpScreen");
                 Navigator.pop(context);
-                Navigator.push(context,
-                    new MaterialPageRoute(builder: (_) => SignUpScreen()));
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (_) => SignUpScreenTeacher()));
               },
               child: Image.asset('assets/images/Teacher.png'),
             ),
@@ -37,8 +40,10 @@ class SignUpIdentity extends StatelessWidget {
                 print('I got clicked');
                 // Navigator.popAndPushNamed(context, "/lib/signUp/SignUpScreen");
                 Navigator.pop(context);
-                Navigator.push(context,
-                    new MaterialPageRoute(builder: (_) => SignUpScreen()));
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (_) => SignUpScreenStudent()));
               },
               child: Image.asset('assets/images/Student.png'),
             ),

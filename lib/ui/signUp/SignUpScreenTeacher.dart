@@ -16,16 +16,16 @@ import '../../main.dart';
 
 File _image;
 
-class SignUpScreen extends StatefulWidget {
+class SignUpScreenTeacher extends StatefulWidget {
   @override
   State createState() => _SignUpState();
 }
 
-class _SignUpState extends State<SignUpScreen> {
+class _SignUpState extends State<SignUpScreenTeacher> {
   TextEditingController _passwordController = new TextEditingController();
   GlobalKey<FormState> _key = new GlobalKey();
   bool _validate = false;
-  String firstName, lastName, email, guardianEmail, password, confirmPassword;
+  String firstName, lastName, email, password, confirmPassword;
 
   @override
   Widget build(BuildContext context) {
@@ -166,6 +166,8 @@ class _SignUpState extends State<SignUpScreen> {
                     },
                     textInputAction: TextInputAction.next,
                     onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
+                    style: TextStyle(height: 0.8, fontSize: 18.0),
+                    cursorColor: Color(Constants.COLOR_PRIMARY),
                     decoration: InputDecoration(
                         contentPadding: new EdgeInsets.symmetric(
                             vertical: 8, horizontal: 16),
@@ -191,6 +193,8 @@ class _SignUpState extends State<SignUpScreen> {
                     },
                     textInputAction: TextInputAction.next,
                     onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
+                    style: TextStyle(height: 0.8, fontSize: 18.0),
+                    cursorColor: Color(Constants.COLOR_PRIMARY),
                     decoration: InputDecoration(
                         contentPadding: new EdgeInsets.symmetric(
                             vertical: 8, horizontal: 16),
@@ -215,39 +219,15 @@ class _SignUpState extends State<SignUpScreen> {
                     onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
                     validator: validateEmail,
                     onSaved: (String val) {
-                      guardianEmail = val;
-                    },
-                    decoration: InputDecoration(
-                        contentPadding: new EdgeInsets.symmetric(
-                            vertical: 8, horizontal: 16),
-                        fillColor: Colors.white,
-                        hintText: 'Guardian Email Address',
-                        focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(25.0),
-                            borderSide: BorderSide(
-                                color: Color(Constants.COLOR_PRIMARY),
-                                width: 2.0)),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(25.0),
-                        ))))),
-        ConstrainedBox(
-            constraints: BoxConstraints(minWidth: double.infinity),
-            child: Padding(
-                padding:
-                    const EdgeInsets.only(top: 16.0, right: 8.0, left: 8.0),
-                child: TextFormField(
-                    keyboardType: TextInputType.emailAddress,
-                    textInputAction: TextInputAction.next,
-                    onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
-                    validator: validateEmail,
-                    onSaved: (String val) {
                       email = val;
                     },
+                    style: TextStyle(height: 0.8, fontSize: 18.0),
+                    cursorColor: Color(Constants.COLOR_PRIMARY),
                     decoration: InputDecoration(
                         contentPadding: new EdgeInsets.symmetric(
                             vertical: 8, horizontal: 16),
                         fillColor: Colors.white,
-                        hintText: 'Email Address',
+                        hintText: 'School Domain Email Address',
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
                             borderSide: BorderSide(
@@ -356,7 +336,6 @@ class _SignUpState extends State<SignUpScreen> {
         User user = User(
             email: email,
             firstName: firstName,
-            guardianEmail: guardianEmail,
             userID: result.user.uid,
             active: true,
             lastName: lastName,

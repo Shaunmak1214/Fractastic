@@ -16,7 +16,7 @@ class SignInIdentity extends StatelessWidget {
       ),
       backgroundColor: Colors.white54,
       body: Padding(
-        padding: const EdgeInsets.all(75.0),
+        padding: const EdgeInsets.all(100.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
