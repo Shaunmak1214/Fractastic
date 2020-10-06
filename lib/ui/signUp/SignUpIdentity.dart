@@ -14,7 +14,7 @@ class SignUpIdentity extends StatelessWidget {
           centerTitle: true,
           backgroundColor: Colors.white,
         ),
-        backgroundColor: Colors.white10,
+        backgroundColor: Colors.white54,
         body: Padding(
           padding: const EdgeInsets.all(75.0),
           child: Column(
