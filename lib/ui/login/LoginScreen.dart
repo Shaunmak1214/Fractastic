@@ -32,6 +32,10 @@ class _LoginScreen extends State<LoginScreen> {
   bool _validate = false;
   String email, password;
 
+  User defaultUser;
+// defaultUser.??? = ???
+//need setter? maybe??
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -241,8 +245,8 @@ class _LoginScreen extends State<LoginScreen> {
     try {
       showProgress(context, 'Logging in Anon, please wait...', false);
       User user = await loginAnonymous();
-      if (user == null)
-        pushAndRemoveUntil(context, HomeScreen(user: user), false);
+      if (user == null) user = defaultUser;
+      pushAndRemoveUntil(context, HomeScreen(user: user), false);
     } catch (e) {
       print(e.toString());
     }
