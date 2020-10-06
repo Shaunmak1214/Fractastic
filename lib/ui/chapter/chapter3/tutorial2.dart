@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fractastic/ui/home/Profile.dart';
 
 class Tutorial extends StatelessWidget {
   @override
@@ -12,12 +11,13 @@ class Tutorial extends StatelessWidget {
           backgroundColor: Colors.lightBlue[250],
           leading: new IconButton(
             icon: new Icon(Icons.arrow_back),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => Profile()),
-              );
-            },
+            onPressed: () => Navigator.of(context).pop(),
+            // onPressed: () {
+            //   Navigator.push(
+            //     context,
+            //     MaterialPageRoute(builder: (context) => Profile()),
+            //   );
+            //},
           ),
         ),
         body: Center(
