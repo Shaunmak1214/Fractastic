@@ -239,15 +239,23 @@ class _LoginScreen extends State<LoginScreen> {
 
   Future signIn() async {
     try {
-      FirebaseAuth _auth = FirebaseAuth.instance;
-      AuthResult result = await _auth.signInAnonymously();
-      User user = result.user as User;
-      setState(() {
-        _validate = true;
-      });
-      pushAndRemoveUntil(context, HomeScreen(user: user), true);
+      showProgress(context, 'Logging in Anon, please wait...', false);
+      User user = await loginAnonymous();
+      if (user == null)
+        pushAndRemoveUntil(context, HomeScreen(user: user), false);
     } catch (e) {
       print(e.toString());
+    }
+  }
+
+  Future<User> loginAnonymous() async {
+    try {
+      User user = (await FirebaseAuth.instance.signInAnonymously()) as User;
+      print("signed in anon as id : ${user.uid}");
+      return user;
+    } catch (exception) {
+      print(exception.toString());
+      return null;
     }
   }
 
@@ -363,3 +371,5 @@ class _LoginScreen extends State<LoginScreen> {
     pushAndRemoveUntil(context, HomeScreen(user: user), false);
   }
 }
+
+loginAnonymous() {}

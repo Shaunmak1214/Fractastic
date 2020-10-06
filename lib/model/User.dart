@@ -15,15 +15,18 @@ class User {
   bool selected = false;
   String appIdentifier = 'Flutter Login Screen ${Platform.operatingSystem}';
 
-  User({this.email,
-    this.firstName,
-    this.phoneNumber,
+  User(
+      {this.email,
+      this.firstName,
+      this.phoneNumber,
       this.lastName,
       this.active,
       this.lastOnlineTimestamp,
       this.settings,
       this.userID,
-    this.profilePictureURL});
+      this.profilePictureURL});
+
+  get uid => this.userID;
 
   String fullName() {
     return '$firstName $lastName';
