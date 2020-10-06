@@ -7,7 +7,7 @@ class User {
   String firstName = '';
   String lastName = '';
   Settings settings = Settings(allowPushNotifications: true);
-  String phoneNumber = '';
+  String guardianEmail = '';
   bool active = false;
   Timestamp lastOnlineTimestamp = Timestamp.now();
   String userID;
@@ -15,16 +15,17 @@ class User {
   bool selected = false;
   String appIdentifier = 'Flutter Login Screen ${Platform.operatingSystem}';
 
-  User(
-      {this.email,
-      this.firstName,
-      this.phoneNumber,
-      this.lastName,
-      this.active,
-      this.lastOnlineTimestamp,
-      this.settings,
-      this.userID,
-      this.profilePictureURL});
+  User({
+    this.email,
+    this.firstName,
+    this.lastName,
+    this.guardianEmail,
+    this.active,
+    this.lastOnlineTimestamp,
+    this.settings,
+    this.userID,
+    this.profilePictureURL,
+  });
 
   get uid => this.userID;
 
@@ -37,11 +38,11 @@ class User {
         email: parsedJson['email'] ?? "",
         firstName: parsedJson['firstName'] ?? '',
         lastName: parsedJson['lastName'] ?? '',
+        guardianEmail: parsedJson['guardianEmail'] ?? "",
         active: parsedJson['active'] ?? false,
         lastOnlineTimestamp: parsedJson['lastOnlineTimestamp'],
         settings: Settings.fromJson(
             parsedJson['settings'] ?? {'allowPushNotifications': true}),
-        phoneNumber: parsedJson['phoneNumber'] ?? "",
         userID: parsedJson['id'] ?? parsedJson['userID'] ?? '',
         profilePictureURL: parsedJson['profilePictureURL'] ?? "");
   }
@@ -52,7 +53,7 @@ class User {
       "firstName": this.firstName,
       "lastName": this.lastName,
       "settings": this.settings.toJson(),
-      "phoneNumber": this.phoneNumber,
+      "guardianEmail": this.guardianEmail,
       "id": this.userID,
       'active': this.active,
       'lastOnlineTimestamp': this.lastOnlineTimestamp,

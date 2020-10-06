@@ -19,8 +19,8 @@ class AuthScreen extends StatelessWidget {
                 child: Image.asset(
                   'assets/images/logo_ver1.png',
                   //color: Color(Constants.COLOR_PRIMARY),
-                  width: 80,
-                  height: 80,
+                  width: 90,
+                  height: 90,
                 ),
               ),
             ),

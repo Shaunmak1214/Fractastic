@@ -25,7 +25,7 @@ class _SignUpState extends State<SignUpScreen> {
   TextEditingController _passwordController = new TextEditingController();
   GlobalKey<FormState> _key = new GlobalKey();
   bool _validate = false;
-  String firstName, lastName, email, mobile, password, confirmPassword;
+  String firstName, lastName, email, guardianEmail, password, confirmPassword;
 
   @override
   Widget build(BuildContext context) {
@@ -210,18 +210,18 @@ class _SignUpState extends State<SignUpScreen> {
                 padding:
                     const EdgeInsets.only(top: 16.0, right: 8.0, left: 8.0),
                 child: TextFormField(
-                    keyboardType: TextInputType.phone,
+                    keyboardType: TextInputType.emailAddress,
                     textInputAction: TextInputAction.next,
                     onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
-                    validator: validateMobile,
+                    validator: validateEmail,
                     onSaved: (String val) {
-                      mobile = val;
+                      guardianEmail = val;
                     },
                     decoration: InputDecoration(
                         contentPadding: new EdgeInsets.symmetric(
                             vertical: 8, horizontal: 16),
                         fillColor: Colors.white,
-                        hintText: 'Mobile Number',
+                        hintText: 'Guardian Email Address',
                         focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
                             borderSide: BorderSide(
@@ -321,19 +321,18 @@ class _SignUpState extends State<SignUpScreen> {
           child: ConstrainedBox(
             constraints: const BoxConstraints(minWidth: double.infinity),
             child: RaisedButton(
-              color: Color(Constants.FACEBOOK_BUTTON_COLOR),
+              color: Color(Constants.COLOR_PRIMARY),
               child: Text(
                 'Sign Up',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
               textColor: Colors.white,
-              splashColor: Color(Constants.FACEBOOK_BUTTON_COLOR),
+              splashColor: Color(Constants.COLOR_PRIMARY),
               onPressed: _sendToServer,
               padding: EdgeInsets.only(top: 12, bottom: 12),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(25.0),
-                  side: BorderSide(
-                      color: Color(Constants.FACEBOOK_BUTTON_COLOR))),
+                  side: BorderSide(color: Color(Constants.COLOR_PRIMARY))),
             ),
           ),
         ),
@@ -357,7 +356,7 @@ class _SignUpState extends State<SignUpScreen> {
         User user = User(
             email: email,
             firstName: firstName,
-            phoneNumber: mobile,
+            guardianEmail: guardianEmail,
             userID: result.user.uid,
             active: true,
             lastName: lastName,
