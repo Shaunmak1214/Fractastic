@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fractastic/ui/login/SignInIdentity.dart';
+import 'package:fractastic/ui/signUp/SignUpIdentity.dart';
 import 'package:fractastic/ui/utils/helper.dart';
 
 import '../../constants.dart' as Constants;
@@ -53,7 +55,7 @@ class AuthScreen extends StatelessWidget {
                   textColor: Colors.white,
                   splashColor: Color(Constants.COLOR_PRIMARY),
                   onPressed: () {
-                    push(context, new LoginScreen());
+                    push(context, new SignInIdentity());
                   },
                   padding: EdgeInsets.only(top: 12, bottom: 12),
                   shape: RoundedRectangleBorder(
@@ -73,7 +75,7 @@ class AuthScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    push(context, new SignUpScreen());
+                    push(context, new SignUpIdentity());
                   },
                   padding: EdgeInsets.only(top: 12, bottom: 12),
                   shape: RoundedRectangleBorder(

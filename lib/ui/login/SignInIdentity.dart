@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class SignUpIdentity extends StatelessWidget {
+class SignInIdentity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,7 +23,7 @@ class SignUpIdentity extends StatelessWidget {
               SizedBox(width: 50.0),
               FlatButton(
                 onPressed: () {
-                  Navigator.popAndPushNamed(context, "/SignUpScreen");
+                  Navigator.popAndPushNamed(context, "/LoginScreen");
                   print('I got clicked');
                 },
                 child: Image.asset('assets/Teacher.png'),
@@ -32,7 +32,7 @@ class SignUpIdentity extends StatelessWidget {
               FlatButton(
                 onPressed: () {
                   print('I got clicked');
-                  Navigator.popAndPushNamed(context, "/SignUpScreen");
+                  Navigator.popAndPushNamed(context, "/LoginScreen");
                 },
                 child: Image.asset('assets/Student.png'),
               ),
