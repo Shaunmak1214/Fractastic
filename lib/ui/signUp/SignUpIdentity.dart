@@ -16,11 +16,11 @@ class SignUpIdentity extends StatelessWidget {
         ),
         backgroundColor: Colors.white10,
         body: Padding(
-          padding: const EdgeInsets.all(65.0),
+          padding: const EdgeInsets.all(75.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              SizedBox(width: 20.0),
+              SizedBox(width: 50.0),
               FlatButton(
                 onPressed: () {
                   //Navigator.popAndPushNamed(context, "/SignUpScreen");
