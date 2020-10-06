@@ -22,7 +22,7 @@ class Tutorial extends StatelessWidget {
           ),
         ),
         body: Center(
-          child: Image(image: AssetImage('assets/intro-tutorial.png')),
+          child: Image(image: AssetImage('assets/chap3-tutorial1.png')),
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.lightBlue[250],

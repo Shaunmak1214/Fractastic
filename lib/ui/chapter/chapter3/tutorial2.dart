@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fractastic/ui/home/Profile.dart';
 
 class Tutorial extends StatelessWidget {
   @override
@@ -22,7 +21,7 @@ class Tutorial extends StatelessWidget {
           ),
         ),
         body: Center(
-          child: Image(image: AssetImage('assets/intro-tutorial.png')),
+          child: Image(image: AssetImage('assets/chap3-tutorial2.png')),
         ),
         floatingActionButton: FloatingActionButton(
           backgroundColor: Colors.lightBlue[250],
