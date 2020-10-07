@@ -151,28 +151,28 @@ class _LoginScreen extends State<LoginScreen> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(right: 40.0, left: 40.0, top: 0),
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(minWidth: double.infinity),
-                child: RaisedButton(
-                  color: Color(Constants.COLOR_ACCENT),
-                  child: Text(
-                    'Sign In Anonymous',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  textColor: Colors.white,
-                  splashColor: Color(Constants.COLOR_ACCENT),
-                  onPressed: () async {
-                    await signIn();
-                  },
-                  padding: EdgeInsets.only(top: 12, bottom: 12),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25.0),
-                      side: BorderSide(color: Color(Constants.COLOR_ACCENT))),
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.only(right: 40.0, left: 40.0, top: 0),
+            //   child: ConstrainedBox(
+            //     constraints: const BoxConstraints(minWidth: double.infinity),
+            //     child: RaisedButton(
+            //       color: Color(Constants.COLOR_ACCENT),
+            //       child: Text(
+            //         'Sign In Anonymous',
+            //         style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+            //       ),
+            //       textColor: Colors.white,
+            //       splashColor: Color(Constants.COLOR_ACCENT),
+            //       onPressed: () async {
+            //         await signIn();
+            //       },
+            //       padding: EdgeInsets.only(top: 12, bottom: 12),
+            //       shape: RoundedRectangleBorder(
+            //           borderRadius: BorderRadius.circular(25.0),
+            //           side: BorderSide(color: Color(Constants.COLOR_ACCENT))),
+            //     ),
+            //   ),
+            // ),
             Padding(
               padding: const EdgeInsets.all(12.0),
             ),
@@ -197,27 +197,27 @@ class _LoginScreen extends State<LoginScreen> {
     );
   }
 
-  Future signIn() async {
-    try {
-      showProgress(context, 'Logging in Anon, please wait...', false);
-      User user = await loginAnonymous();
-      if (user == null) user = defaultUser;
-      pushAndRemoveUntil(context, HomeScreen(user: user), false);
-    } catch (e) {
-      print(e.toString());
-    }
-  }
+  // Future signIn() async {
+  //   try {
+  //     showProgress(context, 'Logging in Anon, please wait...', false);
+  //     User user = await loginAnonymous();
+  //     if (user == null) user = defaultUser;
+  //     pushAndRemoveUntil(context, HomeScreen(user: user), false);
+  //   } catch (e) {
+  //     print(e.toString());
+  //   }
+  // }
 
-  Future<User> loginAnonymous() async {
-    try {
-      User user = (await FirebaseAuth.instance.signInAnonymously()) as User;
-      print("signed in anon as id : ${user.uid}");
-      return user;
-    } catch (exception) {
-      print(exception.toString());
-      return null;
-    }
-  }
+  // Future<User> loginAnonymous() async {
+  //   try {
+  //     User user = (await FirebaseAuth.instance.signInAnonymously()) as User;
+  //     print("signed in anon as id : ${user.uid}");
+  //     return user;
+  //   } catch (exception) {
+  //     print(exception.toString());
+  //     return null;
+  //   }
+  // }
 
   onClick(String email, String password) async {
     if (_key.currentState.validate()) {
