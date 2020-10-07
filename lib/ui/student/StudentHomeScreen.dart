@@ -132,16 +132,20 @@ class _StudentHomeState extends State<StudentHomeScreen> {
             ],
           ),
         ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          backgroundColor: Color(Constants.COLOR_ACCENT),
-          onPressed: () {
-            _createAlertDialog(context).then((value) {
-              //$onValue 拿到classcode的string
-              //put inside list
-            });
-          },
+        floatingActionButton: Container(
+          height: 60.0,
+          width: 60.0,
+          child: FittedBox(
+            child: FloatingActionButton(
+                child: Icon(Icons.add),
+                backgroundColor: Color(Constants.COLOR_ACCENT),
+                onPressed: () {
+                  _createAlertDialog(context).then((onValue) {
+                    //$onValue 拿到classcode的string
+                    //put inside list
+                  });
+                }),
+          ),
         ),
       ),
     );
