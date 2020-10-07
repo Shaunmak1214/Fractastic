@@ -5,7 +5,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fractastic/model/User.dart';
-import 'package:fractastic/ui/home/HomeScreen.dart';
+import 'package:fractastic/ui/student/StudentScreen.dart';
+import 'package:fractastic/ui/teacher/TeacherScreen.dart';
 import 'package:fractastic/ui/services/Authenticate.dart';
 import 'package:fractastic/ui/utils/helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -83,7 +84,10 @@ class OnBoardingState extends State<OnBoarding> {
         User user = await FireStoreUtils().getCurrentUser(firebaseUser.uid);
         if (user != null) {
           MyAppState.currentUser = user;
-          pushReplacement(context, new HomeScreen(user: user));
+          if (user.userType == 'Student')
+            pushReplacement(context, StudentScreen(user: user));
+          else
+            pushReplacement(context, TeacherScreen(user: user));
         } else {
           pushReplacement(context, new AuthScreen());
         }

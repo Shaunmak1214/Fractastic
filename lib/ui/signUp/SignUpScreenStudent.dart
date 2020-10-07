@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fractastic/model/User.dart';
-import 'package:fractastic/ui/student/StudentHomeScreen.dart';
+import 'package:fractastic/ui/student/StudentScreen.dart';
 import 'package:fractastic/ui/services/Authenticate.dart';
 import 'package:fractastic/ui/utils/helper.dart';
 import 'package:image_picker/image_picker.dart';
@@ -385,7 +385,7 @@ class _SignUpState extends State<SignUpScreenStudent> {
             .setData(user.toJson());
         hideProgress();
         MyAppState.currentUser = user;
-        pushAndRemoveUntil(context, StudentHomeScreen(user: user), false);
+        pushAndRemoveUntil(context, StudentScreen(user: user), false);
       } catch (error) {
         hideProgress();
         (error as PlatformException).code != 'ERROR_EMAIL_ALREADY_IN_USE'
