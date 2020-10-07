@@ -41,8 +41,12 @@ class _StudentScreenState extends State<StudentScreen> {
   int currentIndex = 0;
   List listOfScreen = [
     Container(
+      color: Colors.yellow,
+      //StudentHomeScreen
+    ),
+    Container(
       color: Colors.orange,
-      //chaptersoption
+      //ChaptersList
     ),
     Container(
       color: Colors.pink,
@@ -147,8 +151,14 @@ class _StudentScreenState extends State<StudentScreen> {
           },
           items: <BottomNavyBarItem>[
             BottomNavyBarItem(
+              icon: Icon(Icons.home),
+              title: Text('Home'),
+              activeColor: Color(Constants.COLOR_ACCENT),
+              inactiveColor: Colors.black,
+            ),
+            BottomNavyBarItem(
               icon: Icon(Icons.book),
-              title: Text('Study Room'),
+              title: Text('Chapters'),
               activeColor: Color(Constants.COLOR_ACCENT),
               inactiveColor: Colors.black,
             ),
@@ -166,6 +176,8 @@ class _StudentScreenState extends State<StudentScreen> {
             )
           ],
         ),
+        //only homescreen got join class
+        /*
         floatingActionButton: Container(
           height: 60.0,
           width: 60.0,
@@ -180,7 +192,7 @@ class _StudentScreenState extends State<StudentScreen> {
                   });
                 }),
           ),
-        ),
+        ),*/
       ),
     );
   }
