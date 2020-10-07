@@ -377,7 +377,8 @@ class _SignUpState extends State<SignUpScreenStudent> {
             lastName: lastName,
             settings: Settings(allowPushNotifications: true),
             profilePictureURL: profilePicUrl,
-            userType: 'Student');
+            userType: 'Student',
+            password: password);
         await FireStoreUtils.firestore
             .collection(Constants.USERS)
             .document(result.user.uid)

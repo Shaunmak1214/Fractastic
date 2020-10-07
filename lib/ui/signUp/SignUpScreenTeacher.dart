@@ -329,7 +329,8 @@ class _SignUpState extends State<SignUpScreenTeacher> {
     if (_key.currentState.validate()) {
       _key.currentState.save();
       showProgress(context, 'Creating new account...', false);
-      var profilePicUrl = '';
+      var profilePicUrl =
+          'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png';
       try {
         AuthResult result = await FirebaseAuth.instance
             .createUserWithEmailAndPassword(email: email, password: password);
@@ -346,7 +347,8 @@ class _SignUpState extends State<SignUpScreenTeacher> {
             lastName: lastName,
             settings: Settings(allowPushNotifications: true),
             profilePictureURL: profilePicUrl,
-            userType: 'Teacher');
+            userType: 'Teacher',
+            password: password);
         await FireStoreUtils.firestore
             .collection(Constants.USERS)
             .document(result.user.uid)

@@ -38,6 +38,7 @@ class _StudentHomeState extends State<StudentHomeScreen> {
   String _currentFirstName;
   String _currentLastName;
   String _currentPassword;
+  String _currentGuardianEmail;
 
   _StudentHomeState(this.user);
 
@@ -72,7 +73,7 @@ class _StudentHomeState extends State<StudentHomeScreen> {
                       style: TextStyle(color: Colors.black)),
                   trailing: IconButton(
                     icon: Icon(Icons.edit, color: Colors.black),
-                    onPressed: () => _editGuardianEmail(),
+                    onPressed: () => __asyncGuardianEmailInputDialog(context),
                   )),
               SizedBox(
                 height: 100.0,
@@ -90,7 +91,9 @@ class _StudentHomeState extends State<StudentHomeScreen> {
                   title: Text('Change Password',
                       style: TextStyle(
                           color: Color(Constants.COLOR_PRIMARY_DARK))),
-                  onTap: () async {}),
+                  onTap: () async {
+                    await _asyncPasswordInputDialog(context);
+                  }),
               ListTile(
                 leading: Transform.rotate(
                     angle: pi / 1,
@@ -252,60 +255,75 @@ class _StudentHomeState extends State<StudentHomeScreen> {
     showCupertinoModalPopup(context: context, builder: (context) => action);
   }
 
-  _editGuardianEmail() {}
-
-  // Future _asyncInputDialog(BuildContext context) async {
-  //   return showDialog(
-  //     context: context,
-  //     barrierDismissible:
-  //         false, // dialog is dismissible with a tap on the barrier
-  //     builder: (BuildContext context) {
-  //       return AlertDialog(
-  //         title: Text('Enter new name'),
-  //         content: Column(
-  //           children: [
-  //             TextField(
-  //               autofocus: true,
-  //               decoration: InputDecoration(labelText: 'First Name'),
-  //               onChanged: (value) {
-  //                 setState(() {
-  //                   user.firstName = value;
-  //                 });
-  //               },
-  //             ),
-  //             TextField(
-  //               autofocus: false,
-  //               decoration: InputDecoration(labelText: 'Last Name'),
-  //               onChanged: (value) async {
-  //                 await FireStoreUtils.firestore
-  //                     .collection(Constants.USERS)
-  //                     .document(user.uid)
-  //                     .setData(user.toJson());
-  //                 setState(() {
-  //                   user.lastName = value;
-  //                 });
-  //               },
-  //             ),
-  //           ],
-  //         ),
-  //         actions: <Widget>[
-  //           FlatButton(
-  //             child: Text('Cancel'),
-  //             onPressed: () {
-  //               Navigator.of(context).pop();
-  //             },
-  //           ),
-  //           FlatButton(
-  //             child: Text('Ok'),
-  //             onPressed: () {
-  //               Navigator.of(context).pop();
-  //             },
-  //           ),
-  //         ],
-  //       );
-  //     },
-  //   );
-  // }
+  Future __asyncGuardianEmailInputDialog(BuildContext context) async {
+    return showDialog(
+      context: context,
+      barrierDismissible:
+          true, // dialog is dismissible with a tap on the barrier
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Change Guardian Email'),
+          content: Stack(
+            overflow: Overflow.visible,
+            children: <Widget>[
+              Positioned(
+                right: -40.0,
+                top: -80.0,
+                child: InkResponse(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: CircleAvatar(
+                    child: Icon(Icons.close),
+                    backgroundColor: Colors.red,
+                  ),
+                ),
+              ),
+              Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: TextFormField(
+                        initialValue: user.guardianEmail,
+                        decoration: InputDecoration(
+                          hintText: 'New Guardian Email',
+                          contentPadding:
+                              EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                        ),
+                        validator: validateEmail,
+                        onChanged: (val) =>
+                            setState(() => _currentGuardianEmail = val),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: RaisedButton(
+                        child: Text("Update"),
+                        onPressed: () async {
+                          if (_formKey.currentState.validate()) {
+                            setState(() {
+                              user.guardianEmail =
+                                  _currentGuardianEmail ?? user.guardianEmail;
+                            });
+                            await _fireStoreUtils.updateCurrentUser(
+                                user, context);
+                            Navigator.pop(context);
+                          }
+                        },
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 
   Future _asyncNameInputDialog(BuildContext context) async {
     return showDialog(
@@ -431,7 +449,7 @@ class _StudentHomeState extends State<StudentHomeScreen> {
                         ),
                         validator: validatePassword,
                         onChanged: (val) =>
-                            setState(() => _currentFirstName = val),
+                            setState(() => _currentPassword = val),
                       ),
                     ),
                     Padding(
