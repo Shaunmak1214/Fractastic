@@ -6,6 +6,8 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:fractastic/model/User.dart';
 import 'package:fractastic/ui/home/HomeScreen.dart';
+import 'package:fractastic/ui/student/StudentHomeScreen.dart';
+import 'package:fractastic/ui/teacher/TeacherHomeScreen.dart';
 import 'package:fractastic/ui/services/Authenticate.dart';
 import 'package:fractastic/ui/utils/helper.dart';
 
@@ -235,9 +237,11 @@ class _LoginScreen extends State<LoginScreen> {
       User user =
           await loginWithUserNameAndPassword(email.trim(), password.trim());
       if (user != null)
-        pushAndRemoveUntil(context, HomeScreen(user: user), false);
-      // if(userType == 'Student') pushAndRemoveUntil(context, StudentHomeScreen(user: user), false);
-      // else pushAndRemoveUntil(context, TeacherHomeScreen(user: user), false);
+      //  pushAndRemoveUntil(context, HomeScreen(user: user), false);
+      if (userType == 'Student')
+        pushAndRemoveUntil(context, StudentHomeScreen(user: user), false);
+      else
+        pushAndRemoveUntil(context, TeacherHomeScreen(user: user), false);
     } else {
       setState(() {
         _validate = true;

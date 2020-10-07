@@ -11,7 +11,8 @@ class User {
   bool active = false;
   Timestamp lastOnlineTimestamp = Timestamp.now();
   String userID;
-  String profilePictureURL = '';
+  String profilePictureURL =
+      'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png';
   bool selected = false;
   String appIdentifier = 'Flutter Login Screen ${Platform.operatingSystem}';
   String userType = '';
@@ -45,7 +46,8 @@ class User {
         settings: Settings.fromJson(
             parsedJson['settings'] ?? {'allowPushNotifications': true}),
         userID: parsedJson['id'] ?? parsedJson['userID'] ?? '',
-        profilePictureURL: parsedJson['profilePictureURL'] ?? "",
+        profilePictureURL: parsedJson['profilePictureURL'] ??
+            "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
         userType: parsedJson['userType'] ?? '');
   }
 
