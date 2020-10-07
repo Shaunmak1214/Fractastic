@@ -32,7 +32,12 @@ class StudentHomeScreen extends StatefulWidget {
 }
 
 class _StudentHomeState extends State<StudentHomeScreen> {
+  final _formKey = GlobalKey<FormState>();
   final User user;
+
+  String _currentFirstName;
+  String _currentLastName;
+  String _currentPassword;
 
   _StudentHomeState(this.user);
 
@@ -56,11 +61,11 @@ class _StudentHomeState extends State<StudentHomeScreen> {
                     backgroundImage: NetworkImage(user.profilePictureURL),
                   ),
                 ),
-                accountName: Text(user.firstName + user.lastName),
+                accountName: Text(user.firstName + ' ' + user.lastName),
                 accountEmail: Text(user.email),
               ),
               ListTile(
-                  leading: Icon(Icons.email, color: Colors.black),
+                  leading: Icon(Icons.mail_outline, color: Colors.black),
                   title: Text('Guardian email',
                       style: TextStyle(color: Colors.black)),
                   subtitle: Text(user.guardianEmail,
@@ -69,18 +74,31 @@ class _StudentHomeState extends State<StudentHomeScreen> {
                     icon: Icon(Icons.edit, color: Colors.black),
                     onPressed: () => _editGuardianEmail(),
                   )),
+              SizedBox(
+                height: 100.0,
+              ),
+              ListTile(
+                  leading: Icon(Icons.person_outline, color: Colors.black),
+                  title: Text('Change Name',
+                      style: TextStyle(
+                          color: Color(Constants.COLOR_PRIMARY_DARK))),
+                  onTap: () async {
+                    await _asyncNameInputDialog(context);
+                  }),
               ListTile(
                   leading: Icon(Icons.lock_outline, color: Colors.black),
                   title: Text('Change Password',
-                      style: TextStyle(color: Colors.black))),
+                      style: TextStyle(
+                          color: Color(Constants.COLOR_PRIMARY_DARK))),
+                  onTap: () async {}),
               ListTile(
-                title: Text(
-                  'Logout',
-                  style: TextStyle(color: Colors.black),
-                ),
                 leading: Transform.rotate(
                     angle: pi / 1,
                     child: Icon(Icons.exit_to_app, color: Colors.black)),
+                title: Text(
+                  'Logout',
+                  style: TextStyle(color: Color(Constants.COLOR_PRIMARY_DARK)),
+                ),
                 onTap: () async {
                   user.active = false;
                   user.lastOnlineTimestamp = Timestamp.now();
@@ -149,7 +167,7 @@ class _StudentHomeState extends State<StudentHomeScreen> {
           onPressed: () async {
             Navigator.pop(context);
             var newImage =
-                await ImagePicker.pickImage(source: ImageSource.camera);
+                await ImagePicker.pickImage(source: ImageSource.gallery);
             if (newImage != null) {
               updateProgress('Uploading image...');
               _newProfilePicURL = await FireStoreUtils()
@@ -189,4 +207,210 @@ class _StudentHomeState extends State<StudentHomeScreen> {
   }
 
   _editGuardianEmail() {}
+
+  // Future _asyncInputDialog(BuildContext context) async {
+  //   return showDialog(
+  //     context: context,
+  //     barrierDismissible:
+  //         false, // dialog is dismissible with a tap on the barrier
+  //     builder: (BuildContext context) {
+  //       return AlertDialog(
+  //         title: Text('Enter new name'),
+  //         content: Column(
+  //           children: [
+  //             TextField(
+  //               autofocus: true,
+  //               decoration: InputDecoration(labelText: 'First Name'),
+  //               onChanged: (value) {
+  //                 setState(() {
+  //                   user.firstName = value;
+  //                 });
+  //               },
+  //             ),
+  //             TextField(
+  //               autofocus: false,
+  //               decoration: InputDecoration(labelText: 'Last Name'),
+  //               onChanged: (value) async {
+  //                 await FireStoreUtils.firestore
+  //                     .collection(Constants.USERS)
+  //                     .document(user.uid)
+  //                     .setData(user.toJson());
+  //                 setState(() {
+  //                   user.lastName = value;
+  //                 });
+  //               },
+  //             ),
+  //           ],
+  //         ),
+  //         actions: <Widget>[
+  //           FlatButton(
+  //             child: Text('Cancel'),
+  //             onPressed: () {
+  //               Navigator.of(context).pop();
+  //             },
+  //           ),
+  //           FlatButton(
+  //             child: Text('Ok'),
+  //             onPressed: () {
+  //               Navigator.of(context).pop();
+  //             },
+  //           ),
+  //         ],
+  //       );
+  //     },
+  //   );
+  // }
+
+  Future _asyncNameInputDialog(BuildContext context) async {
+    return showDialog(
+      context: context,
+      barrierDismissible:
+          true, // dialog is dismissible with a tap on the barrier
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Change Name'),
+          content: Stack(
+            overflow: Overflow.visible,
+            children: <Widget>[
+              Positioned(
+                right: -40.0,
+                top: -80.0,
+                child: InkResponse(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: CircleAvatar(
+                    child: Icon(Icons.close),
+                    backgroundColor: Colors.red,
+                  ),
+                ),
+              ),
+              Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: TextFormField(
+                        initialValue: user.firstName,
+                        decoration: InputDecoration(
+                          hintText: 'First Name',
+                          contentPadding:
+                              EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                        ),
+                        validator: validateName,
+                        onChanged: (val) =>
+                            setState(() => _currentFirstName = val),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: TextFormField(
+                        initialValue: user.lastName,
+                        decoration: InputDecoration(
+                          hintText: 'Last Name',
+                          contentPadding:
+                              EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                        ),
+                        validator: validateName,
+                        onChanged: (val) =>
+                            setState(() => _currentLastName = val),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: RaisedButton(
+                        child: Text("Update"),
+                        onPressed: () async {
+                          if (_formKey.currentState.validate()) {
+                            setState(() {
+                              user.firstName =
+                                  _currentFirstName ?? user.firstName;
+                              user.lastName = _currentLastName ?? user.lastName;
+                            });
+                            await _fireStoreUtils.updateCurrentUser(
+                                user, context);
+                            Navigator.pop(context);
+                          }
+                        },
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Future _asyncPasswordInputDialog(BuildContext context) async {
+    return showDialog(
+      context: context,
+      barrierDismissible:
+          true, // dialog is dismissible with a tap on the barrier
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Change Password'),
+          content: Stack(
+            overflow: Overflow.visible,
+            children: <Widget>[
+              Positioned(
+                right: -40.0,
+                top: -80.0,
+                child: InkResponse(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: CircleAvatar(
+                    child: Icon(Icons.close),
+                    backgroundColor: Colors.red,
+                  ),
+                ),
+              ),
+              Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          hintText: 'New Password',
+                          contentPadding:
+                              EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                        ),
+                        validator: validatePassword,
+                        onChanged: (val) =>
+                            setState(() => _currentFirstName = val),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: RaisedButton(
+                        child: Text("Update"),
+                        onPressed: () async {
+                          if (_formKey.currentState.validate()) {
+                            setState(() {
+                              user.password = _currentPassword ?? user.password;
+                            });
+                            await _fireStoreUtils.updateCurrentUser(
+                                user, context);
+                            Navigator.pop(context);
+                          }
+                        },
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 }
