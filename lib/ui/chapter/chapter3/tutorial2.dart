@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Tutorial extends StatelessWidget {
+class Chap3Tutorial2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

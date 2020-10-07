@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fractastic/ui/home/Profile.dart';
 
-class Tutorial extends StatelessWidget {
+class Chap1Tutorial2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

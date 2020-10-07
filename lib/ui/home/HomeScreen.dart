@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:fractastic/constants.dart';
 import 'package:fractastic/model/User.dart';
 import 'package:fractastic/ui/auth/AuthScreen.dart';
+import 'package:fractastic/ui/home/ChapterOptionPage.dart';
 import 'package:fractastic/ui/services/Authenticate.dart';
 import 'package:fractastic/ui/utils/helper.dart';
 
@@ -100,6 +101,21 @@ class _HomeState extends State<HomeScreen> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(user.userID),
+              ),
+              RaisedButton(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(18.0),
+                    side: BorderSide(color: Colors.red)),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      new MaterialPageRoute(
+                          builder: (_) => ChapterOptionPage()));
+                },
+                color: Colors.red,
+                textColor: Colors.white,
+                child: Text("chapter 1".toUpperCase(),
+                    style: TextStyle(fontSize: 14)),
               ),
             ],
           ),
