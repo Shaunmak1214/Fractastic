@@ -222,7 +222,7 @@ class _SignUpState extends State<SignUpScreenTeacher> {
                     keyboardType: TextInputType.emailAddress,
                     textInputAction: TextInputAction.next,
                     onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
-                    validator: validateEmail,
+                    validator: validateSchoolEmail,
                     onSaved: (String val) {
                       email = val;
                     },

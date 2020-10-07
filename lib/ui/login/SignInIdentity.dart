@@ -24,8 +24,10 @@ class SignInIdentity extends StatelessWidget {
             FlatButton(
               onPressed: () {
                 Navigator.pop(context);
-                Navigator.push(context,
-                    new MaterialPageRoute(builder: (_) => LoginScreen()));
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (_) => LoginScreen(userType: 'Teacher')));
                 print('I got clicked');
               },
               child: Image.asset('assets/images/Teacher.png'),
@@ -35,8 +37,10 @@ class SignInIdentity extends StatelessWidget {
               onPressed: () {
                 print('I got clicked');
                 Navigator.pop(context);
-                Navigator.push(context,
-                    new MaterialPageRoute(builder: (_) => LoginScreen()));
+                Navigator.push(
+                    context,
+                    new MaterialPageRoute(
+                        builder: (_) => LoginScreen(userType: 'Student')));
               },
               child: Image.asset('assets/images/Student.png'),
             ),

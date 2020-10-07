@@ -15,13 +15,20 @@ import '../../main.dart';
 final _fireStoreUtils = FireStoreUtils();
 
 class LoginScreen extends StatefulWidget {
+  final String userType;
+
+  LoginScreen({Key key, @required this.userType}) : super(key: key);
+
   @override
   State createState() {
-    return _LoginScreen();
+    return _LoginScreen(this.userType);
   }
 }
 
 class _LoginScreen extends State<LoginScreen> {
+  final String userType;
+  _LoginScreen(this.userType);
+
   TextEditingController _emailController = new TextEditingController();
   TextEditingController _passwordController = new TextEditingController();
   GlobalKey<FormState> _key = new GlobalKey();
@@ -64,7 +71,9 @@ class _LoginScreen extends State<LoginScreen> {
                 child: TextFormField(
                     textAlignVertical: TextAlignVertical.center,
                     textInputAction: TextInputAction.next,
-                    validator: validateEmail,
+                    validator: userType == 'Student'
+                        ? validateEmail
+                        : validateSchoolEmail,
                     onSaved: (String val) {
                       email = val;
                     },
@@ -203,6 +212,9 @@ class _LoginScreen extends State<LoginScreen> {
       User user = await loginAnonymous();
       if (user == null) user = defaultUser;
       pushAndRemoveUntil(context, HomeScreen(user: user), false);
+      // if(userType == 'Student') pushAndRemoveUntil(context, StudentHomeScreen(user: user), false);
+      // else pushAndRemoveUntil(context, TeacherHomeScreen(user: user), false);
+
     } catch (e) {
       print(e.toString());
     }
