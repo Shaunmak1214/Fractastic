@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import '../../constants.dart' as Constants;
 
-void main() => runApp(StudentApp());
+void main() => runApp(TeacherApp());
 
-class StudentApp extends StatelessWidget {
+class TeacherApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -33,6 +33,10 @@ class _MyPackageState extends State<MyPackage> {
       color: Colors.red,
       //calendar
     ),
+    Container(
+      color: Colors.purple,
+      //calendar
+    ),
   ];
 
   @override
@@ -59,8 +63,14 @@ class _MyPackageState extends State<MyPackage> {
         },
         items: <BottomNavyBarItem>[
           BottomNavyBarItem(
+            icon: Icon(Icons.child_care),
+            title: Text('Students'),
+            activeColor: Color(Constants.COLOR_ACCENT),
+            inactiveColor: Colors.black,
+          ),
+          BottomNavyBarItem(
             icon: Icon(Icons.book),
-            title: Text('Study Room'),
+            title: Text('Chapters'),
             activeColor: Color(Constants.COLOR_ACCENT),
             inactiveColor: Colors.black,
           ),
