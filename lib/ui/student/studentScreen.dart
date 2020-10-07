@@ -153,7 +153,7 @@ class _StudentScreenState extends State<StudentScreen> {
               inactiveColor: Colors.black,
             ),
             BottomNavyBarItem(
-              icon: Icon(Icons.toc),
+              icon: Icon(Icons.description),
               title: Text('Results'),
               activeColor: Color(Constants.COLOR_ACCENT),
               inactiveColor: Colors.black,
