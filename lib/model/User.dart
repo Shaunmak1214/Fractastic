@@ -16,6 +16,7 @@ class User {
   bool selected = false;
   String appIdentifier = 'Flutter Login Screen ${Platform.operatingSystem}';
   String userType = '';
+  String password = '';
 
   User(
       {this.email,
@@ -27,7 +28,8 @@ class User {
       this.settings,
       this.userID,
       this.profilePictureURL,
-      this.userType});
+      this.userType,
+      this.password});
 
   get uid => this.userID;
 
@@ -37,10 +39,10 @@ class User {
 
   factory User.fromJson(Map<String, dynamic> parsedJson) {
     return new User(
-        email: parsedJson['email'] ?? "",
+        email: parsedJson['email'] ?? '',
         firstName: parsedJson['firstName'] ?? '',
         lastName: parsedJson['lastName'] ?? '',
-        guardianEmail: parsedJson['guardianEmail'] ?? "",
+        guardianEmail: parsedJson['guardianEmail'] ?? '',
         active: parsedJson['active'] ?? false,
         lastOnlineTimestamp: parsedJson['lastOnlineTimestamp'],
         settings: Settings.fromJson(
@@ -48,7 +50,8 @@ class User {
         userID: parsedJson['id'] ?? parsedJson['userID'] ?? '',
         profilePictureURL: parsedJson['profilePictureURL'] ??
             "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
-        userType: parsedJson['userType'] ?? '');
+        userType: parsedJson['userType'] ?? '',
+        password: parsedJson['password'] ?? '');
   }
 
   Map<String, dynamic> toJson() {
@@ -63,7 +66,8 @@ class User {
       'lastOnlineTimestamp': this.lastOnlineTimestamp,
       "profilePictureURL": this.profilePictureURL,
       'appIdentifier': this.appIdentifier,
-      'userType': this.userType
+      'userType': this.userType,
+      'password': this.password
     };
   }
 }
