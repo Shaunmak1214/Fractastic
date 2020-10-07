@@ -132,7 +132,49 @@ class _StudentHomeState extends State<StudentHomeScreen> {
             ],
           ),
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+        floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.add),
+          backgroundColor: Color(Constants.COLOR_ACCENT),
+          onPressed: () {
+            _createAlertDialog(context).then((value) {
+              //$onValue 拿到classcode的string
+              //put inside list
+            });
+          },
+        ),
       ),
+    );
+  }
+
+  Future<String> _createAlertDialog(BuildContext context) {
+    TextEditingController customController = TextEditingController();
+
+    return showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: Text(
+            'Enter Your Class Code:',
+            style: TextStyle(color: Color(Constants.COLOR_WORDING)),
+          ),
+          content: TextField(
+            controller: customController,
+          ),
+          actions: <Widget>[
+            MaterialButton(
+              elevation: 5.0,
+              child: Text(
+                'Submit',
+                style: TextStyle(color: Color(Constants.COLOR_WORDING)),
+              ),
+              onPressed: () {
+                Navigator.of(context).pop(customController.text.toString());
+              },
+            )
+          ],
+        );
+      },
     );
   }
 

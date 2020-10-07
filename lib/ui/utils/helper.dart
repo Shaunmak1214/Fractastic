@@ -16,6 +16,7 @@ String validateName(String value) {
   return null;
 }
 
+/*
 String validateMobile(String value) {
   String patttern = r'(^[0-9]*$)';
   RegExp regExp = new RegExp(patttern);
@@ -25,7 +26,7 @@ String validateMobile(String value) {
     return "Mobile phone number must contain only digits";
   }
   return null;
-}
+} */
 
 String validatePassword(String value) {
   if (value.length < 6)
