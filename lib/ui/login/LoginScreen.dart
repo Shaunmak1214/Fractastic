@@ -152,16 +152,16 @@ class _LoginScreen extends State<LoginScreen> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(32.0),
-              child: Center(
-                child: Text(
-                  'OR',
-                  style: TextStyle(
-                      fontSize: 16, color: Color(Constants.COLOR_WORDING)),
-                ),
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.all(32.0),
+            //   child: Center(
+            //     child: Text(
+            //       'OR',
+            //       style: TextStyle(
+            //           fontSize: 16, color: Color(Constants.COLOR_WORDING)),
+            //     ),
+            //   ),
+            // ),
             // Padding(
             //   padding: const EdgeInsets.only(right: 40.0, left: 40.0, top: 0),
             //   child: ConstrainedBox(
@@ -185,7 +185,7 @@ class _LoginScreen extends State<LoginScreen> {
             //   ),
             // ),
             Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: const EdgeInsets.all(1.0),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
