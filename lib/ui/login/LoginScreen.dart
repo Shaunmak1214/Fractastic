@@ -236,6 +236,8 @@ class _LoginScreen extends State<LoginScreen> {
           await loginWithUserNameAndPassword(email.trim(), password.trim());
       if (user != null)
         pushAndRemoveUntil(context, HomeScreen(user: user), false);
+      // if(userType == 'Student') pushAndRemoveUntil(context, StudentHomeScreen(user: user), false);
+      // else pushAndRemoveUntil(context, TeacherHomeScreen(user: user), false);
     } else {
       setState(() {
         _validate = true;
