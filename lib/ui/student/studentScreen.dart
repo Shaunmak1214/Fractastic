@@ -10,6 +10,7 @@ import 'package:fractastic/ui/auth/AuthScreen.dart';
 import 'package:fractastic/ui/services/Authenticate.dart';
 import 'package:fractastic/ui/utils/helper.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:fractastic/ui/home/ChapterOptionPage.dart';
 
 import '../../main.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
@@ -40,22 +41,20 @@ class _StudentScreenState extends State<StudentScreen> {
 
   int currentIndex = 0;
   List listOfScreen = [
-    Container(
-      color: Colors.yellow,
-      //StudentHomeScreen
-    ),
-    Container(
-      color: Colors.orange,
-      //ChaptersList
-    ),
-    Container(
-      color: Colors.pink,
-      //quiz result
-    ),
-    Container(
-      color: Colors.red,
-      //calendar
-    ),
+    // Container(
+    //   color: Colors.orange,
+    //   //chaptersoption
+    // ),
+    // Container(
+    //   color: Colors.pink,
+    //   //quiz result
+    // ),
+    // Container(
+    //   color: Colors.red,
+    //   //calendar
+    // ),
+
+    ChapterOptionPage(),
   ];
 
   @override
