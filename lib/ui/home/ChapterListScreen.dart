@@ -19,54 +19,177 @@ class _MyChapterListState extends State<ChapterList> {
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
-        backgroundColor: Color(Constants.COLOR_PRIMARY),
+        backgroundColor: Color(Constants.COLOR_ACCENT),
       ),
       body: new Container(
         child: new ListView(
           children: <Widget>[
-            ListTile(
-              title: Text('Chapter 1'),
-              subtitle: Text('Introduction and Fraction in Real Life'),
-              trailing: IconButton(
-                icon: Icon(Icons.arrow_forward),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Chapter1OptionPage(),
-                    ),
-                  );
-                },
+            Card(
+              child: ListTile(
+                title: Text('Chapter 1'),
+                subtitle: Text('Introduction and Fraction in Real Life'),
+                leading: Icon(
+                  Icons.collections_bookmark,
+                  color: Colors.red,
+                ),
+                trailing: IconButton(
+                  icon: Icon(
+                    Icons.arrow_forward,
+                    color: Color(Constants.COLOR_WORDING),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Chapter1OptionPage(),
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
-            ListTile(
-              title: Text('Chapter 2'),
-              subtitle: Text('Basic of Fraction'),
-              trailing: IconButton(
-                icon: Icon(Icons.arrow_forward),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Chapter2OptionPage(),
-                    ),
-                  );
-                },
+            Card(
+              child: ListTile(
+                title: Text('Chapter 2'),
+                subtitle: Text('Basic of Fraction'),
+                leading: Icon(
+                  Icons.menu,
+                  color: Colors.orange,
+                ),
+                trailing: IconButton(
+                  icon: Icon(
+                    Icons.arrow_forward,
+                    color: Color(Constants.COLOR_WORDING),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Chapter2OptionPage(),
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
-            ListTile(
-              title: Text('Chapter 3'),
-              subtitle: Text('Conversion of Fraction'),
-              trailing: IconButton(
-                icon: Icon(Icons.arrow_forward),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Chapter3OptionPage(),
-                    ),
-                  );
-                },
+            Card(
+              child: ListTile(
+                title: Text('Chapter 3'),
+                subtitle: Text('Conversion of Fraction'),
+                leading: Icon(
+                  Icons.import_contacts,
+                  color: Colors.yellow,
+                ),
+                trailing: IconButton(
+                  icon: Icon(
+                    Icons.arrow_forward,
+                    color: Color(Constants.COLOR_WORDING),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Chapter3OptionPage(),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text('Chapter 4'),
+                subtitle: Text('Conversion of Fraction'),
+                leading: Icon(
+                  Icons.import_contacts,
+                  color: Colors.green,
+                ),
+                trailing: IconButton(
+                  icon: Icon(
+                    Icons.arrow_forward,
+                    color: Color(Constants.COLOR_WORDING),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Chapter3OptionPage(),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text('Chapter 5'),
+                subtitle: Text('Conversion of Fraction'),
+                leading: Icon(
+                  Icons.import_contacts,
+                  color: Colors.blue,
+                ),
+                trailing: IconButton(
+                  icon: Icon(
+                    Icons.arrow_forward,
+                    color: Color(Constants.COLOR_WORDING),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Chapter3OptionPage(),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text('Chapter 5'),
+                subtitle: Text('Conversion of Fraction'),
+                leading: Icon(
+                  Icons.import_contacts,
+                  color: Colors.indigo,
+                ),
+                trailing: IconButton(
+                  icon: Icon(
+                    Icons.arrow_forward,
+                    color: Color(Constants.COLOR_WORDING),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Chapter3OptionPage(),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text('Chapter 5'),
+                subtitle: Text('Conversion of Fraction'),
+                leading: Icon(
+                  Icons.import_contacts,
+                  color: Colors.purple,
+                ),
+                trailing: IconButton(
+                  icon: Icon(
+                    Icons.arrow_forward,
+                    color: Color(Constants.COLOR_WORDING),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Chapter3OptionPage(),
+                      ),
+                    );
+                  },
+                ),
               ),
             ),
           ],

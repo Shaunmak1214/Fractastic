@@ -56,11 +56,10 @@ class _CalendarPageState extends State<CalendarPage> {
       appBar: AppBar(
         title: Text(
           'Calendar',
-          style: TextStyle(
-              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20.0),
+          style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,
-        backgroundColor: Color(Constants.COLOR_PRIMARY),
+        backgroundColor: Color(Constants.COLOR_ACCENT),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -70,7 +69,7 @@ class _CalendarPageState extends State<CalendarPage> {
               events: _events,
               calendarStyle: CalendarStyle(
                   todayColor: Colors.deepOrange[300],
-                  selectedColor: Color(Constants.COLOR_ACCENT),
+                  selectedColor: Colors.deepPurple[300],
                   todayStyle: TextStyle(
                     //fontWeight: FontWeight.bold,
                     fontSize: 18.0,
@@ -80,7 +79,7 @@ class _CalendarPageState extends State<CalendarPage> {
                 centerHeaderTitle: true,
                 formatButtonDecoration: BoxDecoration(
                   color: Color(Constants.COLOR_PRIMARY_DARK),
-                  borderRadius: BorderRadius.circular(10.0),
+                  borderRadius: BorderRadius.circular(20.0),
                 ),
                 formatButtonTextStyle: TextStyle(color: Colors.white),
                 formatButtonShowsNext: false,
@@ -100,6 +99,7 @@ class _CalendarPageState extends State<CalendarPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.red,
         child: Icon(
           Icons.add,
           color: Colors.white,
