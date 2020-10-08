@@ -25,7 +25,7 @@ class ChapterList extends StatelessWidget {
               ),
               new ListTile(
                 leading: Icon(Icons.star),
-                trailing: Icon(Icons.done_outline),
+                trailing: Icon(Icons.done),
                 title: Text("Chapter 1"),
                 subtitle: Text("Introduction of Fraction in Real Life"),
                 dense: true, //can be false dk which better
@@ -37,7 +37,7 @@ class ChapterList extends StatelessWidget {
               ),
               new ListTile(
                 leading: Icon(Icons.star),
-                trailing: Icon(Icons.done_outline),
+                trailing: Icon(Icons.done_all),
                 title: Text("Chapter 2"),
                 subtitle: Text("Basic of Fraction"),
                 dense: true,
@@ -49,8 +49,8 @@ class ChapterList extends StatelessWidget {
               ),
               new ListTile(
                 leading: Icon(Icons.star),
-                trailing: Icon(Icons.done_outline),
-                title: Text("Chapter 1"),
+                trailing: Icon(Icons.keyboard_arrow_right),
+                title: Text("Chapter 3"),
                 subtitle: Text("Conversion of Fraction"),
                 dense: true,
                 onTap: () => Navigator.push(
