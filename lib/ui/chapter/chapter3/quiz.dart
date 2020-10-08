@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import '../../../constants.dart' as Constants;
 
-class Chap2Quiz extends StatefulWidget {
+class Chap3Quiz extends StatefulWidget {
   @override
-  _Chap2QuizState createState() => _Chap2QuizState();
+  _Chap3QuizState createState() => _Chap3QuizState();
 }
 
-class _Chap2QuizState extends State<Chap2Quiz> {
+class _Chap3QuizState extends State<Chap3Quiz> {
   int _radioValue1 = -1;
   int correctScore = 0;
   int _radioValue2 = -1;
@@ -129,9 +130,9 @@ class _Chap2QuizState extends State<Chap2Quiz> {
     return MaterialApp(
         home: new Scaffold(
             appBar: AppBar(
-              title: new Text('Chapter 1 Quiz 1'),
+              title: new Text('Chapter 3 Quiz'),
               centerTitle: true,
-              backgroundColor: Colors.blue,
+              backgroundColor: Color(Constants.COLOR_PRIMARY),
               leading: new IconButton(
                 icon: new Icon(Icons.arrow_back),
                 onPressed: () => Navigator.of(context).pop(),
@@ -396,9 +397,9 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                           children: <Widget>[
                                             new Image(
                                                 image: AssetImage(
-                                                    'assets/images/wholeFraction.png')),
+                                                    'assets/images/sevenOverEight.png')),
                                             new Text(
-                                              'Which value is the numerator?',
+                                              'what fraction is missing in the following chart?',
                                               style: new TextStyle(
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 18.0,
@@ -418,7 +419,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                                   onTap: () {
                                                     _handleRadioValueChange5(0);
                                                   },
-                                                  child: Text("A. 2"),
+                                                  child: Text("A. One-Fifth"),
                                                 ),
                                                 new Radio(
                                                   value: 1,
@@ -430,7 +431,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                                   onTap: () {
                                                     _handleRadioValueChange5(1);
                                                   },
-                                                  child: Text("B. 7"),
+                                                  child: Text("B. 2/8"),
                                                 ),
                                                 new Radio(
                                                   value: 2,
@@ -442,7 +443,8 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                                   onTap: () {
                                                     _handleRadioValueChange5(2);
                                                   },
-                                                  child: Text("C. 1"),
+                                                  child:
+                                                      Text("C. One Over Eight"),
                                                 ),
                                               ],
                                             ),

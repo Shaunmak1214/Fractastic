@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:fractastic/constants.dart';
 import 'package:fractastic/model/User.dart';
 import 'package:fractastic/ui/auth/AuthScreen.dart';
-import 'package:fractastic/ui/home/ChapterOptionPage.dart';
+import 'package:fractastic/ui/home/Chapter1OptionPage.dart';
 import 'package:fractastic/ui/services/Authenticate.dart';
 import 'package:fractastic/ui/utils/helper.dart';
 
@@ -110,7 +110,7 @@ class _HomeState extends State<HomeScreen> {
                   Navigator.push(
                       context,
                       new MaterialPageRoute(
-                          builder: (_) => ChapterOptionPage()));
+                          builder: (_) => Chapter1OptionPage()));
                 },
                 color: Colors.red,
                 textColor: Colors.white,

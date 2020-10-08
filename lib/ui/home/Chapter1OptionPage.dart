@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:fractastic/ui/chapter/chapter1/game1.dart';
-import 'package:fractastic/ui/chapter/chapter1/quiz1.dart';
-import 'package:fractastic/ui/chapter/chapter1/tutorial1.dart';
+import 'package:fractastic/ui/chapter/chapter1/game.dart';
+import 'package:fractastic/ui/chapter/chapter1/quiz.dart';
+import 'package:fractastic/ui/chapter/chapter1/tutorial.dart';
 
 import '../../constants.dart' as Constants;
 
-class ChapterOptionPage extends StatelessWidget {
+class Chapter1OptionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +37,7 @@ class ChapterOptionPage extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 50),
                   splashColor: Colors.blueAccent[200],
                   onPressed: () => Navigator.push(context,
-                      new MaterialPageRoute(builder: (_) => Chap1Tutorial1()))),
+                      new MaterialPageRoute(builder: (_) => Chap1Tutorial()))),
             ),
           ),
           SizedBox(height: 30),

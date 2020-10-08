@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:fractastic/ui/home/Profile.dart';
 import '../../../constants.dart' as Constants;
 
-class Chap1Tutorial1 extends StatelessWidget {
+class Chap2Tutorial extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Chapter 1'),
+        title: Text('Chapter 2'),
         centerTitle: true,
         backgroundColor: Color(Constants.COLOR_PRIMARY),
         leading: new IconButton(
@@ -16,8 +15,14 @@ class Chap1Tutorial1 extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: Image(image: AssetImage('assets/images/intro-tutorial.png')),
-      ),
+          child: SingleChildScrollView(
+              child: new Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          new Image(image: AssetImage('assets/images/chap2-tutorial1.png')),
+          new Image(image: AssetImage('assets/images/chap2-tutorial2.png')),
+        ],
+      ))),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color(Constants.COLOR_ACCENT),
         onPressed: () => Navigator.of(context).pop(),

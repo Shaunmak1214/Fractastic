@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import '../../../constants.dart' as Constants;
 
 class Chap1Quiz extends StatefulWidget {
   @override
@@ -129,9 +130,9 @@ class _Chap1QuizState extends State<Chap1Quiz> {
     return MaterialApp(
         home: new Scaffold(
             appBar: AppBar(
-              title: new Text('Chapter 1 Quiz 1'),
+              title: new Text('Chapter 1 Quiz'),
               centerTitle: true,
-              backgroundColor: Colors.blue,
+              backgroundColor: Color(Constants.COLOR_PRIMARY),
               leading: new IconButton(
                 icon: new Icon(Icons.arrow_back),
                 onPressed: () => Navigator.of(context).pop(),

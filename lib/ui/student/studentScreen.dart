@@ -11,7 +11,9 @@ import 'package:fractastic/ui/services/Authenticate.dart';
 import 'package:fractastic/ui/student/StudentHomeScreen.dart';
 import 'package:fractastic/ui/utils/helper.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:fractastic/ui/home/ChapterOptionPage.dart';
+import 'package:fractastic/ui/home/Chapter1OptionPage.dart';
+import 'package:fractastic/ui/home/Chapter2OptionPage.dart';
+import 'package:fractastic/ui/home/Chapter3OptionPage.dart';
 
 import '../../main.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
@@ -55,10 +57,10 @@ class _StudentScreenState extends State<StudentScreen> {
     //   //calendar
     // ),
     //StudentHomeScreen(user: this.user),
-    ChapterOptionPage(),
-    ChapterOptionPage(),
-    ChapterOptionPage(),
-    ChapterOptionPage(),
+    Chapter1OptionPage(),
+    Chapter2OptionPage(),
+    Chapter3OptionPage(),
+    Chapter1OptionPage(),
   ];
 
   @override
