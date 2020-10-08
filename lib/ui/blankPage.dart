@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fractastic/constants.dart' as Constants;
 
-void main() => runApp(MaterialApp(
-      home: Home(),
-    ));
-
-class Home extends StatelessWidget {
+class BlankPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
