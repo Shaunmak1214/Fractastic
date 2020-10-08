@@ -251,7 +251,7 @@ class _SignUpState extends State<SignUpScreenTeacher> {
                   onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
                   controller: _passwordController,
                   validator: validatePassword,
-                  onSaved: (String val) {
+                  onChanged: (String val) {
                     password = val;
                   },
                   style: TextStyle(height: 0.8, fontSize: 18.0),

@@ -35,6 +35,13 @@ String validatePassword(String value) {
     return null;
 }
 
+String validateClassName(String value) {
+  if (value.length == 0 || value.length > 20)
+    return 'Length: 1~19';
+  else
+    return null;
+}
+
 String validateEmail(String value) {
   Pattern pattern =
       r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
