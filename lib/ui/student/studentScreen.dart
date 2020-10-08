@@ -11,6 +11,7 @@ import 'package:fractastic/ui/scheduleCalendar.dart';
 import 'package:fractastic/ui/home/ChapterListScreen.dart';
 import 'package:fractastic/ui/home/QuizResult.dart';
 import 'package:fractastic/ui/services/Authenticate.dart';
+import 'package:fractastic/ui/student/NoClassPage.dart';
 import 'package:fractastic/ui/student/StudentHomeScreen.dart';
 import 'package:fractastic/ui/utils/helper.dart';
 import 'package:image_picker/image_picker.dart';
@@ -49,8 +50,7 @@ class _StudentScreenState extends State<StudentScreen> {
 
   List<Widget> _widgetOptions = <Widget>[
     //StudentHomeScreen(),
-    Chapter1OptionPage(),
-    ChapterList(),
+    NoClassPage(),
     QuizResult(),
     CalendarPage(),
   ];
@@ -150,12 +150,6 @@ class _StudentScreenState extends State<StudentScreen> {
               icon: Icon(Icons.home),
               title: Text('Home'),
               activeColor: Colors.red,
-              inactiveColor: Colors.black,
-            ),
-            BottomNavyBarItem(
-              icon: Icon(Icons.book),
-              title: Text('Chapters'),
-              activeColor: Colors.deepPurple,
               inactiveColor: Colors.black,
             ),
             BottomNavyBarItem(
