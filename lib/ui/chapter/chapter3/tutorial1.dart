@@ -13,12 +13,6 @@ class Chap3Tutorial1 extends StatelessWidget {
           leading: new IconButton(
             icon: new Icon(Icons.arrow_back),
             onPressed: () => Navigator.of(context).pop(),
-            // onPressed: () {
-            //   Navigator.push(
-            //     context,
-            //     MaterialPageRoute(builder: (context) => Profile()),
-            //   );
-            //},
           ),
         ),
         body: Center(
