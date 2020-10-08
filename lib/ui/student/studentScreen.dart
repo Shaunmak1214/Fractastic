@@ -9,7 +9,7 @@ import 'package:fractastic/model/User.dart';
 import 'package:fractastic/ui/auth/AuthScreen.dart';
 import 'package:fractastic/ui/chapter/calendar.dart';
 import 'package:fractastic/ui/home/ChapterListScreen.dart';
-import 'package:fractastic/ui/home/ResultPage.dart';
+import 'package:fractastic/ui/home/QuizResult.dart';
 import 'package:fractastic/ui/services/Authenticate.dart';
 import 'package:fractastic/ui/student/StudentHomeScreen.dart';
 import 'package:fractastic/ui/utils/helper.dart';
@@ -51,7 +51,7 @@ class _StudentScreenState extends State<StudentScreen> {
     //StudentHomeScreen(),
     Chapter1OptionPage(),
     ChapterList(),
-    ResultPage(),
+    QuizResult(),
     MyCalendar(),
   ];
 
