@@ -158,25 +158,25 @@ class _StudentScreenState extends State<StudentScreen> {
             BottomNavyBarItem(
               icon: Icon(Icons.home),
               title: Text('Home'),
-              activeColor: Color(Constants.COLOR_ACCENT),
+              activeColor: Colors.indigo,
               inactiveColor: Colors.black,
             ),
             BottomNavyBarItem(
               icon: Icon(Icons.book),
               title: Text('Chapters'),
-              activeColor: Color(Constants.COLOR_ACCENT),
+              activeColor: Colors.indigo,
               inactiveColor: Colors.black,
             ),
             BottomNavyBarItem(
               icon: Icon(Icons.description),
               title: Text('Results'),
-              activeColor: Color(Constants.COLOR_ACCENT),
+              activeColor: Colors.indigo,
               inactiveColor: Colors.black,
             ),
             BottomNavyBarItem(
               icon: Icon(Icons.calendar_today),
               title: Text('Calendar'),
-              activeColor: Color(Constants.COLOR_ACCENT),
+              activeColor: Colors.indigo,
               inactiveColor: Colors.black,
             )
           ],
