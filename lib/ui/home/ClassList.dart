@@ -11,6 +11,7 @@ class ClassList extends StatefulWidget {
 class _ClassListState extends State<ClassList> {
   @override
   Widget build(BuildContext context) {
+    final classes = Provider.of<QuerySnapshot>(context);
     return Container();
   }
 }
