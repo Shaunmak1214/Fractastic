@@ -47,15 +47,23 @@ class Chap1game1 extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(8.0),
               child: Center(
+                  child: Container(
+                width: 200.0,
+                height: 50.0,
                 child: RaisedButton.icon(
-                  icon: Icon(Icons.link),
+                  icon: Icon(
+                    Icons.link,
+                    size: 33,
+                  ),
                   color: Color(Constants.COLOR_ACCENT),
-                  highlightColor: Color(Constants.COLOR_PRIMARY_DARK),
-                  textColor: Colors.black,
+                  textColor: Colors.white,
                   onPressed: _launchURL,
-                  label: new Text('Play Game !'),
+                  label: new Text(
+                    'Play Game !',
+                    style: TextStyle(fontSize: 22.0),
+                  ),
                 ),
-              ),
+              )),
             ),
           ],
         ));

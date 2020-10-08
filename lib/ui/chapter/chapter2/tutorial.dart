@@ -29,7 +29,7 @@ class Chap2Tutorial extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Color(Constants.COLOR_ACCENT),
         onPressed: () => Navigator.of(context).pop(),
-        child: Text('done'),
+        child: Icon(Icons.done),
       ),
     );
   }
