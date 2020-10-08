@@ -144,7 +144,7 @@ class _Chap1Quiz1State extends State<Chap1Quiz1> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         new Text(
-                          'Select correct answers from below:',
+                          'Select correct answers from below based on the diagram given:',
                           style: new TextStyle(
                               fontSize: 20.0, fontWeight: FontWeight.bold),
                         ),
@@ -156,7 +156,7 @@ class _Chap1Quiz1State extends State<Chap1Quiz1> {
                           padding: new EdgeInsets.all(8.0),
                         ),
                         new Image(
-                            image: AssetImage('assets/images/twoOverFive.png')),
+                            image: AssetImage('assets/images/ingredient.png')),
                         new Text(
                           'The following segment represents... ',
                           style: new TextStyle(
@@ -212,9 +212,6 @@ class _Chap1Quiz1State extends State<Chap1Quiz1> {
                         new Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              new Image(
-                                  image: AssetImage(
-                                      'assets/images/sevenOverEight.png')),
                               new Text(
                                 'How many segment left here? ',
                                 style: new TextStyle(
@@ -270,9 +267,6 @@ class _Chap1Quiz1State extends State<Chap1Quiz1> {
                               new Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: <Widget>[
-                                    new Image(
-                                        image: AssetImage(
-                                            'assets/images/oneThird.png')),
                                     new Text(
                                       'How do we name this fraction?',
                                       style: new TextStyle(
@@ -330,9 +324,6 @@ class _Chap1Quiz1State extends State<Chap1Quiz1> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: <Widget>[
-                                        new Image(
-                                            image: AssetImage(
-                                                'assets/images/fourOverFive.png')),
                                         new Text(
                                           'What is the name of this fraction?',
                                           style: new TextStyle(
@@ -394,11 +385,8 @@ class _Chap1Quiz1State extends State<Chap1Quiz1> {
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: <Widget>[
-                                            new Image(
-                                                image: AssetImage(
-                                                    'assets/images/wholeFraction.png')),
                                             new Text(
-                                              'Which value is the numerator?',
+                                              'what fraction is missing in the following chart?',
                                               style: new TextStyle(
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 18.0,
@@ -418,7 +406,7 @@ class _Chap1Quiz1State extends State<Chap1Quiz1> {
                                                   onTap: () {
                                                     _handleRadioValueChange5(0);
                                                   },
-                                                  child: Text("A. 2"),
+                                                  child: Text("A. One-Fifth"),
                                                 ),
                                                 new Radio(
                                                   value: 1,
@@ -430,7 +418,7 @@ class _Chap1Quiz1State extends State<Chap1Quiz1> {
                                                   onTap: () {
                                                     _handleRadioValueChange5(1);
                                                   },
-                                                  child: Text("B. 7"),
+                                                  child: Text("B. 2/8"),
                                                 ),
                                                 new Radio(
                                                   value: 2,
@@ -442,7 +430,8 @@ class _Chap1Quiz1State extends State<Chap1Quiz1> {
                                                   onTap: () {
                                                     _handleRadioValueChange5(2);
                                                   },
-                                                  child: Text("C. 1"),
+                                                  child:
+                                                      Text("C. One Over Eight"),
                                                 ),
                                               ],
                                             ),

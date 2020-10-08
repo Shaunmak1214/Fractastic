@@ -396,9 +396,9 @@ class _Chap1Quiz3State extends State<Chap1Quiz3> {
                                           children: <Widget>[
                                             new Image(
                                                 image: AssetImage(
-                                                    'assets/images/wholeFraction.png')),
+                                                    'assets/images/sevenOverEight.png')),
                                             new Text(
-                                              'Which value is the numerator?',
+                                              'what fraction is missing in the following chart?',
                                               style: new TextStyle(
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 18.0,
@@ -418,7 +418,7 @@ class _Chap1Quiz3State extends State<Chap1Quiz3> {
                                                   onTap: () {
                                                     _handleRadioValueChange5(0);
                                                   },
-                                                  child: Text("A. 2"),
+                                                  child: Text("A. One-Fifth"),
                                                 ),
                                                 new Radio(
                                                   value: 1,
@@ -430,7 +430,7 @@ class _Chap1Quiz3State extends State<Chap1Quiz3> {
                                                   onTap: () {
                                                     _handleRadioValueChange5(1);
                                                   },
-                                                  child: Text("B. 7"),
+                                                  child: Text("B. 2/8"),
                                                 ),
                                                 new Radio(
                                                   value: 2,
@@ -442,7 +442,8 @@ class _Chap1Quiz3State extends State<Chap1Quiz3> {
                                                   onTap: () {
                                                     _handleRadioValueChange5(2);
                                                   },
-                                                  child: Text("C. 1"),
+                                                  child:
+                                                      Text("C. One Over Eight"),
                                                 ),
                                               ],
                                             ),
