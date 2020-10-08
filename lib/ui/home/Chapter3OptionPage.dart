@@ -21,15 +21,21 @@ class Chapter3OptionPage extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(35.0),
             child: SizedBox(
               width: double.infinity,
-              height: 100,
+              height: 90,
               child: FlatButton.icon(
-                  label: Text('Tutorial'),
+                  label: Text(
+                    'Tutorial',
+                    style: TextStyle(fontSize: 25.0),
+                  ),
                   //textTheme: TextTheme(headline5: ),
                   color: Colors.blueAccent[100],
-                  icon: Icon(Icons.library_books),
+                  icon: Icon(
+                    Icons.library_books,
+                    size: 30.0,
+                  ),
                   textColor: Colors.black,
                   //shape: StadiumBorder(),
                   shape: BeveledRectangleBorder(
@@ -40,17 +46,22 @@ class Chapter3OptionPage extends StatelessWidget {
                       new MaterialPageRoute(builder: (_) => Chap3Tutorial()))),
             ),
           ),
-          SizedBox(height: 30),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(35.0),
             child: SizedBox(
               width: double.infinity,
-              height: 100,
+              height: 90,
               child: FlatButton.icon(
-                  label: Text('Quiz'),
+                  label: Text(
+                    'Quiz',
+                    style: TextStyle(fontSize: 25.0),
+                  ),
                   //textTheme: TextTheme(headline5: ),
                   color: Colors.yellowAccent[100],
-                  icon: Icon(Icons.lightbulb_outline),
+                  icon: Icon(
+                    Icons.lightbulb_outline,
+                    size: 30.0,
+                  ),
                   textColor: Colors.black,
                   //shape: StadiumBorder(),
                   shape: BeveledRectangleBorder(
@@ -61,17 +72,22 @@ class Chapter3OptionPage extends StatelessWidget {
                       new MaterialPageRoute(builder: (_) => new Chap3Quiz()))),
             ),
           ),
-          SizedBox(height: 30),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(35.0),
             child: SizedBox(
               width: double.infinity,
-              height: 100,
+              height: 90,
               child: FlatButton.icon(
-                  label: Text('Game'),
+                  label: Text(
+                    'Game',
+                    style: TextStyle(fontSize: 25.0),
+                  ),
                   //textTheme: TextTheme(headline5: ),
                   color: Colors.redAccent[100],
-                  icon: Icon(Icons.games),
+                  icon: Icon(
+                    Icons.games,
+                    size: 30.0,
+                  ),
                   textColor: Colors.black,
                   //shape: StadiumBorder(),
                   shape: BeveledRectangleBorder(
