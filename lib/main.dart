@@ -10,7 +10,7 @@ import 'package:fractastic/ui/teacher/TeacherScreen.dart';
 import 'package:fractastic/ui/services/Authenticate.dart';
 import 'package:fractastic/ui/utils/helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'package:provider/provider.dart';
 import 'constants.dart' as Constants;
 import 'ui/auth/AuthScreen.dart';
 import 'ui/onBoarding/OnBoardingScreen.dart';

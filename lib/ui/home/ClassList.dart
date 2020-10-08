@@ -2,16 +2,15 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fractastic/ui/services/Authenticate.dart';
 import 'package:provider/provider.dart';
-import 'package:fractastic/ui/home/ClassList.dart';
 
-class classListScreen extends StatelessWidget {
+class ClassList extends StatefulWidget {
+  @override
+  _ClassListState createState() => _ClassListState();
+}
+
+class _ClassListState extends State<ClassList> {
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<QuerySnapshot>.value(
-      value: FireStoreUtils().classes,
-      child: Scaffold(
-        body: ClassList(),
-      ),
-    );
+    return Container();
   }
 }
