@@ -9,7 +9,7 @@ class Chap1game1 extends StatelessWidget {
         appBar: AppBar(
           title: new Text('Welcome to Game Page'),
           centerTitle: true,
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.lightBlue[250],
           leading: new IconButton(
             icon: new Icon(Icons.arrow_back),
             onPressed: () => Navigator.of(context).pop(),
@@ -22,21 +22,24 @@ class Chap1game1 extends StatelessWidget {
               child: SizedBox(height: 60.0),
             ),
             Padding(
-              padding: EdgeInsets.all(8.0),
-              child: SimpleUrlPreview(
-                url:
-                    'https://www.mathplayground.com/fraction_forest_part1.html',
-                textColor: Colors.white,
-                bgColor: Colors.indigo[300],
-                isClosable: false,
-                titleLines: 2,
-                descriptionLines: 3,
-                imageLoaderColor: Colors.white,
-                previewHeight: 250,
-                previewContainerPadding: EdgeInsets.all(8.0),
-                onTap: () => print('This is Fraction game description'),
-              ),
-            ),
+                padding: EdgeInsets.all(8.0),
+                child: new Image(
+                  image: AssetImage('assets/images/game.png'),
+                )
+                // SimpleUrlPreview(
+                //   url:
+                //       'https://www.mathplayground.com/fraction_forest_part1.html',
+                //   textColor: Colors.white,
+                //   bgColor: Colors.indigo[300],
+                //   isClosable: false,
+                //   titleLines: 2,
+                //   descriptionLines: 3,
+                //   imageLoaderColor: Colors.white,
+                //   previewHeight: 250,
+                //   previewContainerPadding: EdgeInsets.all(8.0),
+                //   onTap: () => print('This is Fraction game description'),
+                // ),
+                ),
             SizedBox(
               height: 50.0,
             ),
