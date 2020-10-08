@@ -140,12 +140,12 @@ class _TeacherScreenState extends State<TeacherScreen> {
           },
           items: <BottomNavyBarItem>[
             BottomNavyBarItem(
-              BottomNavyBarItem(
-                icon: Icon(Icons.home),
-                title: Text('Home'),
-                activeColor: Color(Constants.COLOR_ACCENT),
-                inactiveColor: Colors.black,
-              ),
+              icon: Icon(Icons.home),
+              title: Text('Home'),
+              activeColor: Color(Constants.COLOR_ACCENT),
+              inactiveColor: Colors.black,
+            ),
+            BottomNavyBarItem(
               icon: Icon(Icons.people),
               title: Text('Students'),
               activeColor: Color(Constants.COLOR_ACCENT),
