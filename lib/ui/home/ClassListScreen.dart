@@ -13,6 +13,7 @@ import '../../constants.dart' as Constants;
 String _className;
 Class classCreated;
 var uuid = Uuid();
+String _uuid;
 FireStoreUtils _fireStoreUtils = FireStoreUtils();
 
 class ClassListScreen extends StatefulWidget {
@@ -97,10 +98,14 @@ class _ClassListScreenState extends State<ClassListScreen> {
                           //print(_className + "printing");
                           if (_formKey.currentState.validate()) {
                             setState(() {
+                              _uuid = uuid.v1();
                               classCreated = Class(
                                   name: _className,
                                   teacherId: MyAppState.currentUser.uid,
-                                  classCode: uuid.v1());
+                                  classId: _uuid,
+                                  classCode: _uuid.substring(0, 7));
+                              MyAppState.currentUser.classId =
+                                  classCreated.classId;
                             });
                             await _fireStoreUtils.updateClassData(
                                 classCreated, context);

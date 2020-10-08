@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fractastic/model/Class.dart';
+import 'package:fractastic/ui/home/ChapterListScreen.dart';
 import '../../constants.dart' as Constants;
 
 class ClassTile extends StatelessWidget {
@@ -17,6 +18,10 @@ class ClassTile extends StatelessWidget {
               style: TextStyle(color: Color(Constants.COLOR_PRIMARY_DARK))),
           trailing: Icon(Icons.arrow_forward_ios,
               color: Color(Constants.COLOR_PRIMARY_DARK)),
+          onTap: () {
+            Navigator.push(
+                context, new MaterialPageRoute(builder: (_) => ChapterList()));
+          },
         ),
       ),
     );
