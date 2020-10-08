@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fractastic/ui/home/ClassList.dart';
 import 'package:progress_dialog/progress_dialog.dart';
 
 import '../../constants.dart';
@@ -38,6 +39,13 @@ String validatePassword(String value) {
 String validateClassName(String value) {
   if (value.length == 0 || value.length > 20)
     return 'Length: 1~19';
+  else
+    return null;
+}
+
+String validateClassCode(String value) {
+  if (!ClassList.classCodes.contains(value))
+    return 'Invalid class code';
   else
     return null;
 }

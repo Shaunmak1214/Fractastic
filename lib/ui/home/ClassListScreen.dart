@@ -104,8 +104,8 @@ class _ClassListScreenState extends State<ClassListScreen> {
                                   teacherId: MyAppState.currentUser.uid,
                                   classId: _uuid,
                                   classCode: _uuid.substring(0, 7));
-                              MyAppState.currentUser.classId =
-                                  classCreated.classId;
+                              MyAppState.currentUser.classCode =
+                                  classCreated.classCode;
                             });
                             await _fireStoreUtils.updateClassData(
                                 classCreated, context);
