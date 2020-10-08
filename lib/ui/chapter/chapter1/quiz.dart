@@ -145,12 +145,15 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                 padding: EdgeInsets.all(8.0),
                 child: SingleChildScrollView(
                   child: new Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        new Text(
-                          'Select correct answers from below based on the diagram given:',
-                          style: new TextStyle(
-                              fontSize: 20.0, fontWeight: FontWeight.bold),
+                        Container(
+                          color: Colors.red[100],
+                          child: new Text(
+                            'Select correct answers from below based on the diagram given:',
+                            style: new TextStyle(
+                                fontSize: 20.0, fontWeight: FontWeight.bold),
+                          ),
                         ),
                         new Padding(
                           padding: new EdgeInsets.all(8.0),
@@ -159,13 +162,78 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                         new Padding(
                           padding: new EdgeInsets.all(8.0),
                         ),
-                        new Image(
-                            image: AssetImage('assets/images/ingredient.png')),
-                        SizedBox(
-                          height: 20.0,
+                        Container(
+                          color: Colors.amberAccent,
+                          child: new Image(
+                              image:
+                                  AssetImage('assets/images/ingredient.png')),
+                        ),
+                        Container(
+                          color: Colors.amber[100],
+                          child: SizedBox(
+                            height: 20.0,
+                          ),
+                        ),
+                        Container(
+                          color: Colors.amber[100],
+                          child: new Text(
+                            '1.  Based on the recipe above, what is the portion needed for vanilla?',
+                            style: new TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18.0,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          color: Colors.amber[100],
+                          child: new Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              new Radio(
+                                value: 0,
+                                groupValue: _radioValue1,
+                                onChanged: _handleRadioValueChange1,
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  _handleRadioValueChange1(0);
+                                },
+                                child: Text("A.   1/2"),
+                              ),
+                              new Radio(
+                                value: 1,
+                                groupValue: _radioValue1,
+                                onChanged: _handleRadioValueChange1,
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  _handleRadioValueChange1(1);
+                                },
+                                child: Text("B.   1/3"),
+                              ),
+                              new Radio(
+                                value: 2,
+                                groupValue: _radioValue1,
+                                onChanged: _handleRadioValueChange1,
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  _handleRadioValueChange1(2);
+                                },
+                                child: Text("C.   1/4"),
+                              ),
+                            ],
+                          ),
+                        ),
+                        new Divider(
+                          height: 5.0,
+                          color: Colors.black,
+                        ),
+                        new Padding(
+                          padding: new EdgeInsets.all(8.0),
                         ),
                         new Text(
-                          '1.  Based on the recipe above, what is the portion needed for vanilla?',
+                          '2.  Based on the recipe above, how many cup of butter needed?',
                           style: new TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 18.0,
@@ -176,36 +244,36 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                           children: <Widget>[
                             new Radio(
                               value: 0,
-                              groupValue: _radioValue1,
-                              onChanged: _handleRadioValueChange1,
+                              groupValue: _radioValue2,
+                              onChanged: _handleRadioValueChange2,
                             ),
                             GestureDetector(
                               onTap: () {
-                                _handleRadioValueChange1(0);
+                                _handleRadioValueChange2(0);
                               },
-                              child: Text("A.   1/2"),
+                              child: Text("A.   10/9"),
                             ),
                             new Radio(
                               value: 1,
-                              groupValue: _radioValue1,
-                              onChanged: _handleRadioValueChange1,
+                              groupValue: _radioValue2,
+                              onChanged: _handleRadioValueChange2,
                             ),
                             GestureDetector(
                               onTap: () {
-                                _handleRadioValueChange1(1);
+                                _handleRadioValueChange2(1);
                               },
-                              child: Text("B.   1/3"),
+                              child: Text("B.   1/2"),
                             ),
                             new Radio(
                               value: 2,
-                              groupValue: _radioValue1,
-                              onChanged: _handleRadioValueChange1,
+                              groupValue: _radioValue2,
+                              onChanged: _handleRadioValueChange2,
                             ),
                             GestureDetector(
                               onTap: () {
-                                _handleRadioValueChange1(2);
+                                _handleRadioValueChange2(2);
                               },
-                              child: Text("C.   1/4"),
+                              child: Text("C.   1/8"),
                             ),
                           ],
                         ),
@@ -216,279 +284,191 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                         new Padding(
                           padding: new EdgeInsets.all(8.0),
                         ),
-                        new Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              new Text(
-                                '2.  Based on the recipe above, how many cup of butter needed?',
-                                style: new TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18.0,
-                                ),
-                              ),
-                              new Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: <Widget>[
-                                  new Radio(
-                                    value: 0,
-                                    groupValue: _radioValue2,
-                                    onChanged: _handleRadioValueChange2,
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      _handleRadioValueChange2(0);
-                                    },
-                                    child: Text("A.   10/9"),
-                                  ),
-                                  new Radio(
-                                    value: 1,
-                                    groupValue: _radioValue2,
-                                    onChanged: _handleRadioValueChange2,
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      _handleRadioValueChange2(1);
-                                    },
-                                    child: Text("B.   1/2"),
-                                  ),
-                                  new Radio(
-                                    value: 2,
-                                    groupValue: _radioValue2,
-                                    onChanged: _handleRadioValueChange2,
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      _handleRadioValueChange2(2);
-                                    },
-                                    child: Text("C.   1/8"),
-                                  ),
-                                ],
-                              ),
-                              new Divider(
-                                height: 5.0,
-                                color: Colors.black,
-                              ),
-                              new Padding(
-                                padding: new EdgeInsets.all(8.0),
-                              ),
-                              new Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: <Widget>[
-                                    new Text(
-                                      '3.  Based on the recipe above, how many teaspoon of baking soda is needed?',
-                                      style: new TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18.0,
-                                      ),
-                                    ),
-                                    new Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: <Widget>[
-                                        new Radio(
-                                          value: 0,
-                                          groupValue: _radioValue3,
-                                          onChanged: _handleRadioValueChange3,
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            _handleRadioValueChange3(0);
-                                          },
-                                          child: Text("A.   Half"),
-                                        ),
-                                        new Radio(
-                                          value: 1,
-                                          groupValue: _radioValue3,
-                                          onChanged: _handleRadioValueChange3,
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            _handleRadioValueChange3(1);
-                                          },
-                                          child: Text("B.   One-Fourth"),
-                                        ),
-                                        new Radio(
-                                          value: 2,
-                                          groupValue: _radioValue3,
-                                          onChanged: _handleRadioValueChange3,
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                            _handleRadioValueChange3(2);
-                                          },
-                                          child: Text("C.   Fifth-Third"),
-                                        ),
-                                      ],
-                                    ),
-                                    new Divider(
-                                      height: 5.0,
-                                      color: Colors.black,
-                                    ),
-                                    new Padding(
-                                      padding: new EdgeInsets.all(8.0),
-                                    ),
-                                    new Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: <Widget>[
-                                        new Text(
-                                          '4.  Based on the recipe above, what is the portion need for multipurpose flour?',
-                                          style: new TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 18.0,
-                                          ),
-                                        ),
-                                        new Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: <Widget>[
-                                            new Radio(
-                                              value: 0,
-                                              groupValue: _radioValue4,
-                                              onChanged:
-                                                  _handleRadioValueChange4,
-                                            ),
-                                            GestureDetector(
-                                              onTap: () {
-                                                _handleRadioValueChange4(0);
-                                              },
-                                              child: Text("A. One and a half"),
-                                            ),
-                                            new Radio(
-                                              value: 1,
-                                              groupValue: _radioValue4,
-                                              onChanged:
-                                                  _handleRadioValueChange4,
-                                            ),
-                                            GestureDetector(
-                                              onTap: () {
-                                                _handleRadioValueChange4(1);
-                                              },
-                                              child: Text("B. 1/3"),
-                                            ),
-                                            new Radio(
-                                              value: 2,
-                                              groupValue: _radioValue4,
-                                              onChanged:
-                                                  _handleRadioValueChange4,
-                                            ),
-                                            GestureDetector(
-                                              onTap: () {
-                                                _handleRadioValueChange4(2);
-                                              },
-                                              child: Text("C.One-Fourth"),
-                                            ),
-                                          ],
-                                        ),
-                                        new Divider(
-                                          height: 5.0,
-                                          color: Colors.black,
-                                        ),
-                                        new Padding(
-                                          padding: new EdgeInsets.all(8.0),
-                                        ),
-                                        new Column(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: <Widget>[
-                                            new Text(
-                                              'what ingredien is need a portion which is a Whole Number (not Fraction)?',
-                                              style: new TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 18.0,
-                                              ),
-                                            ),
-                                            new Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: <Widget>[
-                                                new Radio(
-                                                  value: 0,
-                                                  groupValue: _radioValue5,
-                                                  onChanged:
-                                                      _handleRadioValueChange5,
-                                                ),
-                                                GestureDetector(
-                                                  onTap: () {
-                                                    _handleRadioValueChange5(0);
-                                                  },
-                                                  child: Text("A. Sugar"),
-                                                ),
-                                                new Radio(
-                                                  value: 1,
-                                                  groupValue: _radioValue5,
-                                                  onChanged:
-                                                      _handleRadioValueChange5,
-                                                ),
-                                                GestureDetector(
-                                                  onTap: () {
-                                                    _handleRadioValueChange5(1);
-                                                  },
-                                                  child: Text("B. Vanilla"),
-                                                ),
-                                                new Radio(
-                                                  value: 2,
-                                                  groupValue: _radioValue5,
-                                                  onChanged:
-                                                      _handleRadioValueChange5,
-                                                ),
-                                                GestureDetector(
-                                                  onTap: () {
-                                                    _handleRadioValueChange5(2);
-                                                  },
-                                                  child: Text("C. Egg"),
-                                                ),
-                                              ],
-                                            ),
-                                            new Divider(
-                                              height: 5.0,
-                                              color: Colors.black,
-                                            ),
-                                            new Padding(
-                                              padding: new EdgeInsets.all(8.0),
-                                            ),
-                                            new RaisedButton(
-                                              onPressed: validateAnswers,
-                                              child: new Text(
-                                                'Submit Quiz',
-                                                style: new TextStyle(
-                                                    fontSize: 16.0,
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    color: Colors.white),
-                                              ),
-                                              color:
-                                                  Color(Constants.COLOR_ACCENT),
-                                              shape: new RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      new BorderRadius.circular(
-                                                          20.0)),
-                                            ),
-                                            new Padding(
-                                              padding: EdgeInsets.all(4.0),
-                                            ),
-                                            new RaisedButton(
-                                              onPressed: resetSelection,
-                                              child: new Text(
-                                                'Reset Selection',
-                                                style: new TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontSize: 16.0,
-                                                    color: Colors.white),
-                                              ),
-                                              color: Colors.orange[300],
-                                              shape: new RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      new BorderRadius.circular(
-                                                          20.0)),
-                                            )
-                                          ],
-                                        ),
-                                      ],
-                                    )
-                                  ])
-                            ])
+                        new Text(
+                          '3.  Based on the recipe above, how many teaspoon of baking soda is needed?',
+                          style: new TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18.0,
+                          ),
+                        ),
+                        new Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            new Radio(
+                              value: 0,
+                              groupValue: _radioValue3,
+                              onChanged: _handleRadioValueChange3,
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                _handleRadioValueChange3(0);
+                              },
+                              child: Text("A.   Half"),
+                            ),
+                            new Radio(
+                              value: 1,
+                              groupValue: _radioValue3,
+                              onChanged: _handleRadioValueChange3,
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                _handleRadioValueChange3(1);
+                              },
+                              child: Text("B.   One-Fourth"),
+                            ),
+                            new Radio(
+                              value: 2,
+                              groupValue: _radioValue3,
+                              onChanged: _handleRadioValueChange3,
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                _handleRadioValueChange3(2);
+                              },
+                              child: Text("C.   Fifth-Third"),
+                            ),
+                          ],
+                        ),
+                        new Divider(
+                          height: 5.0,
+                          color: Colors.black,
+                        ),
+                        new Padding(
+                          padding: new EdgeInsets.all(8.0),
+                        ),
+                        new Text(
+                          '4.  Based on the recipe above, what is the portion need for multipurpose flour?',
+                          style: new TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18.0,
+                          ),
+                        ),
+                        new Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            new Radio(
+                              value: 0,
+                              groupValue: _radioValue4,
+                              onChanged: _handleRadioValueChange4,
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                _handleRadioValueChange4(0);
+                              },
+                              child: Text("A. One and a half"),
+                            ),
+                            new Radio(
+                              value: 1,
+                              groupValue: _radioValue4,
+                              onChanged: _handleRadioValueChange4,
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                _handleRadioValueChange4(1);
+                              },
+                              child: Text("B. 1/3"),
+                            ),
+                            new Radio(
+                              value: 2,
+                              groupValue: _radioValue4,
+                              onChanged: _handleRadioValueChange4,
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                _handleRadioValueChange4(2);
+                              },
+                              child: Text("C.One-Fourth"),
+                            ),
+                          ],
+                        ),
+                        new Divider(
+                          height: 5.0,
+                          color: Colors.black,
+                        ),
+                        new Padding(
+                          padding: new EdgeInsets.all(8.0),
+                        ),
+                        new Text(
+                          'what ingredien is need a portion which is a Whole Number (not Fraction)?',
+                          style: new TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18.0,
+                          ),
+                        ),
+                        new Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            new Radio(
+                              value: 0,
+                              groupValue: _radioValue5,
+                              onChanged: _handleRadioValueChange5,
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                _handleRadioValueChange5(0);
+                              },
+                              child: Text("A. Sugar"),
+                            ),
+                            new Radio(
+                              value: 1,
+                              groupValue: _radioValue5,
+                              onChanged: _handleRadioValueChange5,
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                _handleRadioValueChange5(1);
+                              },
+                              child: Text("B. Vanilla"),
+                            ),
+                            new Radio(
+                              value: 2,
+                              groupValue: _radioValue5,
+                              onChanged: _handleRadioValueChange5,
+                            ),
+                            GestureDetector(
+                              onTap: () {
+                                _handleRadioValueChange5(2);
+                              },
+                              child: Text("C. Egg"),
+                            ),
+                          ],
+                        ),
+                        new Divider(
+                          height: 5.0,
+                          color: Colors.black,
+                        ),
+                        new Padding(
+                          padding: new EdgeInsets.all(8.0),
+                        ),
+                        new RaisedButton(
+                          onPressed: validateAnswers,
+                          child: new Text(
+                            'Submit Quiz',
+                            style: new TextStyle(
+                                fontSize: 16.0,
+                                fontWeight: FontWeight.normal,
+                                color: Colors.white),
+                          ),
+                          color: Color(Constants.COLOR_ACCENT),
+                          shape: new RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(20.0)),
+                        ),
+                        new Padding(
+                          padding: EdgeInsets.all(4.0),
+                        ),
+                        new RaisedButton(
+                          onPressed: resetSelection,
+                          child: new Text(
+                            'Reset Selection',
+                            style: new TextStyle(
+                                fontWeight: FontWeight.normal,
+                                fontSize: 16.0,
+                                color: Colors.white),
+                          ),
+                          color: Colors.orange[300],
+                          shape: new RoundedRectangleBorder(
+                              borderRadius: new BorderRadius.circular(20.0)),
+                        )
                       ]),
                 ))));
   }
