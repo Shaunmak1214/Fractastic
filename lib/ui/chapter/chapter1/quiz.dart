@@ -156,7 +156,8 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                           ),
                         ),
                         new Padding(
-                          padding: new EdgeInsets.all(8.0),
+                          padding:
+                              new EdgeInsets.fromLTRB(10.0, 16.0, 6.0, 8.0),
                         ),
                         new Divider(height: 5.0, color: Colors.black),
                         new Padding(
@@ -175,11 +176,13 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                           ),
                         ),
                         Container(
+                          padding:
+                              new EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
                           color: Colors.amber[100],
                           child: new Text(
                             '1.  Based on the recipe above, what is the portion needed for vanilla?',
                             style: new TextStyle(
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w500,
                               fontSize: 18.0,
                             ),
                           ),
@@ -233,11 +236,13 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                           padding: new EdgeInsets.all(8.0),
                         ),
                         Container(
+                          padding:
+                              new EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
                           color: Colors.yellow,
                           child: new Text(
                             '2.  Based on the recipe above, how many cup of butter needed?',
                             style: new TextStyle(
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w500,
                               fontSize: 18.0,
                             ),
                           ),
@@ -291,11 +296,13 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                           padding: new EdgeInsets.all(8.0),
                         ),
                         Container(
+                          padding:
+                              new EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
                           color: Colors.green[200],
                           child: new Text(
                             '3.  Based on the recipe above, how many teaspoon of baking soda is needed?',
                             style: new TextStyle(
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w500,
                               fontSize: 18.0,
                             ),
                           ),
@@ -349,11 +356,13 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                           padding: new EdgeInsets.all(8.0),
                         ),
                         Container(
+                          padding:
+                              new EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
                           color: Colors.blue[200],
                           child: new Text(
                             '4.  Based on the recipe above, what is the portion need for multipurpose flour?',
                             style: new TextStyle(
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w500,
                               fontSize: 18.0,
                             ),
                           ),
@@ -407,11 +416,13 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                           padding: new EdgeInsets.all(8.0),
                         ),
                         Container(
+                          padding:
+                              new EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
                           color: Colors.indigo[200],
                           child: new Text(
-                            'what ingredien is need a portion which is a Whole Number (not Fraction)?',
+                            '5.   Which ingredient needs a portion which is a Whole Number (not Fraction)?',
                             style: new TextStyle(
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w500,
                               fontSize: 18.0,
                             ),
                           ),
@@ -470,10 +481,10 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                             'Submit Quiz',
                             style: new TextStyle(
                                 fontSize: 16.0,
-                                fontWeight: FontWeight.normal,
-                                color: Colors.white),
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white70),
                           ),
-                          color: Color(Constants.COLOR_ACCENT),
+                          color: Colors.red[300],
                           shape: new RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(20.0)),
                         ),
@@ -489,7 +500,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                 fontSize: 16.0,
                                 color: Colors.white),
                           ),
-                          color: Colors.orange[300],
+                          color: Colors.green[300],
                           shape: new RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(20.0)),
                         )
