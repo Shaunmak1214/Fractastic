@@ -9,7 +9,7 @@ class Chap1Tutorial1 extends StatelessWidget {
       appBar: AppBar(
         title: Text('Chapter 1'),
         centerTitle: true,
-        backgroundColor: Color(Constants.COLOR_ACCENT),
+        backgroundColor: Color(Constants.COLOR_PRIMARY),
         leading: new IconButton(
           icon: new Icon(Icons.arrow_back),
           onPressed: () => Navigator.of(context).pop(),

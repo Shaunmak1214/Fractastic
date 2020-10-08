@@ -13,10 +13,10 @@ class ChapterOptionPage extends StatelessWidget {
         title: Text('Chapter 1'),
         centerTitle: true,
         backgroundColor: Color(Constants.COLOR_ACCENT),
-        leading: new IconButton(
-          icon: new Icon(Icons.arrow_back),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
+        // leading: new IconButton(
+        //   icon: new Icon(Icons.arrow_back),
+        //   onPressed: () => Navigator.of(context).pop(),
+        // ),
       ),
       body: Column(
         children: [
