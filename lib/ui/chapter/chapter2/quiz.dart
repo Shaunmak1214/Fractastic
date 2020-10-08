@@ -145,7 +145,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         new Text(
-                          'Select correct answers from below:',
+                          'Select correct answers based on the picture given:',
                           style: new TextStyle(
                               fontSize: 20.0, fontWeight: FontWeight.bold),
                         ),
@@ -157,9 +157,9 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                           padding: new EdgeInsets.all(8.0),
                         ),
                         new Image(
-                            image: AssetImage('assets/images/twoOverFive.png')),
+                            image: AssetImage('assets/images/denominator.png')),
                         new Text(
-                          'The following segment represents... ',
+                          'Which number is the denominator of this fraction ',
                           style: new TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 18.0,
@@ -177,7 +177,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                               onTap: () {
                                 _handleRadioValueChange1(0);
                               },
-                              child: Text("A.   2/5"),
+                              child: Text("A.   5"),
                             ),
                             new Radio(
                               value: 1,
@@ -188,7 +188,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                               onTap: () {
                                 _handleRadioValueChange1(1);
                               },
-                              child: Text("B.   1/5"),
+                              child: Text("B.   2"),
                             ),
                             new Radio(
                               value: 2,
@@ -199,7 +199,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                               onTap: () {
                                 _handleRadioValueChange1(2);
                               },
-                              child: Text("C.   1/2"),
+                              child: Text("C.   4"),
                             ),
                           ],
                         ),
@@ -215,9 +215,9 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                             children: <Widget>[
                               new Image(
                                   image: AssetImage(
-                                      'assets/images/sevenOverEight.png')),
+                                      'assets/images/improperFraction.png')),
                               new Text(
-                                'How many segment left here? ',
+                                'What type of this fraction is? ',
                                 style: new TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18.0,
@@ -235,7 +235,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                     onTap: () {
                                       _handleRadioValueChange2(0);
                                     },
-                                    child: Text("A.   5/8"),
+                                    child: Text("A.   Proper"),
                                   ),
                                   new Radio(
                                     value: 1,
@@ -246,7 +246,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                     onTap: () {
                                       _handleRadioValueChange2(1);
                                     },
-                                    child: Text("B.   7/8"),
+                                    child: Text("B.   Improper"),
                                   ),
                                   new Radio(
                                     value: 2,
@@ -257,7 +257,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                     onTap: () {
                                       _handleRadioValueChange2(2);
                                     },
-                                    child: Text("C.   1/8"),
+                                    child: Text("C.   Mixed"),
                                   ),
                                 ],
                               ),
@@ -273,9 +273,9 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                   children: <Widget>[
                                     new Image(
                                         image: AssetImage(
-                                            'assets/images/oneThird.png')),
+                                            'assets/images/likeFraction.png')),
                                     new Text(
-                                      'How do we name this fraction?',
+                                      'How do we name the fraction with common denominator?',
                                       style: new TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 18.0,
@@ -294,7 +294,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                           onTap: () {
                                             _handleRadioValueChange3(0);
                                           },
-                                          child: Text("A.   Half"),
+                                          child: Text("A.   Improper"),
                                         ),
                                         new Radio(
                                           value: 1,
@@ -305,7 +305,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                           onTap: () {
                                             _handleRadioValueChange3(1);
                                           },
-                                          child: Text("B.   One-Third"),
+                                          child: Text("B.   Like"),
                                         ),
                                         new Radio(
                                           value: 2,
@@ -316,7 +316,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                           onTap: () {
                                             _handleRadioValueChange3(2);
                                           },
-                                          child: Text("C.   Fifth-Third"),
+                                          child: Text("C.   Mixed"),
                                         ),
                                       ],
                                     ),
@@ -333,9 +333,9 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                       children: <Widget>[
                                         new Image(
                                             image: AssetImage(
-                                                'assets/images/fourOverFive.png')),
+                                                'assets/images/mixedFraction.png')),
                                         new Text(
-                                          'What is the name of this fraction?',
+                                          'What type of the fraction given is?',
                                           style: new TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 18.0,
@@ -355,8 +355,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                               onTap: () {
                                                 _handleRadioValueChange4(0);
                                               },
-                                              child: Text(
-                                                  "A.Forth-Fifths"), //four or forth???
+                                              child: Text("A.  Mixed"),
                                             ),
                                             new Radio(
                                               value: 1,
@@ -368,7 +367,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                               onTap: () {
                                                 _handleRadioValueChange4(1);
                                               },
-                                              child: Text("B.One-Third"),
+                                              child: Text("B.  Proper"),
                                             ),
                                             new Radio(
                                               value: 2,
@@ -380,7 +379,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                               onTap: () {
                                                 _handleRadioValueChange4(2);
                                               },
-                                              child: Text("C.One-Forths"),
+                                              child: Text("C.  Like"),
                                             ),
                                           ],
                                         ),
