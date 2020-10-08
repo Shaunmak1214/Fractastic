@@ -52,7 +52,7 @@ class _StudentScreenState extends State<StudentScreen> {
     Chapter1OptionPage(),
     ChapterList(),
     QuizResult(),
-    MyCalendar(),
+    CalendarPage(),
   ];
 
   @override

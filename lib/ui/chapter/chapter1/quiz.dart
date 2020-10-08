@@ -498,7 +498,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
       result = correctScore;
       Navigator.of(context).pop();
       setState(() {
-        status = 1;
+        //status = 1;
       });
     }
   }

@@ -4,27 +4,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 import 'package:fractastic/constants.dart' as Constants;
 
-void main() => runApp(MyCalendar());
-
-class MyCalendar extends StatelessWidget {
+class CalendarPage extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return new MaterialApp(
-      theme: ThemeData(
-        primaryColor: Color(Constants.COLOR_PRIMARY),
-        accentColor: Color(Constants.COLOR_ACCENT),
-      ),
-      home: new HomePage(),
-    );
-  }
+  _CalendarPageState createState() => _CalendarPageState();
 }
 
-class HomePage extends StatefulWidget {
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
+class _CalendarPageState extends State<CalendarPage> {
   CalendarController _controller;
   Map<DateTime, List<dynamic>> _events;
   List<dynamic> _selectedEvents;
@@ -76,10 +61,6 @@ class _HomePageState extends State<HomePage> {
         ),
         centerTitle: true,
         backgroundColor: Color(Constants.COLOR_PRIMARY),
-        leading: new IconButton(
-          icon: new Icon(Icons.calendar_today),
-          onPressed: () => Navigator.of(context).pop(),
-        ),
       ),
       body: SingleChildScrollView(
         child: Column(
