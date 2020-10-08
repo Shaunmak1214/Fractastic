@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:fractastic/constants.dart';
 import 'package:fractastic/model/User.dart';
 import 'package:fractastic/ui/auth/AuthScreen.dart';
-import 'package:fractastic/ui/chapter/calendar.dart';
+import 'package:fractastic/ui/scheduleCalendar.dart';
 import 'package:fractastic/ui/home/ChapterListScreen.dart';
 import 'package:fractastic/ui/home/QuizResult.dart';
 import 'package:fractastic/ui/services/Authenticate.dart';
