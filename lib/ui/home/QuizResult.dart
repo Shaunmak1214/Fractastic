@@ -26,6 +26,7 @@ class _QuizResultState extends State<QuizResult> {
                 title: Text("student name"),
                 onTap: () => showDialog(
                       context: context,
+                      barrierDismissible: true,
                       builder: (BuildContext context) => new AlertDialog(
                         title: new Text("Student Result"),
                         content: new ListTile(
