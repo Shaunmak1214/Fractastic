@@ -159,9 +159,9 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                         new Image(
                             image: AssetImage('assets/images/twoOverFive.png')),
                         new Text(
-                          'The following segment represents... ',
+                          '1.   The following segment represents... ',
                           style: new TextStyle(
-                            fontWeight: FontWeight.bold,
+                            fontWeight: FontWeight.w500,
                             fontSize: 18.0,
                           ),
                         ),
@@ -217,9 +217,9 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                                   image: AssetImage(
                                       'assets/images/sevenOverEight.png')),
                               new Text(
-                                'How many segment left here? ',
+                                '2.   How many segment left here? ',
                                 style: new TextStyle(
-                                  fontWeight: FontWeight.bold,
+                                  fontWeight: FontWeight.w500,
                                   fontSize: 18.0,
                                 ),
                               ),
@@ -275,9 +275,9 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                                         image: AssetImage(
                                             'assets/images/oneThird.png')),
                                     new Text(
-                                      'How do we name this fraction?',
+                                      '3.   How do we name this fraction?',
                                       style: new TextStyle(
-                                        fontWeight: FontWeight.bold,
+                                        fontWeight: FontWeight.w500,
                                         fontSize: 18.0,
                                       ),
                                     ),
@@ -335,9 +335,9 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                                             image: AssetImage(
                                                 'assets/images/fourOverFive.png')),
                                         new Text(
-                                          'What is the name of this fraction?',
+                                          '4.   What is the name of this fraction?',
                                           style: new TextStyle(
-                                            fontWeight: FontWeight.bold,
+                                            fontWeight: FontWeight.w500,
                                             fontSize: 18.0,
                                           ),
                                         ),
@@ -398,11 +398,15 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                                             new Image(
                                                 image: AssetImage(
                                                     'assets/images/sevenOverEight.png')),
-                                            new Text(
-                                              'what fraction is missing in the following chart?',
-                                              style: new TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                fontSize: 18.0,
+                                            Container(
+                                              padding: new EdgeInsets.fromLTRB(
+                                                  20.0, 16.0, 6.0, 8.0),
+                                              child: new Text(
+                                                '5.   What fraction is missing in the following chart?',
+                                                style: new TextStyle(
+                                                  fontWeight: FontWeight.w500,
+                                                  fontSize: 18.0,
+                                                ),
                                               ),
                                             ),
                                             new Row(
@@ -461,12 +465,10 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                                                 'Submit Quiz',
                                                 style: new TextStyle(
                                                     fontSize: 16.0,
-                                                    fontWeight:
-                                                        FontWeight.normal,
+                                                    fontWeight: FontWeight.bold,
                                                     color: Colors.white),
                                               ),
-                                              color:
-                                                  Color(Constants.COLOR_ACCENT),
+                                              color: Colors.red[300],
                                               shape: new RoundedRectangleBorder(
                                                   borderRadius:
                                                       new BorderRadius.circular(
@@ -485,7 +487,7 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                                                     fontSize: 16.0,
                                                     color: Colors.white),
                                               ),
-                                              color: Colors.orange[300],
+                                              color: Colors.green[300],
                                               shape: new RoundedRectangleBorder(
                                                   borderRadius:
                                                       new BorderRadius.circular(

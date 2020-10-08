@@ -148,6 +148,8 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         Container(
+                          padding:
+                              new EdgeInsets.fromLTRB(10.0, 16.0, 6.0, 8.0),
                           color: Colors.red[100],
                           child: new Text(
                             'Select correct answers from below based on the diagram given:',

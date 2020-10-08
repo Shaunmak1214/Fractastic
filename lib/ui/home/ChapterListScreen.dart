@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fractastic/ui/home/Chapter1OptionPage.dart';
 import 'package:fractastic/ui/home/Chapter2OptionPage.dart';
 import 'package:fractastic/ui/home/Chapter3OptionPage.dart';
+import '../../ui/blankPage.dart';
 import '../../constants.dart' as Constants;
 
 class ChapterList extends StatefulWidget {
@@ -112,7 +113,7 @@ class _MyChapterListState extends State<ChapterList> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Chapter3OptionPage(),
+                      builder: (context) => BlankPage(),
                     ),
                   );
                 },
@@ -134,7 +135,7 @@ class _MyChapterListState extends State<ChapterList> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Chapter3OptionPage(),
+                      builder: (context) => BlankPage(),
                     ),
                   );
                 },
@@ -142,7 +143,7 @@ class _MyChapterListState extends State<ChapterList> {
             ),
             Card(
               child: ListTile(
-                title: Text('Chapter 5'),
+                title: Text('Chapter 6'),
                 subtitle: Text('Conversion of Fraction'),
                 leading: Icon(
                   Icons.collections_bookmark,
@@ -156,7 +157,7 @@ class _MyChapterListState extends State<ChapterList> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Chapter3OptionPage(),
+                      builder: (context) => BlankPage(),
                     ),
                   );
                 },
@@ -164,7 +165,7 @@ class _MyChapterListState extends State<ChapterList> {
             ),
             Card(
               child: ListTile(
-                title: Text('Chapter 5'),
+                title: Text('Chapter 7'),
                 subtitle: Text('Conversion of Fraction'),
                 leading: Icon(
                   Icons.collections_bookmark,
@@ -178,7 +179,7 @@ class _MyChapterListState extends State<ChapterList> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Chapter3OptionPage(),
+                      builder: (context) => BlankPage(),
                     ),
                   );
                 },
