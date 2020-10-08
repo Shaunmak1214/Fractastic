@@ -8,6 +8,7 @@ import 'package:fractastic/constants.dart';
 import 'package:fractastic/model/User.dart';
 import 'package:fractastic/ui/auth/AuthScreen.dart';
 import 'package:fractastic/ui/services/Authenticate.dart';
+import 'package:fractastic/ui/student/StudentHomeScreen.dart';
 import 'package:fractastic/ui/utils/helper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:fractastic/ui/home/ChapterOptionPage.dart';
@@ -53,7 +54,10 @@ class _StudentScreenState extends State<StudentScreen> {
     //   color: Colors.red,
     //   //calendar
     // ),
-
+    //StudentHomeScreen(user: this.user),
+    ChapterOptionPage(),
+    ChapterOptionPage(),
+    ChapterOptionPage(),
     ChapterOptionPage(),
   ];
 

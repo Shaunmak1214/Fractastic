@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:simple_url_preview/simple_url_preview.dart';
+//import 'package:simple_url_preview/simple_url_preview.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../../constants.dart' as Constants;
 
 class Chap1game1 extends StatelessWidget {
   @override
@@ -9,7 +10,7 @@ class Chap1game1 extends StatelessWidget {
         appBar: AppBar(
           title: new Text('Welcome to Game Page'),
           centerTitle: true,
-          backgroundColor: Colors.lightBlue[250],
+          backgroundColor: Color(Constants.COLOR_ACCENT),
           leading: new IconButton(
             icon: new Icon(Icons.arrow_back),
             onPressed: () => Navigator.of(context).pop(),
@@ -48,8 +49,8 @@ class Chap1game1 extends StatelessWidget {
               child: Center(
                 child: RaisedButton.icon(
                   icon: Icon(Icons.link),
-                  color: Colors.blue[300],
-                  highlightColor: Colors.blue[300],
+                  color: Color(Constants.COLOR_ACCENT),
+                  highlightColor: Color(Constants.COLOR_PRIMARY_DARK),
                   textColor: Colors.black,
                   onPressed: _launchURL,
                   label: new Text('Play Game !'),

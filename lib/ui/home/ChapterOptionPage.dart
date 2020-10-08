@@ -3,6 +3,8 @@ import 'package:fractastic/ui/chapter/chapter1/game1.dart';
 import 'package:fractastic/ui/chapter/chapter1/quiz1.dart';
 import 'package:fractastic/ui/chapter/chapter1/tutorial1.dart';
 
+import '../../constants.dart' as Constants;
+
 class ChapterOptionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -10,7 +12,7 @@ class ChapterOptionPage extends StatelessWidget {
       appBar: AppBar(
         title: Text('Chapter 1'),
         centerTitle: true,
-        backgroundColor: Colors.lightBlue[250],
+        backgroundColor: Color(Constants.COLOR_ACCENT),
         leading: new IconButton(
           icon: new Icon(Icons.arrow_back),
           onPressed: () => Navigator.of(context).pop(),
