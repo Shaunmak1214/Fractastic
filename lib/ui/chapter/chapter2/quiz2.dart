@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-class Chap1Quiz2 extends StatefulWidget {
+class Chap2Quiz extends StatefulWidget {
   @override
-  _Chap1Quiz2State createState() => _Chap1Quiz2State();
+  _Chap2QuizState createState() => _Chap2QuizState();
 }
 
-class _Chap1Quiz2State extends State<Chap1Quiz2> {
+class _Chap2QuizState extends State<Chap2Quiz> {
   int _radioValue1 = -1;
   int correctScore = 0;
   int _radioValue2 = -1;
