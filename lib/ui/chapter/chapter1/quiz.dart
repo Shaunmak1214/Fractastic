@@ -158,8 +158,11 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                         ),
                         new Image(
                             image: AssetImage('assets/images/ingredient.png')),
+                        SizedBox(
+                          height: 20.0,
+                        ),
                         new Text(
-                          'The following segment represents... ',
+                          '1.  Based on the recipe above, what is the portion needed for vanilla?',
                           style: new TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 18.0,
@@ -177,7 +180,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                               onTap: () {
                                 _handleRadioValueChange1(0);
                               },
-                              child: Text("A.   2/5"),
+                              child: Text("A.   1/2"),
                             ),
                             new Radio(
                               value: 1,
@@ -188,7 +191,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                               onTap: () {
                                 _handleRadioValueChange1(1);
                               },
-                              child: Text("B.   1/5"),
+                              child: Text("B.   1/3"),
                             ),
                             new Radio(
                               value: 2,
@@ -199,7 +202,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                               onTap: () {
                                 _handleRadioValueChange1(2);
                               },
-                              child: Text("C.   1/2"),
+                              child: Text("C.   1/4"),
                             ),
                           ],
                         ),
@@ -214,7 +217,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               new Text(
-                                'How many segment left here? ',
+                                '2.  Based on the recipe above, how many cup of butter needed?',
                                 style: new TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18.0,
@@ -232,7 +235,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                     onTap: () {
                                       _handleRadioValueChange2(0);
                                     },
-                                    child: Text("A.   5/8"),
+                                    child: Text("A.   10/9"),
                                   ),
                                   new Radio(
                                     value: 1,
@@ -243,7 +246,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                     onTap: () {
                                       _handleRadioValueChange2(1);
                                     },
-                                    child: Text("B.   7/8"),
+                                    child: Text("B.   1/2"),
                                   ),
                                   new Radio(
                                     value: 2,
@@ -269,7 +272,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: <Widget>[
                                     new Text(
-                                      'How do we name this fraction?',
+                                      '3.  Based on the recipe above, how many teaspoon of baking soda is needed?',
                                       style: new TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 18.0,
@@ -299,7 +302,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                           onTap: () {
                                             _handleRadioValueChange3(1);
                                           },
-                                          child: Text("B.   One-Third"),
+                                          child: Text("B.   One-Fourth"),
                                         ),
                                         new Radio(
                                           value: 2,
@@ -326,7 +329,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                           MainAxisAlignment.center,
                                       children: <Widget>[
                                         new Text(
-                                          'What is the name of this fraction?',
+                                          '4.  Based on the recipe above, what is the portion need for multipurpose flour?',
                                           style: new TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 18.0,
@@ -346,8 +349,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                               onTap: () {
                                                 _handleRadioValueChange4(0);
                                               },
-                                              child: Text(
-                                                  "A.Forth-Fifths"), //four or forth???
+                                              child: Text("A. One and a half"),
                                             ),
                                             new Radio(
                                               value: 1,
@@ -359,7 +361,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                               onTap: () {
                                                 _handleRadioValueChange4(1);
                                               },
-                                              child: Text("B.One-Third"),
+                                              child: Text("B. 1/3"),
                                             ),
                                             new Radio(
                                               value: 2,
@@ -371,7 +373,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                               onTap: () {
                                                 _handleRadioValueChange4(2);
                                               },
-                                              child: Text("C.One-Forths"),
+                                              child: Text("C.One-Fourth"),
                                             ),
                                           ],
                                         ),
@@ -387,7 +389,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                               MainAxisAlignment.center,
                                           children: <Widget>[
                                             new Text(
-                                              'what fraction is missing in the following chart?',
+                                              'what ingredien is need a portion which is a Whole Number (not Fraction)?',
                                               style: new TextStyle(
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 18.0,
@@ -407,7 +409,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                                   onTap: () {
                                                     _handleRadioValueChange5(0);
                                                   },
-                                                  child: Text("A. One-Fifth"),
+                                                  child: Text("A. Sugar"),
                                                 ),
                                                 new Radio(
                                                   value: 1,
@@ -419,7 +421,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                                   onTap: () {
                                                     _handleRadioValueChange5(1);
                                                   },
-                                                  child: Text("B. 2/8"),
+                                                  child: Text("B. Vanilla"),
                                                 ),
                                                 new Radio(
                                                   value: 2,
@@ -431,8 +433,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                                   onTap: () {
                                                     _handleRadioValueChange5(2);
                                                   },
-                                                  child:
-                                                      Text("C. One Over Eight"),
+                                                  child: Text("C. Egg"),
                                                 ),
                                               ],
                                             ),
