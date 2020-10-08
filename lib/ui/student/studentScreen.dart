@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:fractastic/constants.dart';
 import 'package:fractastic/model/User.dart';
 import 'package:fractastic/ui/auth/AuthScreen.dart';
+import 'package:fractastic/ui/home/ChapterListScreen.dart';
 import 'package:fractastic/ui/services/Authenticate.dart';
 import 'package:fractastic/ui/student/StudentHomeScreen.dart';
 import 'package:fractastic/ui/utils/helper.dart';
@@ -43,24 +44,13 @@ class _StudentScreenState extends State<StudentScreen> {
   String _currentGuardianEmail;
 
   int currentIndex = 0;
-  List listOfScreen = [
-    // Container(
-    //   color: Colors.orange,
-    //   //chaptersoption
-    // ),
-    // Container(
-    //   color: Colors.pink,
-    //   //quiz result
-    // ),
-    // Container(
-    //   color: Colors.red,
-    //   //calendar
-    // ),
-    //StudentHomeScreen(user: this.user),
+
+  List<Widget> _widgetOptions = <Widget>[
+    //StudentHomeScreen(),
     Chapter1OptionPage(),
+    ChapterList(),
     Chapter2OptionPage(),
     Chapter3OptionPage(),
-    Chapter1OptionPage(),
   ];
 
   @override
@@ -144,7 +134,6 @@ class _StudentScreenState extends State<StudentScreen> {
           backgroundColor: Color(Constants.COLOR_PRIMARY),
           centerTitle: true,
         ),
-        body: listOfScreen[currentIndex],
         bottomNavigationBar: BottomNavyBar(
           selectedIndex: currentIndex,
           onItemSelected: (index) {
@@ -181,6 +170,8 @@ class _StudentScreenState extends State<StudentScreen> {
             )
           ],
         ),
+        body: _widgetOptions.elementAt(currentIndex),
+
         //only homescreen got join class
         /*
         floatingActionButton: Container(
