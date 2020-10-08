@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:fractastic/constants.dart';
 import 'package:fractastic/model/User.dart';
 import 'package:fractastic/ui/auth/AuthScreen.dart';
+import 'package:fractastic/ui/home/ClassListScreen.dart';
 import 'package:fractastic/ui/services/Authenticate.dart';
 import 'package:fractastic/ui/utils/helper.dart';
 import 'package:image_picker/image_picker.dart';
@@ -35,13 +36,13 @@ class _TeacherScreenState extends State<TeacherScreen> {
   String _currentFirstName;
   String _currentLastName;
   String _currentPassword;
-
   int currentIndex = 0;
   List listOfScreen = [
-    Container(
-      color: Colors.yellow,
-      //Class List
-    ),
+    // Container(
+    //   color: Colors.yellow,
+    //   //Class List
+    // ),
+    ClassListScreen(),
     Container(
       color: Colors.orange,
       //Chapters List
@@ -429,40 +430,3 @@ class _TeacherScreenState extends State<TeacherScreen> {
     );
   }
 }
-
-/*
-class StudentApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Classroom"),
-          textTheme: Theme.of(context).textTheme.apply(
-                bodyColor: Colors.black,
-                displayColor: Colors.black,
-              ),
-          centerTitle: true,
-          backgroundColor: Colors.white,
-        ),
-        body: Padding(
-            padding: EdgeInsets.only(left: 20, top: 20, right: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Container(
-                  height: 80,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: Colors.blue[400],
-                  ),
-                ),
-                SizedBox(height: 30),
-              ],
-            )),
-      ),
-    );
-  }
-}
-
-*/

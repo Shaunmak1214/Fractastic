@@ -29,11 +29,21 @@ class FireStoreUtils {
     }
   }
 
-  Future<Class> getCurrentClass(String cid) async {
-    DocumentSnapshot userDocument =
+  // Future<Class> getClass(String cid) async {
+  //   DocumentSnapshot userDocument =
+  //       await firestore.collection(CLASSES).document(cid).get();
+  //   if (userDocument != null && userDocument.exists) {
+  //     return Class.fromJson(userDocument.data);
+  //   } else {
+  //     return null;
+  //   }
+  // }
+
+  Future<Class> getClass(String cid) async {
+    DocumentSnapshot classDocument =
         await firestore.collection(CLASSES).document(cid).get();
-    if (userDocument != null && userDocument.exists) {
-      return Class.fromJson(userDocument.data);
+    if (classDocument != null && classDocument.exists) {
+      return Class.fromJson(classDocument.data);
     } else {
       return null;
     }
@@ -53,7 +63,7 @@ class FireStoreUtils {
     });
   }
 
-  Future<Class> updateCurrentClass(
+  Future<Class> updateClassData(
       Class currentClass, BuildContext context) async {
     return await firestore
         .collection(CLASSES)
@@ -75,7 +85,13 @@ class FireStoreUtils {
     return downloadUrl.toString();
   }
 
-  Stream<QuerySnapshot> get classes {
-    return classCollection.snapshots();
+  Stream<List<Class>> get classes {
+    return classCollection.snapshots().map(_classListFromSnapshot);
+  }
+
+  List<Class> _classListFromSnapshot(QuerySnapshot snapshot) {
+    return snapshot.documents.map((doc) {
+      return Class.fromJson(doc.data);
+    }).toList();
   }
 }

@@ -1,7 +1,7 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:fractastic/ui/services/Authenticate.dart';
 import 'package:provider/provider.dart';
+import 'package:fractastic/model/Class.dart';
+import 'package:fractastic/ui/home/ClassTile.dart';
 
 class ClassList extends StatefulWidget {
   @override
@@ -11,7 +11,13 @@ class ClassList extends StatefulWidget {
 class _ClassListState extends State<ClassList> {
   @override
   Widget build(BuildContext context) {
-    final classes = Provider.of<QuerySnapshot>(context);
-    return Container();
+    final classes = Provider.of<List<Class>>(context);
+
+    return ListView.builder(
+      itemCount: classes.length,
+      itemBuilder: (context, index) {
+        return ClassTile(classTile: classes[index]);
+      },
+    );
   }
 }

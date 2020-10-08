@@ -2,11 +2,12 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fractastic/model/User.dart';
+import 'dart:convert';
 
 class Class {
-  String classCode;
-  String name;
-  List<User> studentList;
+  String classCode = '';
+  String name = '';
+  String teacherId = '';
   Settings settings = Settings(allowPushNotifications: true);
   bool selected = false;
   String appIdentifier = 'Flutter Login Screen ${Platform.operatingSystem}';
@@ -14,8 +15,7 @@ class Class {
   Class({
     this.classCode,
     this.name,
-    this.studentList,
-    this.settings,
+    this.teacherId,
   });
 
   get cid => this.classCode;
@@ -24,8 +24,7 @@ class Class {
     return new Class(
       classCode: parsedJson['classCode'] ?? '',
       name: parsedJson['name'] ?? '',
-      settings: Settings.fromJson(
-          parsedJson['settings'] ?? {'allowPushNotifications': true}),
+      teacherId: parsedJson['teacherId'] ?? '',
     );
   }
 
@@ -33,22 +32,7 @@ class Class {
     return {
       "classCode": this.classCode,
       "name": this.name,
-      "settings": this.settings.toJson(),
+      "teacherId": this.teacherId,
     };
-  }
-}
-
-class Settings {
-  bool allowPushNotifications = true;
-
-  Settings({this.allowPushNotifications});
-
-  factory Settings.fromJson(Map<dynamic, dynamic> parsedJson) {
-    return new Settings(
-        allowPushNotifications: parsedJson['allowPushNotifications'] ?? true);
-  }
-
-  Map<String, dynamic> toJson() {
-    return {'allowPushNotifications': this.allowPushNotifications};
   }
 }
