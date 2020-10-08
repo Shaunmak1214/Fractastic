@@ -25,7 +25,7 @@ class ChapterList extends StatelessWidget {
               new Padding(
                 padding: const EdgeInsets.all(8.0),
               ),
-              MyListTile(),
+              MyListTile(title: 'Chapter 2', subTitle: 'Basic of Fractions'),
             ],
           ),
         ));
@@ -33,7 +33,10 @@ class ChapterList extends StatelessWidget {
 }
 
 class MyListTile extends StatefulWidget {
-  MyListTile();
+  final String title;
+  final String subTitle;
+
+  MyListTile({this.title, this.subTitle});
   @override
   // TODO: implement createState
   _MyListTileState createState() => _MyListTileState();
@@ -56,21 +59,26 @@ class _MyListTileState extends State<MyListTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: ListTile(
-        leading: Icon(Icons.star),
-        trailing: Icon(icon),
-        // trailing: Icon(Icons.done_all),
-        title: Text("Chapter 2"),
-        subtitle: Text("Basic of Fraction"),
-        dense: true,
-        onTap: () => {
-          status = 1,
-          Navigator.push(
-            context,
-            new MaterialPageRoute(builder: (_) => Chapter2OptionPage()),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          new ListTile(
+            title: Text(widget.title),
+            subtitle: Text(widget.title),
+            leading: Icon(Icons.star),
+            trailing: Icon(icon),
+            // trailing: Icon(Icons.done_all),
+            dense: true,
+            onTap: () => {
+              status = 1,
+              Navigator.push(
+                context,
+                new MaterialPageRoute(builder: (_) => Chapter2OptionPage()),
+              ),
+            },
+            selected: true,
           ),
-        },
-        selected: true,
+        ],
       ),
     );
   }
