@@ -56,7 +56,7 @@ class ChapterOptionPage extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 50),
                   splashColor: Colors.yellowAccent[200],
                   onPressed: () => Navigator.push(context,
-                      new MaterialPageRoute(builder: (_) => Chap1Quiz1()))),
+                      new MaterialPageRoute(builder: (_) => new Chap1Quiz1()))),
             ),
           ),
           SizedBox(height: 30),

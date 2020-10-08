@@ -509,10 +509,10 @@ class _Chap1Quiz1State extends State<Chap1Quiz1> {
   }
 
   void validateAnswers() {
-    if (_radioValue1 == -1 &&
-        _radioValue2 == -1 &&
-        _radioValue3 == -1 &&
-        _radioValue4 == -1 &&
+    if (_radioValue1 == -1 ||
+        _radioValue2 == -1 ||
+        _radioValue3 == -1 ||
+        _radioValue4 == -1 ||
         _radioValue5 == -1) {
       Fluttertoast.showToast(
           msg: 'Please finish the quiz before submit !',
