@@ -8,21 +8,19 @@ class ClassTile extends StatelessWidget {
   ClassTile({this.classTile});
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: 8.0),
-      child: Card(
-        margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
-        child: ListTile(
-          leading: Icon(Icons.business, color: Colors.black),
-          title: Text(classTile.name,
-              style: TextStyle(color: Color(Constants.COLOR_PRIMARY_DARK))),
-          trailing: Icon(Icons.arrow_forward_ios,
-              color: Color(Constants.COLOR_PRIMARY_DARK)),
-          onTap: () {
-            Navigator.push(
-                context, new MaterialPageRoute(builder: (_) => ChapterList()));
-          },
-        ),
+    return Card(
+      child: ListTile(
+        contentPadding: EdgeInsets.fromLTRB(16.0, 5.0, 16.0, 5.0),
+        leading: Icon(Icons.business, color: Colors.black),
+        title: Text(classTile.name),
+        trailing: Icon(Icons.arrow_forward_ios,
+            color: Color(Constants.COLOR_WORDING)),
+        onTap: () {
+          Navigator.push(
+              context,
+              new MaterialPageRoute(
+                  builder: (_) => ChapterList(className: classTile.name)));
+        },
       ),
     );
   }
