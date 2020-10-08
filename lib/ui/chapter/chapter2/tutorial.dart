@@ -21,6 +21,9 @@ class Chap2Tutorial extends StatelessWidget {
         children: <Widget>[
           new Image(image: AssetImage('assets/images/chap2-tutorial1.png')),
           new Image(image: AssetImage('assets/images/chap2-tutorial2.png')),
+          Padding(
+            padding: EdgeInsets.all(15.0),
+          )
         ],
       ))),
       floatingActionButton: FloatingActionButton(

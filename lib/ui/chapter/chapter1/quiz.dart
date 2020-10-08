@@ -455,7 +455,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                                     color: Colors.white),
                                               ),
                                               color:
-                                                  Theme.of(context).accentColor,
+                                                  Color(Constants.COLOR_ACCENT),
                                               shape: new RoundedRectangleBorder(
                                                   borderRadius:
                                                       new BorderRadius.circular(
