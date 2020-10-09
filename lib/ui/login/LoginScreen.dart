@@ -29,6 +29,12 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreen extends State<LoginScreen> {
   final String userType;
   _LoginScreen(this.userType);
+  bool _showPassword = false;
+  void _toggleVisibility() {
+    setState(() {
+      _showPassword = !_showPassword;
+    });
+  }
 
   TextEditingController _emailController = new TextEditingController();
   TextEditingController _passwordController = new TextEditingController();
@@ -109,6 +115,7 @@ class _LoginScreen extends State<LoginScreen> {
                     onSaved: (String val) {
                       password = val;
                     },
+                    obscureText: !_showPassword,
                     controller: _passwordController,
                     textInputAction: TextInputAction.done,
                     style: TextStyle(fontSize: 18.0),
@@ -125,6 +132,17 @@ class _LoginScreen extends State<LoginScreen> {
                                 width: 2.0)),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25.0),
+                        ),
+                        suffixIcon: GestureDetector(
+                          onTap: () {
+                            _toggleVisibility();
+                          },
+                          child: Icon(
+                            _showPassword
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                            color: Colors.blueGrey[300],
+                          ),
                         ))),
               ),
             ),
