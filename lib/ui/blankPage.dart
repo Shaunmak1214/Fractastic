@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:fractastic/constants.dart' as Constants;
 
-class BlankPage extends StatelessWidget {
-  String _currentClassCode;
+void main() => runApp(MaterialApp(
+      home: Home(),
+    ));
+
+class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,6 +26,13 @@ class BlankPage extends StatelessWidget {
             ),
           )
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(Constants.COLOR_ACCENT),
+        child: Text('Back'),
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
       ),
     );
   }
