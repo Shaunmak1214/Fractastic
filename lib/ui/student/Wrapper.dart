@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fractastic/ui/home/ChapterListScreen.dart';
 import 'package:fractastic/model/Class.dart';
 import 'package:fractastic/ui/services/Authenticate.dart';
-import 'package:fractastic/ui/student/NoClassPage.dart';
+import 'package:fractastic/ui/home/NoClassPage.dart';
 import '../../main.dart';
 
 FireStoreUtils _fireStoreUtils = FireStoreUtils();
@@ -39,10 +39,12 @@ class _WrapperState extends State<Wrapper> {
               ];
             } else if (snapshot.hasError) {
               children = <Widget>[
-                Icon(
-                  Icons.error_outline,
-                  color: Colors.red,
-                  size: 60,
+                Center(
+                  child: Icon(
+                    Icons.error_outline,
+                    color: Colors.red,
+                    size: 60,
+                  ),
                 ),
               ];
             } else {

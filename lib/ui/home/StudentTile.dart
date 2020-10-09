@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fractastic/model/User.dart';
+import 'package:fractastic/ui/home/LearningProgress.dart';
 
 class StudentTile extends StatelessWidget {
   final User studentTile;
@@ -16,6 +17,12 @@ class StudentTile extends StatelessWidget {
         ),
         title: Text(studentTile.firstName + ' ' + studentTile.lastName),
         subtitle: Text('Email: ' + studentTile.email),
+        onTap: () {
+          Navigator.push(
+              context,
+              new MaterialPageRoute(
+                  builder: (_) => LearningProgress(user: studentTile)));
+        },
       ),
     );
   }

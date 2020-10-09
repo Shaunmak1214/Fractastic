@@ -19,6 +19,7 @@ class User {
   String userType = '';
   String password = '';
   String classCode = '';
+  int quizCount = 0;
 
   User({
     this.email,
@@ -33,6 +34,7 @@ class User {
     this.userType,
     this.password,
     this.classCode,
+    this.quizCount,
   });
 
   get uid => this.userID;
@@ -56,7 +58,8 @@ class User {
             "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
         userType: parsedJson['userType'] ?? '',
         password: parsedJson['password'] ?? '',
-        classCode: parsedJson['classCode'] ?? '');
+        classCode: parsedJson['classCode'] ?? '',
+        quizCount: parsedJson['quizCount'] ?? 0);
   }
 
   Map<String, dynamic> toJson() {
@@ -74,6 +77,7 @@ class User {
       'userType': this.userType,
       'password': this.password,
       'classCode': this.classCode,
+      'quizCount': this.quizCount,
     };
   }
 }

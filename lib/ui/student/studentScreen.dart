@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:fractastic/constants.dart';
 import 'package:fractastic/model/User.dart';
 import 'package:fractastic/ui/auth/AuthScreen.dart';
+import 'package:fractastic/ui/home/LearningProgress.dart';
 import 'package:fractastic/ui/scheduleCalendar.dart';
 import 'package:fractastic/ui/home/QuizResult.dart';
 import 'package:fractastic/ui/services/Authenticate.dart';
@@ -56,9 +57,8 @@ class _StudentScreenState extends State<StudentScreen> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: <Widget>[
+          child: Column(
+            children: [
               UserAccountsDrawerHeader(
                 decoration: BoxDecoration(
                   color: Color(COLOR_PRIMARY),
@@ -85,23 +85,31 @@ class _StudentScreenState extends State<StudentScreen> {
                     onPressed: () => __asyncGuardianEmailInputDialog(context),
                   )),
               SizedBox(
-                height: 100.0,
+                height: 20.0,
               ),
               ListTile(
                   leading: Icon(Icons.person_outline, color: Colors.black),
                   title: Text('Change Name',
-                      style: TextStyle(
-                          color: Color(Constants.COLOR_PRIMARY_DARK))),
+                      style: TextStyle(color: Color(Constants.COLOR_WORDING))),
                   onTap: () async {
                     await _asyncNameInputDialog(context);
                   }),
               ListTile(
                   leading: Icon(Icons.lock_outline, color: Colors.black),
                   title: Text('Change Password',
-                      style: TextStyle(
-                          color: Color(Constants.COLOR_PRIMARY_DARK))),
+                      style: TextStyle(color: Color(Constants.COLOR_WORDING))),
                   onTap: () async {
                     await _asyncPasswordInputDialog(context);
+                  }),
+              ListTile(
+                  leading: Icon(Icons.data_usage, color: Colors.black),
+                  title: Text('View Learning Progress',
+                      style: TextStyle(color: Colors.orange)),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        new MaterialPageRoute(
+                            builder: (_) => LearningProgress(user: user)));
                   }),
               ListTile(
                 leading: Transform.rotate(
@@ -109,7 +117,7 @@ class _StudentScreenState extends State<StudentScreen> {
                     child: Icon(Icons.exit_to_app, color: Colors.black)),
                 title: Text(
                   'Logout',
-                  style: TextStyle(color: Color(Constants.COLOR_PRIMARY_DARK)),
+                  style: TextStyle(color: Colors.red[400]),
                 ),
                 onTap: () async {
                   user.active = false;
@@ -120,6 +128,7 @@ class _StudentScreenState extends State<StudentScreen> {
                   pushAndRemoveUntil(context, AuthScreen(), false);
                 },
               ),
+              Spacer(),
               ListTile(
                 leading: Icon(Icons.help_outline, color: Colors.black),
                 title: Text('Contact Us',

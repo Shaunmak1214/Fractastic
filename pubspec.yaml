@@ -28,6 +28,7 @@ dependencies:
   table_calendar: ^2.2.3
   shared_preferences: ^0.5.12
   intl: ^0.16.1
+  percent_indicator: ^2.1.7+4
 
   flutter:
     sdk: flutter

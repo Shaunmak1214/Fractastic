@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:fractastic/main.dart';
 import 'package:fractastic/ui/home/ChapterListScreen.dart';
 import '../../../constants.dart' as Constants;
 
@@ -11,6 +12,7 @@ class Chap1Quiz extends StatefulWidget {
 }
 
 class _Chap1QuizState extends State<Chap1Quiz> {
+  int status = 0;
   int _radioValue1 = -1;
   int correctScore = 0;
   int _radioValue2 = -1;
@@ -534,9 +536,10 @@ class _Chap1QuizState extends State<Chap1Quiz> {
           msg: 'Your total score is: $correctScore out of 5',
           toastLength: Toast.LENGTH_LONG);
       result = correctScore;
-      Navigator.of(context).pop();
+      Navigator.of(context).pop(status);
       setState(() {
-        //status = 1;
+        MyAppState.currentUser.quizCount++;
+        status = 1;
       });
     }
   }

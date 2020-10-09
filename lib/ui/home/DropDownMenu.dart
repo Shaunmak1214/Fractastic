@@ -28,6 +28,7 @@ class _DropDownMenuState extends State<DropDownMenu> {
 
   @override
   void initState() {
+    super.initState();
     _selectedClass = classes[0];
   }
 
