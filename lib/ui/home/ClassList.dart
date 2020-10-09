@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:fractastic/model/Class.dart';
 import 'package:fractastic/ui/home/ClassTile.dart';
+import 'package:fractastic/model/User.dart';
 import '../../main.dart';
 
 class ClassList extends StatefulWidget {
@@ -10,12 +11,18 @@ class ClassList extends StatefulWidget {
 }
 
 class _ClassListState extends State<ClassList> {
+  User user = MyAppState.currentUser;
   @override
   Widget build(BuildContext context) {
     List<Class> classes = new List<Class>();
     var prov = Provider.of<List<Class>>(context);
     if (prov != null) {
-      classes = prov;
+      //classes = prov;
+      prov.forEach((classroom) {
+        if (classroom.teacherId == user.userID) {
+          classes.add(classroom);
+        }
+      });
     }
     if (classes.isNotEmpty) {
       classes.forEach((element) {
