@@ -33,6 +33,7 @@ class _ClassListScreenState extends State<ClassListScreen> {
       value: FireStoreUtils().classes,
       child: Scaffold(
         body: ClassList(),
+        backgroundColor: Colors.blueGrey[50],
         floatingActionButton: Container(
           child: FittedBox(
             child: FloatingActionButton(

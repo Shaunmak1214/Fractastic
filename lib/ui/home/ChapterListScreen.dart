@@ -29,8 +29,8 @@ class _MyChapterListState extends State<ChapterList> {
         centerTitle: true,
         backgroundColor: Color(Constants.COLOR_PRIMARY),
       ),
-      body: new Container(
-        child: new ListView(
+      body: Container(
+        child: ListView(
           children: <Widget>[
             Card(
               child: ListTile(
@@ -42,7 +42,7 @@ class _MyChapterListState extends State<ChapterList> {
                 ),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
-                  color: Color(Constants.COLOR_WORDING),
+                  color: Color(Constants.COLOR_PRIMARY),
                 ),
                 onTap: () {
                   Navigator.push(
@@ -64,7 +64,7 @@ class _MyChapterListState extends State<ChapterList> {
                 ),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
-                  color: Color(Constants.COLOR_WORDING),
+                  color: Color(Constants.COLOR_PRIMARY),
                 ),
                 onTap: () {
                   Navigator.push(
@@ -86,7 +86,7 @@ class _MyChapterListState extends State<ChapterList> {
                 ),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
-                  color: Color(Constants.COLOR_WORDING),
+                  color: Color(Constants.COLOR_PRIMARY),
                 ),
                 onTap: () {
                   Navigator.push(
@@ -108,7 +108,7 @@ class _MyChapterListState extends State<ChapterList> {
                 ),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
-                  color: Color(Constants.COLOR_WORDING),
+                  color: Color(Constants.COLOR_PRIMARY),
                 ),
                 onTap: () {
                   Navigator.push(
@@ -130,7 +130,7 @@ class _MyChapterListState extends State<ChapterList> {
                 ),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
-                  color: Color(Constants.COLOR_WORDING),
+                  color: Color(Constants.COLOR_PRIMARY),
                 ),
                 onTap: () {
                   Navigator.push(
@@ -152,7 +152,7 @@ class _MyChapterListState extends State<ChapterList> {
                 ),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
-                  color: Color(Constants.COLOR_WORDING),
+                  color: Color(Constants.COLOR_PRIMARY),
                 ),
                 onTap: () {
                   Navigator.push(
@@ -174,7 +174,7 @@ class _MyChapterListState extends State<ChapterList> {
                 ),
                 trailing: Icon(
                   Icons.arrow_forward_ios,
-                  color: Color(Constants.COLOR_WORDING),
+                  color: Color(Constants.COLOR_PRIMARY),
                 ),
                 onTap: () {
                   Navigator.push(
@@ -189,6 +189,7 @@ class _MyChapterListState extends State<ChapterList> {
           ],
         ),
       ),
+      backgroundColor: Colors.blueGrey[50],
     );
   }
 }

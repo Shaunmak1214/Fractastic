@@ -62,8 +62,8 @@ class _TeacherScreenState extends State<TeacherScreen> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         drawer: Drawer(
-          child: ListView(
-            padding: EdgeInsets.zero,
+          child: Column(
+            //padding: EdgeInsets.zero,
             children: <Widget>[
               UserAccountsDrawerHeader(
                 decoration: BoxDecoration(
@@ -83,16 +83,14 @@ class _TeacherScreenState extends State<TeacherScreen> {
               ListTile(
                   leading: Icon(Icons.person_outline, color: Colors.black),
                   title: Text('Change Name',
-                      style: TextStyle(
-                          color: Color(Constants.COLOR_PRIMARY_DARK))),
+                      style: TextStyle(color: Color(Constants.COLOR_WORDING))),
                   onTap: () async {
                     await _asyncNameInputDialog(context);
                   }),
               ListTile(
                   leading: Icon(Icons.lock_outline, color: Colors.black),
                   title: Text('Change Password',
-                      style: TextStyle(
-                          color: Color(Constants.COLOR_PRIMARY_DARK))),
+                      style: TextStyle(color: Color(Constants.COLOR_WORDING))),
                   onTap: () async {
                     await _asyncPasswordInputDialog(context);
                   }),
@@ -102,7 +100,7 @@ class _TeacherScreenState extends State<TeacherScreen> {
                     child: Icon(Icons.exit_to_app, color: Colors.black)),
                 title: Text(
                   'Logout',
-                  style: TextStyle(color: Color(Constants.COLOR_PRIMARY_DARK)),
+                  style: TextStyle(color: Colors.red[400]),
                 ),
                 onTap: () async {
                   user.active = false;
@@ -113,6 +111,7 @@ class _TeacherScreenState extends State<TeacherScreen> {
                   pushAndRemoveUntil(context, AuthScreen(), false);
                 },
               ),
+              Spacer(),
               ListTile(
                 leading: Icon(Icons.help_outline, color: Colors.black),
                 title: Text('Contact Us',

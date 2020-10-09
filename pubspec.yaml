@@ -27,6 +27,7 @@ dependencies:
   flutter_calendar_carousel: ^1.4.12
   table_calendar: ^2.2.3
   shared_preferences: ^0.5.12
+  intl: ^0.16.1
 
   flutter:
     sdk: flutter

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
@@ -50,6 +51,7 @@ class _CalendarPageState extends State<CalendarPage> {
     return newMap;
   }
 
+  DateTime _selectedDate;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -105,14 +107,25 @@ class _CalendarPageState extends State<CalendarPage> {
               //startingDayOfWeek: StartingDayOfWeek.monday,
               onDaySelected: (date, events) {
                 setState(() {
+                  _selectedDate = date;
                   _selectedEvents = events;
                 });
               },
               calendarController: _controller,
             ),
-            ..._selectedEvents.map((event) => ListTile(
-                  title: Text(event),
-                ))
+            ..._selectedEvents.map(
+              (event) => ListTile(
+                contentPadding: EdgeInsets.fromLTRB(23.0, 0.0, 80.0, 0.0),
+                leading:
+                    Icon(Icons.arrow_right, color: Colors.orangeAccent[400]),
+                title: _selectedDate != null
+                    ? Text(
+                        '${DateFormat.Md().format(_selectedDate)} - $event',
+                        textAlign: TextAlign.left,
+                      )
+                    : Text(event),
+              ),
+            ),
           ],
         ),
       ),

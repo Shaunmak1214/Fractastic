@@ -11,11 +11,11 @@ class ClassTile extends StatelessWidget {
     return Card(
       child: ListTile(
         contentPadding: EdgeInsets.fromLTRB(16.0, 5.0, 16.0, 5.0),
-        leading: Icon(Icons.business, color: Colors.black),
+        leading: Icon(Icons.location_city, color: Colors.black),
         title: Text(classTile.name),
         subtitle: Text('Class Code: ' + classTile.classCode),
         trailing: Icon(Icons.arrow_forward_ios,
-            color: Color(Constants.COLOR_WORDING)),
+            color: Color(Constants.COLOR_PRIMARY)),
         onTap: () {
           Navigator.push(
               context,
