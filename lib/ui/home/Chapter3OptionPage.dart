@@ -5,7 +5,16 @@ import 'package:fractastic/ui/chapter/chapter3/tutorial.dart';
 
 import '../../constants.dart' as Constants;
 
-class Chapter3OptionPage extends StatelessWidget {
+class Chapter3OptionPage extends StatefulWidget {
+  @override
+  _Chapter3OptionPageState createState() => _Chapter3OptionPageState();
+}
+
+class _Chapter3OptionPageState extends State<Chapter3OptionPage> {
+  dynamic status;
+  Color cardColor = Colors.red;
+  String quizProgress = 'Quiz isn\'t Completed';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,11 +56,11 @@ class Chapter3OptionPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(35.0),
-            child: SizedBox(
-              width: double.infinity,
-              height: 90,
-              child: FlatButton.icon(
+              padding: const EdgeInsets.all(35.0),
+              child: SizedBox(
+                width: double.infinity,
+                height: 90,
+                child: FlatButton.icon(
                   label: Text(
                     'Quiz',
                     style: TextStyle(fontSize: 25.0),
@@ -68,10 +77,16 @@ class Chapter3OptionPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12)),
                   padding: EdgeInsets.symmetric(horizontal: 50),
                   splashColor: Colors.yellowAccent[200],
-                  onPressed: () => Navigator.push(context,
-                      new MaterialPageRoute(builder: (_) => new Chap3Quiz()))),
-            ),
-          ),
+                  onPressed: () async {
+                    status = await Navigator.push(context,
+                        new MaterialPageRoute(builder: (_) => new Chap3Quiz()));
+                    setState(() {
+                      cardColor = Colors.green;
+                      quizProgress = 'Quiz Completed!';
+                    });
+                  },
+                ),
+              )),
           Padding(
             padding: const EdgeInsets.all(35.0),
             child: SizedBox(
@@ -98,6 +113,27 @@ class Chapter3OptionPage extends StatelessWidget {
                       new MaterialPageRoute(builder: (_) => Chap1game1()))),
             ),
           ),
+          SizedBox(height: 50),
+          Center(
+            child: Container(
+              margin: EdgeInsets.all(10.0),
+              width: 250.0,
+              height: 70.0,
+              child: Card(
+                color: cardColor,
+                shape: StadiumBorder(
+                  side: BorderSide(
+                    color: Colors.transparent,
+                    width: 3.0,
+                  ),
+                ),
+                child: Center(
+                  child: Text(quizProgress,
+                      style: TextStyle(fontSize: 20, color: Colors.white)),
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );

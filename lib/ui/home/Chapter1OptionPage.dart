@@ -5,6 +5,8 @@ import 'package:fractastic/ui/chapter/chapter1/tutorial.dart';
 
 import '../../constants.dart' as Constants;
 
+//void main() => runApp(new MaterialApp(home: Chapter1OptionPage()));
+
 class Chapter1OptionPage extends StatefulWidget {
   @override
   _Chapter1OptionPageState createState() => _Chapter1OptionPageState();
@@ -13,7 +15,7 @@ class Chapter1OptionPage extends StatefulWidget {
 class _Chapter1OptionPageState extends State<Chapter1OptionPage> {
   dynamic status;
   Color cardColor = Colors.red;
-  String quizProgress = 'Quiz not completed yet';
+  String quizProgress = 'Quiz isn\'t Completed';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,7 +85,7 @@ class _Chapter1OptionPageState extends State<Chapter1OptionPage> {
                         new MaterialPageRoute(builder: (_) => new Chap1Quiz()));
                     setState(() {
                       cardColor = Colors.green;
-                      quizProgress = 'Quiz completed!';
+                      quizProgress = 'Quiz Completed!';
                     });
                   },
                 ),
@@ -105,7 +107,6 @@ class _Chapter1OptionPageState extends State<Chapter1OptionPage> {
                     size: 30.0,
                   ),
                   textColor: Colors.black,
-                  //shape: StadiumBorder(),
                   shape: BeveledRectangleBorder(
                       borderRadius: BorderRadius.circular(12)),
                   padding: EdgeInsets.symmetric(horizontal: 50),
@@ -118,13 +119,19 @@ class _Chapter1OptionPageState extends State<Chapter1OptionPage> {
           Center(
             child: Container(
               margin: EdgeInsets.all(10.0),
-              width: 300.0,
-              height: 50.0,
+              width: 250.0,
+              height: 70.0,
               child: Card(
-                elevation: 5,
-                shape: Border(right: BorderSide(color: cardColor, width: 50)),
-                child: ListTile(
-                  title: Text(quizProgress),
+                color: cardColor,
+                shape: StadiumBorder(
+                  side: BorderSide(
+                    color: Colors.transparent,
+                    width: 3.0,
+                  ),
+                ),
+                child: Center(
+                  child: Text(quizProgress,
+                      style: TextStyle(fontSize: 20, color: Colors.white)),
                 ),
               ),
             ),
