@@ -5,7 +5,6 @@ import 'package:fractastic/model/User.dart';
 import 'dart:convert';
 
 class Class {
-  String classId = '';
   String classCode = '';
   String name = '';
   String teacherId = '';

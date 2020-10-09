@@ -24,6 +24,7 @@ class MyApp extends StatefulWidget {
 
 class MyAppState extends State<MyApp> with WidgetsBindingObserver {
   static User currentUser;
+  static List<String> classCodeList = new List<String>();
 
   @override
   Widget build(BuildContext context) {

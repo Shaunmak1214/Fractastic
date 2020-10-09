@@ -20,19 +20,20 @@ class _NoClassPageState extends State<NoClassPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: new Column(
-        children: [
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: SizedBox(height: 60.0),
-          ),
-          Padding(
-            padding: EdgeInsets.all(8.0),
-            child: new Image(
-              image: AssetImage('assets/images/noClass.png'),
+      backgroundColor: Colors.grey[300],
+      body: Center(
+        child: Column(
+          children: [
+            Image.asset(
+              'assets/images/noClass.png',
             ),
-          )
-        ],
+            Padding(padding: EdgeInsets.only(top: 15.0)),
+            Image.asset(
+              'assets/images/noClass2.png',
+            ),
+          ],
+          mainAxisAlignment: MainAxisAlignment.center,
+        ),
       ),
       floatingActionButton: Container(
         height: 60.0,
