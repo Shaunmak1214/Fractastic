@@ -507,6 +507,9 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                           color: Colors.green[300],
                           shape: new RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(20.0)),
+                        ),
+                        SizedBox(
+                          height: 20,
                         )
                       ]),
                 ))));
@@ -535,11 +538,11 @@ class _Chap2QuizState extends State<Chap2Quiz> {
       Fluttertoast.showToast(
           msg: 'Your total score is: $correctScore out of 5',
           toastLength: Toast.LENGTH_LONG);
-      Navigator.of(context).pop(status);
       setState(() {
         MyAppState.currentUser.quizCount++;
         status = 1;
       });
+      Navigator.of(context).pop(status);
     }
   }
 }

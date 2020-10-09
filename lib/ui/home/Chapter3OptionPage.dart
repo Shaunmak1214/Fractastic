@@ -81,8 +81,10 @@ class _Chapter3OptionPageState extends State<Chapter3OptionPage> {
                     status = await Navigator.push(context,
                         new MaterialPageRoute(builder: (_) => new Chap3Quiz()));
                     setState(() {
-                      cardColor = Colors.green;
-                      quizProgress = 'Quiz Completed!';
+                      if (status == 1) {
+                        cardColor = Colors.green;
+                        quizProgress = 'Quiz Completed!';
+                      }
                     });
                   },
                 ),

@@ -508,6 +508,9 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                           color: Colors.green[300],
                           shape: new RoundedRectangleBorder(
                               borderRadius: new BorderRadius.circular(20.0)),
+                        ),
+                        SizedBox(
+                          height: 20,
                         )
                       ]),
                 ))));
@@ -536,11 +539,11 @@ class _Chap1QuizState extends State<Chap1Quiz> {
           msg: 'Your total score is: $correctScore out of 5',
           toastLength: Toast.LENGTH_LONG);
       result = correctScore;
-      Navigator.of(context).pop(status);
       setState(() {
         MyAppState.currentUser.quizCount++;
         status = 1;
       });
     }
+    Navigator.of(context).pop(status);
   }
 }

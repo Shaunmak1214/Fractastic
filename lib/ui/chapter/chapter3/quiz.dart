@@ -498,6 +498,9 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                                                   borderRadius:
                                                       new BorderRadius.circular(
                                                           20.0)),
+                                            ),
+                                            SizedBox(
+                                              height: 20,
                                             )
                                           ],
                                         ),
@@ -532,11 +535,11 @@ class _Chap3QuizState extends State<Chap3Quiz> {
       Fluttertoast.showToast(
           msg: 'Your total score is: $correctScore out of 5',
           toastLength: Toast.LENGTH_LONG);
-      Navigator.of(context).pop(status);
       setState(() {
         MyAppState.currentUser.quizCount++;
         status = 1;
       });
+      Navigator.of(context).pop(status);
     }
   }
 }
