@@ -13,10 +13,12 @@ class _ClassListState extends State<ClassList> {
   @override
   Widget build(BuildContext context) {
     final classes = Provider.of<List<Class>>(context);
-    classes.forEach((element) {
-      if (!MyAppState.classCodeList.contains(element.classCode))
-        MyAppState.classCodeList.add(element.classCode);
-    });
+    if (classes.isNotEmpty) {
+      classes.forEach((element) {
+        if (!MyAppState.classCodeList.contains(element.classCode))
+          MyAppState.classCodeList.add(element.classCode);
+      });
+    }
     return ListView.builder(
       itemCount: classes.length,
       itemBuilder: (context, index) {
