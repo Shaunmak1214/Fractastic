@@ -13,6 +13,7 @@ class ClassTile extends StatelessWidget {
         contentPadding: EdgeInsets.fromLTRB(16.0, 5.0, 16.0, 5.0),
         leading: Icon(Icons.business, color: Colors.black),
         title: Text(classTile.name),
+        subtitle: Text('Class Code: ' + classTile.classCode),
         trailing: Icon(Icons.arrow_forward_ios,
             color: Color(Constants.COLOR_WORDING)),
         onTap: () {
