@@ -24,7 +24,7 @@ class _StudentListState extends State<StudentList> {
 
   @override
   Widget build(BuildContext context) {
-    List<Class> classes = new List<Class>();
+    List<Class> classes = [];
     var prov = Provider.of<List<Class>>(context);
     if (prov != null) {
       prov.forEach((classroom) {
