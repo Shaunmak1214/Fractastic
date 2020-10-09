@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import '../../../constants.dart' as Constants;
+import '../chapter2/quiz.dart';
+
+var result3;
 
 class Chap3Quiz extends StatefulWidget {
   @override
@@ -521,6 +524,7 @@ class _Chap3QuizState extends State<Chap3Quiz> {
       Fluttertoast.showToast(
           msg: 'Please finish the quiz before submit !',
           toastLength: Toast.LENGTH_SHORT);
+      result3 = correctScore;
     } else {
       Fluttertoast.showToast(
           msg: 'Your total score is: $correctScore out of 5',

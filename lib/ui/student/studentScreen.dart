@@ -120,7 +120,7 @@ class _StudentScreenState extends State<StudentScreen> {
                 },
               ),
               ListTile(
-                leading: Icon(Icons.help, color: Colors.black),
+                leading: Icon(Icons.help_outline, color: Colors.black),
                 title: Text('Contact Us',
                     style:
                         TextStyle(color: Color(Constants.COLOR_PRIMARY_DARK))),
