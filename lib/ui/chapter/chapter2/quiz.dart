@@ -130,6 +130,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+        debugShowCheckedModeBanner: false,
         home: new Scaffold(
             appBar: AppBar(
               title: new Text('Chapter 2 Quiz'),

@@ -36,6 +36,7 @@ class _HomeState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: new Scaffold(
         drawer: Drawer(
           child: ListView(

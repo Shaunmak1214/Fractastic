@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -7,60 +8,45 @@ import 'package:flutter/material.dart';
 import 'package:fractastic/constants.dart';
 import 'package:fractastic/model/User.dart';
 import 'package:fractastic/ui/auth/AuthScreen.dart';
-import 'package:fractastic/ui/home/ClassListScreen.dart';
 import 'package:fractastic/ui/services/Authenticate.dart';
 import 'package:fractastic/ui/utils/helper.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:bottom_navy_bar/bottom_navy_bar.dart';
+
 import '../../main.dart';
 import '../../constants.dart' as Constants;
-import '../../model/Class.dart';
-import '../../model/Class.dart';
-import '../home/ChapterListScreen.dart';
-import '../scheduleCalendar.dart';
 
 FireStoreUtils _fireStoreUtils = FireStoreUtils();
 String _newProfilePicURL =
     'https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png';
 
-class TeacherScreen extends StatefulWidget {
+class StudentHomeScreen extends StatefulWidget {
   final User user;
 
-  TeacherScreen({Key key, @required this.user}) : super(key: key);
+  StudentHomeScreen({Key key, @required this.user}) : super(key: key);
 
   @override
-  _TeacherScreenState createState() => _TeacherScreenState(user);
+  State createState() {
+    print(user.toString());
+    return _StudentHomeState(user);
+  }
 }
 
-class _TeacherScreenState extends State<TeacherScreen> {
+class _StudentHomeState extends State<StudentHomeScreen> {
   final _formKey = GlobalKey<FormState>();
   final User user;
-  Class defaultclass;
-  _TeacherScreenState(this.user);
 
   String _currentFirstName;
   String _currentLastName;
   String _currentPassword;
-  int currentIndex = 0;
+  String _currentGuardianEmail;
 
-  List<Widget> _widgetOptions = <Widget>[
-    // Container(
-    //   color: Colors.yellow,
-    //   //Class List
-    // ),
-    ClassListScreen(),
-    //student List
-    //StudentList(),
-    CalendarPage(),
-    CalendarPage(),
-    //calendar
-  ];
+  _StudentHomeState(this.user);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
+      home: new Scaffold(
         drawer: Drawer(
           child: ListView(
             padding: EdgeInsets.zero,
@@ -79,6 +65,19 @@ class _TeacherScreenState extends State<TeacherScreen> {
                 ),
                 accountName: Text(user.firstName + ' ' + user.lastName),
                 accountEmail: Text(user.email),
+              ),
+              ListTile(
+                  leading: Icon(Icons.mail_outline, color: Colors.black),
+                  title: Text('Guardian email',
+                      style: TextStyle(color: Colors.black)),
+                  subtitle: Text(user.guardianEmail,
+                      style: TextStyle(color: Colors.black)),
+                  trailing: IconButton(
+                    icon: Icon(Icons.edit, color: Colors.black),
+                    onPressed: () => __asyncGuardianEmailInputDialog(context),
+                  )),
+              SizedBox(
+                height: 100.0,
               ),
               ListTile(
                   leading: Icon(Icons.person_outline, color: Colors.black),
@@ -113,59 +112,63 @@ class _TeacherScreenState extends State<TeacherScreen> {
                   pushAndRemoveUntil(context, AuthScreen(), false);
                 },
               ),
-              ListTile(
-                leading: Icon(Icons.help_outline, color: Colors.black),
-                title: Text('Contact Us',
-                    style:
-                        TextStyle(color: Color(Constants.COLOR_PRIMARY_DARK))),
-                onTap: () {
-                  showAlertDialog(context, 'Fractastic Business Email',
-                      'admin@fractastic.com');
-                },
-              ),
             ],
           ),
         ),
         appBar: AppBar(
           title: Text(
-            'Classroom',
+            'Home',
             style: TextStyle(color: Colors.black),
           ),
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Color(Constants.COLOR_PRIMARY),
           centerTitle: true,
         ),
-        bottomNavigationBar: BottomNavyBar(
-          selectedIndex: currentIndex,
-          onItemSelected: (index) {
-            setState(
-              () {
-                currentIndex = index;
-              },
-            );
-          },
-          items: <BottomNavyBarItem>[
-            BottomNavyBarItem(
-              icon: Icon(Icons.home),
-              title: Text('Home'),
-              activeColor: Colors.black,
-              inactiveColor: Colors.blueGrey[300],
-            ),
-            BottomNavyBarItem(
-              icon: Icon(Icons.people),
-              title: Text('Students'),
-              activeColor: Colors.black,
-              inactiveColor: Colors.blueGrey[300],
-            ),
-            BottomNavyBarItem(
-              icon: Icon(Icons.calendar_today),
-              title: Text('Calendar'),
-              activeColor: Colors.black,
-              inactiveColor: Colors.blueGrey[300],
-            )
-          ],
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              displayCircleImage(user.profilePictureURL, 125, false),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(user.firstName),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(user.email),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(user.guardianEmail),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(user.userID),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(user.profilePictureURL),
+              ),
+            ],
+          ),
         ),
-        body: _widgetOptions.elementAt(currentIndex),
+        floatingActionButton: Container(
+          height: 60.0,
+          width: 60.0,
+          child: FittedBox(
+            child: FloatingActionButton(
+                child: Icon(Icons.add),
+                backgroundColor: Color(Constants.COLOR_ACCENT),
+                onPressed: () {
+                  _createAlertDialog(context).then((onValue) {
+                    //$onValue 拿到classcode的string
+                    //put inside list
+                  });
+                }),
+          ),
+        ),
       ),
     );
   }
@@ -251,6 +254,76 @@ class _TeacherScreenState extends State<TeacherScreen> {
       ),
     );
     showCupertinoModalPopup(context: context, builder: (context) => action);
+  }
+
+  Future __asyncGuardianEmailInputDialog(BuildContext context) async {
+    return showDialog(
+      context: context,
+      barrierDismissible:
+          true, // dialog is dismissible with a tap on the barrier
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('Change Guardian Email'),
+          content: Stack(
+            overflow: Overflow.visible,
+            children: <Widget>[
+              Positioned(
+                right: -40.0,
+                top: -80.0,
+                child: InkResponse(
+                  onTap: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: CircleAvatar(
+                    child: Icon(Icons.close),
+                    backgroundColor: Colors.red,
+                  ),
+                ),
+              ),
+              Form(
+                key: _formKey,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: TextFormField(
+                        initialValue: user.guardianEmail,
+                        decoration: InputDecoration(
+                          hintText: 'New Guardian Email',
+                          contentPadding:
+                              EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                        ),
+                        validator: validateEmail,
+                        onChanged: (val) =>
+                            setState(() => _currentGuardianEmail = val),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: RaisedButton(
+                        child: Text("Update"),
+                        onPressed: () async {
+                          if (_formKey.currentState.validate()) {
+                            setState(() {
+                              user.guardianEmail =
+                                  _currentGuardianEmail ?? user.guardianEmail;
+                            });
+                            await _fireStoreUtils.updateCurrentUser(
+                                user, context);
+                            Navigator.pop(context);
+                          }
+                        },
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
   }
 
   Future _asyncNameInputDialog(BuildContext context) async {
