@@ -1,10 +1,11 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fractastic/ui/home/ClassList.dart';
+import 'package:fractastic/ui/services/Authenticate.dart';
 import 'package:progress_dialog/progress_dialog.dart';
-
 import '../../constants.dart';
+
+FireStoreUtils _fireStoreUtils = FireStoreUtils();
 
 String validateName(String value) {
   String patttern = r'(^[a-zA-Z ]*$)';
@@ -15,6 +16,13 @@ String validateName(String value) {
     return "Name must be a-z and A-Z";
   }
   return null;
+}
+
+String validateClassCode(String value) {
+  if (_fireStoreUtils.getClass(value) == null)
+    return 'Invalid class code';
+  else
+    return null;
 }
 
 /*
@@ -39,13 +47,6 @@ String validatePassword(String value) {
 String validateClassName(String value) {
   if (value.length == 0 || value.length > 20)
     return 'Length: 1~19';
-  else
-    return null;
-}
-
-String validateClassCode(String value) {
-  if (!ClassList.classCodes.contains(value))
-    return 'Invalid class code';
   else
     return null;
 }

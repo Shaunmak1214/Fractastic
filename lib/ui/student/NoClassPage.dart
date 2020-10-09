@@ -20,10 +20,6 @@ class _NoClassPageState extends State<NoClassPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: Text('Fractastic'),
-          centerTitle: true,
-          backgroundColor: Color(Constants.COLOR_PRIMARY)),
       body: new Column(
         children: [
           Padding(
@@ -60,7 +56,7 @@ class _NoClassPageState extends State<NoClassPage> {
           true, // dialog is dismissible with a tap on the barrier
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Jpin Class'),
+          title: Text('Join Class'),
           content: Stack(
             overflow: Overflow.visible,
             children: <Widget>[

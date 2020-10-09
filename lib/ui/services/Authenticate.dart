@@ -29,16 +29,6 @@ class FireStoreUtils {
     }
   }
 
-  // Future<Class> getClass(String cid) async {
-  //   DocumentSnapshot userDocument =
-  //       await firestore.collection(CLASSES).document(cid).get();
-  //   if (userDocument != null && userDocument.exists) {
-  //     return Class.fromJson(userDocument.data);
-  //   } else {
-  //     return null;
-  //   }
-  // }
-
   Future<Class> getClass(String cid) async {
     DocumentSnapshot classDocument =
         await firestore.collection(CLASSES).document(cid).get();
