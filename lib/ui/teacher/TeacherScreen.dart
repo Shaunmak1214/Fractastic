@@ -8,6 +8,8 @@ import 'package:fractastic/constants.dart';
 import 'package:fractastic/model/User.dart';
 import 'package:fractastic/ui/auth/AuthScreen.dart';
 import 'package:fractastic/ui/home/ClassListScreen.dart';
+import 'package:fractastic/ui/home/StudentList.dart';
+import 'package:fractastic/ui/home/StudentListScreen.dart';
 import 'package:fractastic/ui/services/Authenticate.dart';
 import 'package:fractastic/ui/utils/helper.dart';
 import 'package:image_picker/image_picker.dart';
@@ -50,8 +52,7 @@ class _TeacherScreenState extends State<TeacherScreen> {
     // ),
     ClassListScreen(),
     //student List
-    //StudentList(),
-    CalendarPage(),
+    StudentListScreen(),
     CalendarPage(),
     //calendar
   ];

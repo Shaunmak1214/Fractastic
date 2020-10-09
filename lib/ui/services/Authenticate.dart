@@ -16,7 +16,7 @@ class FireStoreUtils {
       firestore.collection(USERS).document(MyAppState.currentUser.userID);
   StorageReference storage = FirebaseStorage.instance.ref();
 
-  final CollectionReference userCollection = firestore.collection(USERS);
+  static CollectionReference userCollection = firestore.collection(USERS);
   final CollectionReference classCollection = firestore.collection(CLASSES);
 
   Future<User> getCurrentUser(String uid) async {
