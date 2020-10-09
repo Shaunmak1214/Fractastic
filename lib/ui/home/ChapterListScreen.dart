@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fractastic/model/Class.dart';
 import 'package:fractastic/ui/home/Chapter1OptionPage.dart';
 import 'package:fractastic/ui/home/Chapter2OptionPage.dart';
 import 'package:fractastic/ui/home/Chapter3OptionPage.dart';
@@ -6,23 +7,23 @@ import '../../ui/blankPage.dart';
 import '../../constants.dart' as Constants;
 
 class ChapterList extends StatefulWidget {
-  final String className;
+  final Class classroom;
 
-  ChapterList({Key key, @required this.className}) : super(key: key);
+  ChapterList({Key key, @required this.classroom}) : super(key: key);
   @override
-  _MyChapterListState createState() => _MyChapterListState(className);
+  _MyChapterListState createState() => _MyChapterListState(classroom);
 }
 
 class _MyChapterListState extends State<ChapterList> {
-  String className;
-  _MyChapterListState(this.className);
+  Class classroom;
+  _MyChapterListState(this.classroom);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          className,
+          classroom.name,
           style: TextStyle(color: Colors.white),
         ),
         centerTitle: true,

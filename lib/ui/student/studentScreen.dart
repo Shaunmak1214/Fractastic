@@ -8,16 +8,11 @@ import 'package:fractastic/constants.dart';
 import 'package:fractastic/model/User.dart';
 import 'package:fractastic/ui/auth/AuthScreen.dart';
 import 'package:fractastic/ui/scheduleCalendar.dart';
-import 'package:fractastic/ui/home/ChapterListScreen.dart';
 import 'package:fractastic/ui/home/QuizResult.dart';
 import 'package:fractastic/ui/services/Authenticate.dart';
-import 'package:fractastic/ui/student/NoClassPage.dart';
-import 'package:fractastic/ui/student/StudentHomeScreen.dart';
+import 'package:fractastic/ui/student/Wrapper.dart';
 import 'package:fractastic/ui/utils/helper.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:fractastic/ui/home/Chapter1OptionPage.dart';
-import 'package:fractastic/ui/home/Chapter2OptionPage.dart';
-import 'package:fractastic/ui/home/Chapter3OptionPage.dart';
 
 import '../../main.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
@@ -50,7 +45,7 @@ class _StudentScreenState extends State<StudentScreen> {
 
   List<Widget> _widgetOptions = <Widget>[
     //StudentHomeScreen(),
-    NoClassPage(),
+    Wrapper(),
     QuizResult(),
     CalendarPage(),
   ];

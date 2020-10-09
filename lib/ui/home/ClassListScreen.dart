@@ -102,7 +102,6 @@ class _ClassListScreenState extends State<ClassListScreen> {
                               classCreated = Class(
                                   name: _className,
                                   teacherId: MyAppState.currentUser.uid,
-                                  classId: _uuid,
                                   classCode: _uuid.substring(0, 7));
                               MyAppState.currentUser.classCode =
                                   classCreated.classCode;

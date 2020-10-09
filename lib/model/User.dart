@@ -18,7 +18,7 @@ class User {
   String appIdentifier = 'Flutter Login Screen ${Platform.operatingSystem}';
   String userType = '';
   String password = '';
-  String classId = '';
+  String classCode = '';
 
   User({
     this.email,
@@ -32,7 +32,7 @@ class User {
     this.profilePictureURL,
     this.userType,
     this.password,
-    this.classId,
+    this.classCode,
   });
 
   get uid => this.userID;
@@ -56,7 +56,7 @@ class User {
             "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
         userType: parsedJson['userType'] ?? '',
         password: parsedJson['password'] ?? '',
-        classId: parsedJson['classId'] ?? '');
+        classCode: parsedJson['classCode'] ?? '');
   }
 
   Map<String, dynamic> toJson() {
@@ -73,7 +73,7 @@ class User {
       'appIdentifier': this.appIdentifier,
       'userType': this.userType,
       'password': this.password,
-      'classId': this.classId,
+      'classCode': this.classCode,
     };
   }
 }

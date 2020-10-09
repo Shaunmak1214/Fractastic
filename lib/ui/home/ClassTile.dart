@@ -19,7 +19,7 @@ class ClassTile extends StatelessWidget {
           Navigator.push(
               context,
               new MaterialPageRoute(
-                  builder: (_) => ChapterList(className: classTile.name)));
+                  builder: (_) => ChapterList(classroom: classTile)));
         },
       ),
     );
