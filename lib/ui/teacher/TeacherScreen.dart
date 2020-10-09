@@ -117,6 +117,16 @@ class _TeacherScreenState extends State<TeacherScreen> {
                   pushAndRemoveUntil(context, AuthScreen(), false);
                 },
               ),
+              ListTile(
+                leading: Icon(Icons.help, color: Colors.black),
+                title: Text('Contact Us',
+                    style:
+                        TextStyle(color: Color(Constants.COLOR_PRIMARY_DARK))),
+                onTap: () {
+                  showAlertDialog(context, 'Fractastic Business Email',
+                      'admin@fractastic.com');
+                },
+              ),
             ],
           ),
         ),
