@@ -33,7 +33,7 @@ class _WrapperState extends State<Wrapper> {
               children = <Widget>[
                 ChapterList(classroom: snapshot.data),
               ];
-            } else if (!snapshot.hasData) {
+            } else if (!snapshot.hasData && classCode == null) {
               children = <Widget>[
                 NoClassPage(),
               ];
@@ -47,10 +47,12 @@ class _WrapperState extends State<Wrapper> {
               ];
             } else {
               children = <Widget>[
-                SizedBox(
-                  child: CircularProgressIndicator(),
-                  width: 50,
-                  height: 50,
+                Center(
+                  child: SizedBox(
+                    child: CircularProgressIndicator(),
+                    width: 50,
+                    height: 50,
+                  ),
                 ),
               ];
             }
