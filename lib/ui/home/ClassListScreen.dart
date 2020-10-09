@@ -34,12 +34,10 @@ class _ClassListScreenState extends State<ClassListScreen> {
       child: Scaffold(
         body: ClassList(),
         floatingActionButton: Container(
-          height: 60.0,
-          width: 60.0,
           child: FittedBox(
             child: FloatingActionButton(
                 child: Icon(Icons.add),
-                backgroundColor: Color(Constants.COLOR_ACCENT),
+                backgroundColor: Color(Constants.COLOR_PRIMARY),
                 onPressed: () async {
                   await _createAlertDialog(context);
                 }),

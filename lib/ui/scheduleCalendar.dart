@@ -53,18 +53,36 @@ class _CalendarPageState extends State<CalendarPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Calendar',
-          style: TextStyle(color: Colors.white),
-        ),
-        centerTitle: true,
-        backgroundColor: Color(Constants.COLOR_ACCENT),
-      ),
+      // appBar: AppBar(
+      //   title: Text(
+      //     'Calendar',
+      //     style: TextStyle(color: Colors.white),
+      //   ),
+      //   centerTitle: true,
+      //   backgroundColor: Color(Constants.COLOR_PRIMARY),
+      // ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            Center(
+              child: Container(
+                margin: EdgeInsets.fromLTRB(0.0, 25.0, 0.0, 10.0),
+                padding: EdgeInsets.fromLTRB(15.0, 8.0, 15.0, 8.0),
+                decoration: BoxDecoration(
+                  border: Border.all(width: 2, color: Colors.red[300]),
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Colors.red[400],
+                ),
+                child: Text(
+                  'Calendar',
+                  style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
+              ),
+            ),
             TableCalendar(
               events: _events,
               calendarStyle: CalendarStyle(

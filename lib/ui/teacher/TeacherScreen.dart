@@ -129,7 +129,7 @@ class _TeacherScreenState extends State<TeacherScreen> {
         appBar: AppBar(
           title: Text(
             'Classroom',
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Colors.white),
           ),
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Color(Constants.COLOR_PRIMARY),
@@ -148,19 +148,19 @@ class _TeacherScreenState extends State<TeacherScreen> {
             BottomNavyBarItem(
               icon: Icon(Icons.home),
               title: Text('Home'),
-              activeColor: Colors.black,
+              activeColor: Colors.deepPurple,
               inactiveColor: Colors.blueGrey[300],
             ),
             BottomNavyBarItem(
               icon: Icon(Icons.people),
               title: Text('Students'),
-              activeColor: Colors.black,
+              activeColor: Color(Constants.COLOR_PRIMARY_DARK),
               inactiveColor: Colors.blueGrey[300],
             ),
             BottomNavyBarItem(
               icon: Icon(Icons.calendar_today),
               title: Text('Calendar'),
-              activeColor: Colors.black,
+              activeColor: Colors.deepOrangeAccent,
               inactiveColor: Colors.blueGrey[300],
             )
           ],
