@@ -12,12 +12,25 @@ class ClassList extends StatefulWidget {
 class _ClassListState extends State<ClassList> {
   @override
   Widget build(BuildContext context) {
-    final classes = Provider.of<List<Class>>(context);
+    List<Class> classes = new List<Class>();
+    var prov = Provider.of<List<Class>>(context);
+    if (prov != null) {
+      classes = prov;
+    }
     if (classes.isNotEmpty) {
       classes.forEach((element) {
         if (!MyAppState.classCodeList.contains(element.classCode))
           MyAppState.classCodeList.add(element.classCode);
       });
+    }
+    if (prov == null) {
+      return Center(
+        child: SizedBox(
+          child: CircularProgressIndicator(),
+          width: 50,
+          height: 50,
+        ),
+      );
     }
     return ListView.builder(
       itemCount: classes.length,
