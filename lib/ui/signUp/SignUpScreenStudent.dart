@@ -32,6 +32,12 @@ class _SignUpState extends State<SignUpScreenStudent> {
       password,
       confirmPassword,
       userType = 'Student';
+  bool _showPassword = true;
+  void _toggleVisibility() {
+    setState(() {
+      _showPassword = !_showPassword;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -275,7 +281,7 @@ class _SignUpState extends State<SignUpScreenStudent> {
             child: Padding(
               padding: const EdgeInsets.only(top: 16.0, right: 8.0, left: 8.0),
               child: TextFormField(
-                  obscureText: true,
+                  obscureText: _showPassword,
                   textInputAction: TextInputAction.next,
                   onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
                   controller: _passwordController,
@@ -297,6 +303,17 @@ class _SignUpState extends State<SignUpScreenStudent> {
                               width: 2.0)),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(25.0),
+                      ),
+                      suffixIcon: GestureDetector(
+                        onTap: () {
+                          _toggleVisibility();
+                        },
+                        child: Icon(
+                          _showPassword
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                          color: Colors.blueGrey[300],
+                        ),
                       ))),
             )),
         ConstrainedBox(
@@ -308,7 +325,7 @@ class _SignUpState extends State<SignUpScreenStudent> {
                 onFieldSubmitted: (_) {
                   _sendToServer();
                 },
-                obscureText: true,
+                obscureText: _showPassword,
                 validator: (val) =>
                     validateConfirmPassword(_passwordController.text, val),
                 onSaved: (String val) {
@@ -327,6 +344,15 @@ class _SignUpState extends State<SignUpScreenStudent> {
                             color: Color(Constants.COLOR_PRIMARY), width: 2.0)),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(25.0),
+                    ),
+                    suffixIcon: GestureDetector(
+                      onTap: () {
+                        _toggleVisibility();
+                      },
+                      child: Icon(
+                        _showPassword ? Icons.visibility : Icons.visibility_off,
+                        color: Colors.blueGrey[300],
+                      ),
                     ))),
           ),
         ),

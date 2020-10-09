@@ -31,6 +31,12 @@ class _SignUpState extends State<SignUpScreenTeacher> {
       password,
       confirmPassword,
       userType = 'Teacher';
+  bool _showPassword = true;
+  void _toggleVisibility() {
+    setState(() {
+      _showPassword = !_showPassword;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -246,7 +252,7 @@ class _SignUpState extends State<SignUpScreenTeacher> {
             child: Padding(
               padding: const EdgeInsets.only(top: 16.0, right: 8.0, left: 8.0),
               child: TextFormField(
-                  obscureText: true,
+                  obscureText: _showPassword,
                   textInputAction: TextInputAction.next,
                   onFieldSubmitted: (_) => FocusScope.of(context).nextFocus(),
                   controller: _passwordController,
@@ -268,6 +274,17 @@ class _SignUpState extends State<SignUpScreenTeacher> {
                               width: 2.0)),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(25.0),
+                      ),
+                      suffixIcon: GestureDetector(
+                        onTap: () {
+                          _toggleVisibility();
+                        },
+                        child: Icon(
+                          _showPassword
+                              ? Icons.visibility
+                              : Icons.visibility_off,
+                          color: Colors.blueGrey[300],
+                        ),
                       ))),
             )),
         ConstrainedBox(
@@ -279,7 +296,7 @@ class _SignUpState extends State<SignUpScreenTeacher> {
                 onFieldSubmitted: (_) {
                   _sendToServer();
                 },
-                obscureText: true,
+                obscureText: _showPassword,
                 validator: (val) =>
                     validateConfirmPassword(_passwordController.text, val),
                 onSaved: (String val) {
@@ -288,17 +305,27 @@ class _SignUpState extends State<SignUpScreenTeacher> {
                 style: TextStyle(height: 0.8, fontSize: 18.0),
                 cursorColor: Color(Constants.COLOR_PRIMARY),
                 decoration: InputDecoration(
-                    contentPadding:
-                        new EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-                    fillColor: Colors.white,
-                    hintText: 'Confirm Password',
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(25.0),
-                        borderSide: BorderSide(
-                            color: Color(Constants.COLOR_PRIMARY), width: 2.0)),
-                    border: OutlineInputBorder(
+                  contentPadding:
+                      new EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                  fillColor: Colors.white,
+                  hintText: 'Confirm Password',
+                  focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(25.0),
-                    ))),
+                      borderSide: BorderSide(
+                          color: Color(Constants.COLOR_PRIMARY), width: 2.0)),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(25.0),
+                  ),
+                  suffixIcon: GestureDetector(
+                    onTap: () {
+                      _toggleVisibility();
+                    },
+                    child: Icon(
+                      _showPassword ? Icons.visibility : Icons.visibility_off,
+                      color: Colors.blueGrey[300],
+                    ),
+                  ),
+                )),
           ),
         ),
         Padding(

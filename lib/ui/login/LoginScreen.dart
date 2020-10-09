@@ -29,7 +29,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreen extends State<LoginScreen> {
   final String userType;
   _LoginScreen(this.userType);
-  bool _showPassword = false;
+  bool _showPassword = true;
   void _toggleVisibility() {
     setState(() {
       _showPassword = !_showPassword;
