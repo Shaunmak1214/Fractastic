@@ -19,7 +19,6 @@ class StudentListScreen extends StatefulWidget {
 }
 
 class _StudentListScreenState extends State<StudentListScreen> {
-  final _formKey = GlobalKey<FormState>();
   _StudentListScreenState();
 
   @override

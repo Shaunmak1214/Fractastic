@@ -46,15 +46,9 @@ class _TeacherScreenState extends State<TeacherScreen> {
   int currentIndex = 0;
 
   List<Widget> _widgetOptions = <Widget>[
-    // Container(
-    //   color: Colors.yellow,
-    //   //Class List
-    // ),
     ClassListScreen(),
-    //student List
     StudentListScreen(),
     CalendarPage(),
-    //calendar
   ];
 
   @override

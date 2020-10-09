@@ -1,13 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:fractastic/ui/student/Wrapper.dart';
 import 'package:provider/provider.dart';
 
 import '../../constants.dart';
 import '../../main.dart';
 import '../../model/Class.dart';
-import '../../model/Class.dart';
 import '../../model/User.dart';
 import '../services/Authenticate.dart';
+import 'StudentTile.dart';
 
 class StudentList extends StatefulWidget {
   @override
@@ -16,6 +17,8 @@ class StudentList extends StatefulWidget {
 
 class _StudentListState extends State<StudentList> {
   User user = MyAppState.currentUser;
+  List<User> studentList = new List<User>();
+  List<User> filteredStudentList = new List<User>();
   List<DropdownMenuItem<Class>> _dropdownMenuClass;
   Class _selectedClass;
 
@@ -24,14 +27,14 @@ class _StudentListState extends State<StudentList> {
     List<Class> classes = new List<Class>();
     var prov = Provider.of<List<Class>>(context);
     if (prov != null) {
-      //classes = prov;
       prov.forEach((classroom) {
-        if (classroom.teacherId == user.userID) {
+        if (classroom.teacherId == user.userID &&
+            !classes.contains(classroom)) {
           classes.add(classroom);
         }
       });
     }
-    if (prov == null) {
+    if (prov == null || classes.isEmpty) {
       return Center(
         child: SizedBox(
           child: CircularProgressIndicator(),
@@ -40,39 +43,71 @@ class _StudentListState extends State<StudentList> {
         ),
       );
     }
-    if (classes.isNotEmpty) {
-      classes.forEach((element) {
-        if (!MyAppState.classCodeList.contains(element.classCode))
-          MyAppState.classCodeList.add(element.classCode);
+
+    FireStoreUtils.userCollection.snapshots().listen((snapshot) {
+      setState(() {
+        studentList = snapshot.documents.map((doc) {
+          return User.fromJson(doc.data);
+        }).toList();
       });
-    }
+    });
 
     return Container(
       padding: EdgeInsets.all(20.0),
       child: DropdownButton<Class>(
-        items: classes.map<DropdownMenuItem<Class>>((Class classroom) {
-          search(classroom);
-          return DropdownMenuItem<Class>(
-            value: classroom,
-            child: Text(classroom.name),
-          );
-        }).toList(),
+        items: classes.isNotEmpty
+            ? classes.map<DropdownMenuItem<Class>>((Class classroom) {
+                return DropdownMenuItem<Class>(
+                  value: classroom,
+                  child: Text(classroom.name),
+                );
+              }).toList()
+            : [],
         onChanged: (Class newClassSelected) {
           setState(() {
-            this._selectedClass = newClassSelected;
+            _selectedClass = newClassSelected;
+            filteredStudentList.clear();
           });
+          if (studentList != null && studentList.isNotEmpty) {
+            filterStudentList();
+            return ListView.builder(
+              itemCount: filteredStudentList.length,
+              itemBuilder: (context, index) {
+                return StudentTile(studentTile: filteredStudentList[index]);
+              },
+            );
+          } else if (studentList == null) {
+            return Center(
+              child: SizedBox(
+                child: CircularProgressIndicator(),
+                width: 50,
+                height: 50,
+              ),
+            );
+          } else {
+            print('aoisdoaisdjioasd');
+            return Container();
+          }
         },
         value: _selectedClass,
       ),
     );
   }
 
-  void search(Class classroom) {
+  createFilteredStudentList() {
+    FireStoreUtils.userCollection.snapshots().listen((snapshot) {
+      studentList = snapshot.documents.map((doc) {
+        return User.fromJson(doc.data);
+      }).toList();
+    });
+  }
 
-
-    FireStoreUtils.userCollection.snapshots()
-        classroom.classCode = this._selectedClass.classCode;
-      );
+  filterStudentList() {
+    studentList.forEach((element) {
+      if (element.classCode == _selectedClass.classCode &&
+          !filteredStudentList.contains(element)) {
+        filteredStudentList.add(element);
+      }
     });
   }
 }
