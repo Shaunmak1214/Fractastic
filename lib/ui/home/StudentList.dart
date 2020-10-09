@@ -67,27 +67,30 @@ class _StudentListState extends State<StudentList> {
           setState(() {
             _selectedClass = newClassSelected;
             filteredStudentList.clear();
+            createFilteredStudentList();
+            print('select new class');
+            if (studentList != null && studentList.isNotEmpty) {
+              filterStudentList();
+              print('print student in listview');
+              return ListView.builder(
+                itemCount: filteredStudentList.length,
+                itemBuilder: (context, index) {
+                  return StudentTile(studentTile: filteredStudentList[index]);
+                },
+              );
+            } else if (studentList == null) {
+              return Center(
+                child: SizedBox(
+                  child: CircularProgressIndicator(),
+                  width: 50,
+                  height: 50,
+                ),
+              );
+            } else {
+              print('aoisdoaisdjioasd');
+              return Container();
+            }
           });
-          if (studentList != null && studentList.isNotEmpty) {
-            filterStudentList();
-            return ListView.builder(
-              itemCount: filteredStudentList.length,
-              itemBuilder: (context, index) {
-                return StudentTile(studentTile: filteredStudentList[index]);
-              },
-            );
-          } else if (studentList == null) {
-            return Center(
-              child: SizedBox(
-                child: CircularProgressIndicator(),
-                width: 50,
-                height: 50,
-              ),
-            );
-          } else {
-            print('aoisdoaisdjioasd');
-            return Container();
-          }
         },
         value: _selectedClass,
       ),
