@@ -38,7 +38,7 @@ class _WrapperState extends State<Wrapper> {
           List<Widget> children;
           if (snapshot.hasData) {
             children = <Widget>[
-              ChapterList(classroom: snapshot.data),
+              Expanded(child: ChapterList(classroom: snapshot.data)),
             ];
           } else if (snapshot.hasData) {
             children = <Widget>[
