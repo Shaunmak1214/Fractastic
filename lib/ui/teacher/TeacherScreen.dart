@@ -14,6 +14,10 @@ import 'package:image_picker/image_picker.dart';
 import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import '../../main.dart';
 import '../../constants.dart' as Constants;
+import '../../model/Class.dart';
+import '../../model/Class.dart';
+import '../home/ChapterListScreen.dart';
+import '../scheduleCalendar.dart';
 
 FireStoreUtils _fireStoreUtils = FireStoreUtils();
 String _newProfilePicURL =
@@ -31,34 +35,25 @@ class TeacherScreen extends StatefulWidget {
 class _TeacherScreenState extends State<TeacherScreen> {
   final _formKey = GlobalKey<FormState>();
   final User user;
+  Class defaultclass;
   _TeacherScreenState(this.user);
 
   String _currentFirstName;
   String _currentLastName;
   String _currentPassword;
   int currentIndex = 0;
-  List listOfScreen = [
+
+  List<Widget> _widgetOptions = <Widget>[
     // Container(
     //   color: Colors.yellow,
     //   //Class List
     // ),
     ClassListScreen(),
-    Container(
-      color: Colors.orange,
-      //Chapters List
-    ),
-    Container(
-      color: Colors.pink,
-      //quiz result
-    ),
-    Container(
-      color: Colors.red,
-      //calendar
-    ),
-    Container(
-      color: Colors.purple,
-      //calendar
-    ),
+    //student List
+    //StudentList(),
+    CalendarPage(),
+    CalendarPage(),
+    //calendar
   ];
 
   @override
@@ -139,7 +134,6 @@ class _TeacherScreenState extends State<TeacherScreen> {
           backgroundColor: Color(Constants.COLOR_PRIMARY),
           centerTitle: true,
         ),
-        body: listOfScreen[currentIndex],
         bottomNavigationBar: BottomNavyBar(
           selectedIndex: currentIndex,
           onItemSelected: (index) {
@@ -163,18 +157,6 @@ class _TeacherScreenState extends State<TeacherScreen> {
               inactiveColor: Colors.blueGrey[300],
             ),
             BottomNavyBarItem(
-              icon: Icon(Icons.book),
-              title: Text('Chapters'),
-              activeColor: Colors.black,
-              inactiveColor: Colors.blueGrey[300],
-            ),
-            BottomNavyBarItem(
-              icon: Icon(Icons.description),
-              title: Text('Results'),
-              activeColor: Colors.black,
-              inactiveColor: Colors.blueGrey[300],
-            ),
-            BottomNavyBarItem(
               icon: Icon(Icons.calendar_today),
               title: Text('Calendar'),
               activeColor: Colors.black,
@@ -182,24 +164,7 @@ class _TeacherScreenState extends State<TeacherScreen> {
             )
           ],
         ),
-        //only homescreen got create class
-        /*
-        floatingActionButton: Container(
-          height: 60.0,
-          width: 60.0,
-          child: FittedBox(
-            child: FloatingActionButton(
-                child: Icon(Icons.add),
-                backgroundColor: Color(Constants.COLOR_ACCENT),
-                onPressed: () {
-                  _createAlertDialog(context).then((onValue) {
-                    //$onValue 拿到classcode的string
-                    //put inside list
-                  });
-                }),
-          ),
-        ),
-        */
+        body: _widgetOptions.elementAt(currentIndex),
       ),
     );
   }
