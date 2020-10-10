@@ -164,7 +164,7 @@ class _StudentScreenState extends State<StudentScreen> {
             BottomNavyBarItem(
               icon: Icon(Icons.home),
               title: Text('Home'),
-              activeColor: Colors.red,
+              activeColor: Colors.redAccent,
               inactiveColor: Colors.blueGrey[300],
             ),
             BottomNavyBarItem(

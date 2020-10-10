@@ -42,7 +42,10 @@ class _QuizResultState extends State<QuizResult> {
               ),
             ),
             new ListTile(
-                leading: Icon(Icons.receipt),
+                leading: Icon(
+                  Icons.receipt,
+                  color: Colors.red,
+                ),
                 // trailing: Icon(Icons.done_all),
                 title: Text("Chapter 1 Result"),
                 onTap: () => showDialog(
@@ -66,7 +69,10 @@ class _QuizResultState extends State<QuizResult> {
                       ),
                     )),
             new ListTile(
-                leading: Icon(Icons.receipt),
+                leading: Icon(
+                  Icons.receipt,
+                  color: Colors.orange,
+                ),
                 // trailing: Icon(Icons.done_all),
                 title: Text("Chapter 2 Result"),
                 onTap: () => showDialog(
@@ -90,7 +96,10 @@ class _QuizResultState extends State<QuizResult> {
                       ),
                     )),
             new ListTile(
-                leading: Icon(Icons.receipt),
+                leading: Icon(
+                  Icons.receipt,
+                  color: Colors.yellow,
+                ),
                 // trailing: Icon(Icons.done_all),
                 title: Text("Chapter 3 Result"),
                 onTap: () => showDialog(
@@ -114,7 +123,10 @@ class _QuizResultState extends State<QuizResult> {
                       ),
                     )),
             new ListTile(
-                leading: Icon(Icons.receipt),
+                leading: Icon(
+                  Icons.receipt,
+                  color: Colors.green,
+                ),
                 // trailing: Icon(Icons.done_all),
                 title: Text("Chapter 4 Result"),
                 onTap: () => showDialog(
@@ -138,7 +150,10 @@ class _QuizResultState extends State<QuizResult> {
                       ),
                     )),
             new ListTile(
-                leading: Icon(Icons.receipt),
+                leading: Icon(
+                  Icons.receipt,
+                  color: Colors.blue,
+                ),
                 // trailing: Icon(Icons.done_all),
                 title: Text("Chapter 5 Result"),
                 onTap: () => showDialog(
@@ -162,7 +177,10 @@ class _QuizResultState extends State<QuizResult> {
                       ),
                     )),
             new ListTile(
-                leading: Icon(Icons.receipt),
+                leading: Icon(
+                  Icons.receipt,
+                  color: Colors.indigo,
+                ),
                 // trailing: Icon(Icons.done_all),
                 title: Text("Chapter 6 Result"),
                 onTap: () => showDialog(
@@ -186,7 +204,10 @@ class _QuizResultState extends State<QuizResult> {
                       ),
                     )),
             new ListTile(
-                leading: Icon(Icons.receipt),
+                leading: Icon(
+                  Icons.receipt,
+                  color: Colors.purple,
+                ),
                 // trailing: Icon(Icons.done_all),
                 title: Text("Chapter 7 Result"),
                 onTap: () => showDialog(

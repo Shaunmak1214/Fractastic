@@ -32,29 +32,35 @@ class _Chapter1OptionPageState extends State<Chapter1OptionPage> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(35.0),
-              child: SizedBox(
+              padding: const EdgeInsets.fromLTRB(60, 70, 60, 20),
+              child: Container(
                 width: double.infinity,
-                height: 90,
+                height: 80,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: <Color>[
+                      Color(0xFF3D5AFE),
+                      Color(0xFF82B1FF),
+                      Color(0xFF9FA8DA),
+                    ],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                  ),
+                  borderRadius: BorderRadius.circular(60),
+                ),
                 child: FlatButton.icon(
                     label: Text(
-                      'Tutorial',
+                      ' Tutorial',
                       style: TextStyle(
-                        fontSize: 25.0,
-                      ),
+                          fontSize: 30.0,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
                     ),
-                    //textTheme: TextTheme(headline5: ),
-                    color: Colors.blueAccent[100],
                     icon: Icon(
                       Icons.library_books,
-                      size: 30.0,
+                      size: 35.0,
+                      color: Colors.white,
                     ),
-                    textColor: Colors.black,
-                    //shape: StadiumBorder(),
-                    shape: BeveledRectangleBorder(
-                        borderRadius: BorderRadius.circular(12)),
-                    padding: EdgeInsets.symmetric(horizontal: 50),
-                    splashColor: Colors.blueAccent[200],
                     onPressed: () => Navigator.push(
                         context,
                         new MaterialPageRoute(
@@ -62,27 +68,36 @@ class _Chapter1OptionPageState extends State<Chapter1OptionPage> {
               ),
             ),
             Padding(
-                padding: const EdgeInsets.all(35.0),
-                child: SizedBox(
+                padding: const EdgeInsets.fromLTRB(60, 20, 60, 20),
+                child: Container(
                   width: double.infinity,
-                  height: 90,
+                  height: 80,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: <Color>[
+                        Color(0xFF76FF03),
+                        Color(0xFFB2FF59),
+                        Color(0xFF69F0AE),
+                      ],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight,
+                    ),
+                    borderRadius: BorderRadius.circular(60),
+                  ),
                   child: FlatButton.icon(
                     label: Text(
                       'Quiz',
-                      style: TextStyle(fontSize: 25.0),
+                      style: TextStyle(
+                        fontSize: 30.0,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                    //textTheme: TextTheme(headline5: ),
-                    color: Colors.yellowAccent[100],
                     icon: Icon(
                       Icons.lightbulb_outline,
-                      size: 30.0,
+                      size: 37.0,
+                      color: Colors.white,
                     ),
-                    textColor: Colors.black,
-                    //shape: StadiumBorder(),
-                    shape: BeveledRectangleBorder(
-                        borderRadius: BorderRadius.circular(12)),
-                    padding: EdgeInsets.symmetric(horizontal: 50),
-                    splashColor: Colors.yellowAccent[200],
                     onPressed: () async {
                       status = await Navigator.push(
                           context,
@@ -98,31 +113,41 @@ class _Chapter1OptionPageState extends State<Chapter1OptionPage> {
                   ),
                 )),
             Padding(
-              padding: const EdgeInsets.all(35.0),
-              child: SizedBox(
+              padding: const EdgeInsets.fromLTRB(60, 20, 60, 20),
+              child: Container(
                 width: double.infinity,
-                height: 90,
+                height: 80,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: <Color>[
+                      Color(0xFFE91E63),
+                      Color(0xFFF48FB1),
+                      Color(0xFFE57373),
+                    ],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                  ),
+                  borderRadius: BorderRadius.circular(60),
+                ),
                 child: FlatButton.icon(
                     label: Text(
-                      'Game',
-                      style: TextStyle(fontSize: 25.0),
+                      ' Game',
+                      style: TextStyle(
+                        fontSize: 30.0,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                    //textTheme: TextTheme(headline5: ),
-                    color: Colors.redAccent[100],
                     icon: Icon(
                       Icons.games,
-                      size: 30.0,
+                      size: 35.0,
+                      color: Colors.white,
                     ),
-                    textColor: Colors.black,
-                    shape: BeveledRectangleBorder(
-                        borderRadius: BorderRadius.circular(12)),
-                    padding: EdgeInsets.symmetric(horizontal: 50),
-                    splashColor: Colors.redAccent[200],
                     onPressed: () => Navigator.push(context,
                         new MaterialPageRoute(builder: (_) => Chap1game1()))),
               ),
             ),
-            SizedBox(height: 50),
+            SizedBox(height: 40),
             Center(
               child: Container(
                 margin: EdgeInsets.all(10.0),

@@ -73,9 +73,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               margin: EdgeInsets.fromLTRB(0.0, 25.0, 0.0, 10.0),
               padding: EdgeInsets.fromLTRB(15.0, 8.0, 15.0, 8.0),
               decoration: BoxDecoration(
-                border: Border.all(width: 2, color: Colors.red),
+                border: Border.all(width: 2, color: Colors.redAccent),
                 borderRadius: BorderRadius.circular(25.0),
-                color: Colors.red,
+                color: Colors.redAccent,
               ),
               child: Text(
                 'Classroom',
