@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fractastic/main.dart';
 import '../chapter/chapter1/quiz.dart';
 import '../chapter/chapter2/quiz.dart';
 import '../chapter/chapter3/quiz.dart';
@@ -54,10 +55,12 @@ class _QuizResultState extends State<QuizResult> {
                       builder: (BuildContext context) => new AlertDialog(
                         title: new Text("Student Result"),
                         content: new ListTile(
-                          title: result == null
-                              ? Text('Quiz not attended yet')
-                              : Text("$result  Over 5 Marks"),
-                          subtitle: Text("Chap 1 : Introduction to Fraction"),
+                          title: MyAppState.currentUser.result == null
+                              ? Text('Quiz isn\'t completed')
+                              : Text(
+                                  "${MyAppState.currentUser.result}  Over 5 Marks"),
+                          subtitle:
+                              Text("Chapter 1 : Introduction to Fraction"),
 
                           /// print result list
                         ),
@@ -83,10 +86,11 @@ class _QuizResultState extends State<QuizResult> {
                       builder: (BuildContext context) => new AlertDialog(
                         title: new Text("Student Result"),
                         content: new ListTile(
-                          title: result2 == null
-                              ? Text('Quiz not attended yet')
-                              : Text("$result2  Over 5 Marks"),
-                          subtitle: Text("Chap 2 : Basic of Fraction"),
+                          title: MyAppState.currentUser.result2 == null
+                              ? Text('Quiz isn\'t completed')
+                              : Text(
+                                  "${MyAppState.currentUser.result2}  Over 5 Marks"),
+                          subtitle: Text("Chapter 2 : Basic of Fraction"),
 
                           /// print result list
                         ),
@@ -112,10 +116,11 @@ class _QuizResultState extends State<QuizResult> {
                       builder: (BuildContext context) => new AlertDialog(
                         title: new Text("Student Result"),
                         content: new ListTile(
-                          title: result3 == null
-                              ? Text('Quiz not attended yet')
-                              : Text("$result3  Over 5 Marks"),
-                          subtitle: Text("Chap 3 : Conversion of Fraction"),
+                          title: MyAppState.currentUser.result3 == null
+                              ? Text('Quiz isn\'t completed')
+                              : Text(
+                                  "${MyAppState.currentUser.result3}  Over 5 Marks"),
+                          subtitle: Text("Chapter 3 : Conversion of Fraction"),
 
                           /// print result list
                         ),
@@ -142,9 +147,9 @@ class _QuizResultState extends State<QuizResult> {
                         title: new Text("Student Result"),
                         content: new ListTile(
                           title: result4 == null
-                              ? Text('Quiz not attended yet')
+                              ? Text('Quiz isn\'t completed')
                               : Text("$result4  Over 5 Marks"),
-                          subtitle: Text("Chap 4 : Adding of Fraction"),
+                          subtitle: Text("Chapter 4 : Adding of Fraction"),
 
                           /// print result list
                         ),
@@ -171,9 +176,9 @@ class _QuizResultState extends State<QuizResult> {
                         title: new Text("Student Result"),
                         content: new ListTile(
                           title: result4 == null
-                              ? Text('Quiz not attended yet')
+                              ? Text('Quiz isn\'t completed')
                               : Text("$result4  Over 5 Marks"),
-                          subtitle: Text("Chap 5 : Subtracting of Fraction"),
+                          subtitle: Text("Chapter 5 : Subtracting of Fraction"),
 
                           /// print result list
                         ),
@@ -200,9 +205,9 @@ class _QuizResultState extends State<QuizResult> {
                         title: new Text("Student Result"),
                         content: new ListTile(
                           title: result4 == null
-                              ? Text('Quiz not attended yet')
+                              ? Text('Quiz isn\'t completed')
                               : Text("$result4  Over 5 Marks"),
-                          subtitle: Text("Chap 6 : Multiplying of Fraction"),
+                          subtitle: Text("Chapter 6 : Multiplying of Fraction"),
 
                           /// print result list
                         ),
@@ -229,9 +234,9 @@ class _QuizResultState extends State<QuizResult> {
                         title: new Text("Student Result"),
                         content: new ListTile(
                           title: result4 == null
-                              ? Text('Quiz not attended yet')
+                              ? Text('Quiz isn\'t completed')
                               : Text("$result4  Over 5 Marks"),
-                          subtitle: Text("Chap 7 : Dividing of Fraction"),
+                          subtitle: Text("Chapter 7 : Dividing of Fraction"),
 
                           /// print result list
                         ),

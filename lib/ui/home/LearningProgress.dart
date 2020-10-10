@@ -48,7 +48,7 @@ class LearningProgress extends StatelessWidget {
           SizedBox(height: 50.0),
           Image.asset(
             'assets/images/LearningProg.png',
-            height: 250,
+            height: 200,
             fit: BoxFit.fitHeight,
           ),
         ]),

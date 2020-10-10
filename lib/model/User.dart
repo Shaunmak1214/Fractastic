@@ -18,6 +18,9 @@ class User {
   String password = '';
   String classCode = '';
   int quizCount = 0;
+  int result;
+  int result2;
+  int result3;
 
   User({
     this.email,
@@ -33,6 +36,9 @@ class User {
     this.password,
     this.classCode,
     this.quizCount,
+    this.result,
+    this.result2,
+    this.result3,
   });
 
   get uid => this.userID;
@@ -57,7 +63,10 @@ class User {
         userType: parsedJson['userType'] ?? '',
         password: parsedJson['password'] ?? '',
         classCode: parsedJson['classCode'] ?? '',
-        quizCount: parsedJson['quizCount'] ?? 0);
+        quizCount: parsedJson['quizCount'] ?? 0,
+        result: parsedJson['result'],
+        result2: parsedJson['result2'],
+        result3: parsedJson['result3']);
   }
 
   Map<String, dynamic> toJson() {
@@ -76,6 +85,9 @@ class User {
       'password': this.password,
       'classCode': this.classCode,
       'quizCount': this.quizCount,
+      'result': this.result,
+      'result2': this.result2,
+      'result3': this.result3,
     };
   }
 }

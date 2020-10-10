@@ -18,6 +18,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
   int _radioValue3 = -1;
   int _radioValue4 = -1;
   int _radioValue5 = -1;
+  List<int> ansResult = [0, 0, 0, 0, 0];
 
   void _handleRadioValueChange1(int value) {
     setState(() {
@@ -27,15 +28,17 @@ class _Chap2QuizState extends State<Chap2Quiz> {
         case 0:
           Fluttertoast.showToast(
               msg: 'You are AWESOME !', toastLength: Toast.LENGTH_SHORT);
-          correctScore++;
+          ansResult[0] = 1;
           break;
         case 1:
           Fluttertoast.showToast(
               msg: 'Try again !', toastLength: Toast.LENGTH_SHORT);
+          ansResult[0] = 0;
           break;
         case 2:
           Fluttertoast.showToast(
               msg: 'Try again !', toastLength: Toast.LENGTH_SHORT);
+          ansResult[0] = 0;
           break;
       }
     });
@@ -49,15 +52,17 @@ class _Chap2QuizState extends State<Chap2Quiz> {
         case 0:
           Fluttertoast.showToast(
               msg: 'Try again !', toastLength: Toast.LENGTH_SHORT);
+          ansResult[1] = 0;
           break;
         case 1:
           Fluttertoast.showToast(
               msg: 'You are AWESOME !', toastLength: Toast.LENGTH_SHORT);
-          correctScore++;
+          ansResult[1] = 1;
           break;
         case 2:
           Fluttertoast.showToast(
               msg: 'Try again !', toastLength: Toast.LENGTH_SHORT);
+          ansResult[1] = 0;
           break;
       }
     });
@@ -71,15 +76,17 @@ class _Chap2QuizState extends State<Chap2Quiz> {
         case 0:
           Fluttertoast.showToast(
               msg: 'Try again !', toastLength: Toast.LENGTH_SHORT);
+          ansResult[2] = 0;
           break;
         case 1:
           Fluttertoast.showToast(
               msg: 'You are such a genius !', toastLength: Toast.LENGTH_SHORT);
-          correctScore++;
+          ansResult[2] = 1;
           break;
         case 2:
           Fluttertoast.showToast(
               msg: 'Try again !', toastLength: Toast.LENGTH_SHORT);
+          ansResult[2] = 0;
           break;
       }
     });
@@ -93,15 +100,17 @@ class _Chap2QuizState extends State<Chap2Quiz> {
         case 0:
           Fluttertoast.showToast(
               msg: 'Perfect !', toastLength: Toast.LENGTH_SHORT);
-          correctScore++;
+          ansResult[3] = 1;
           break;
         case 1:
           Fluttertoast.showToast(
               msg: 'Try again !', toastLength: Toast.LENGTH_SHORT);
+          ansResult[3] = 0;
           break;
         case 2:
           Fluttertoast.showToast(
               msg: 'Try again !', toastLength: Toast.LENGTH_SHORT);
+          ansResult[3] = 0;
           break;
       }
     });
@@ -115,15 +124,17 @@ class _Chap2QuizState extends State<Chap2Quiz> {
         case 0:
           Fluttertoast.showToast(
               msg: 'Try again !', toastLength: Toast.LENGTH_SHORT);
+          ansResult[4] = 0;
           break;
         case 1:
           Fluttertoast.showToast(
               msg: 'Try again !', toastLength: Toast.LENGTH_SHORT);
+          ansResult[4] = 0;
           break;
         case 2:
           Fluttertoast.showToast(
               msg: 'Congratulations !', toastLength: Toast.LENGTH_SHORT);
-          correctScore++;
+          ansResult[4] = 1;
           break;
       }
     });
@@ -525,6 +536,8 @@ class _Chap2QuizState extends State<Chap2Quiz> {
   }
 
   void validateAnswers() {
+    correctScore = ansResult.fold(0, (prev, element) => prev + element);
+
     if (_radioValue1 == -1 ||
         _radioValue2 == -1 ||
         _radioValue3 == -1 ||
@@ -533,13 +546,14 @@ class _Chap2QuizState extends State<Chap2Quiz> {
       Fluttertoast.showToast(
           msg: 'Please finish the quiz before submit !',
           toastLength: Toast.LENGTH_SHORT);
-      result2 = correctScore;
+      MyAppState.currentUser.result2 = correctScore;
     } else {
       Fluttertoast.showToast(
           msg: 'Your total score is: $correctScore out of 5',
           toastLength: Toast.LENGTH_LONG);
       setState(() {
-        MyAppState.currentUser.quizCount++;
+        if (MyAppState.currentUser.quizCount == 1)
+          MyAppState.currentUser.quizCount++;
         status = 1;
       });
       Navigator.of(context).pop(status);

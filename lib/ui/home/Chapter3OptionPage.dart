@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fractastic/main.dart';
 import 'package:fractastic/ui/chapter/chapter1/game.dart';
 import 'package:fractastic/ui/chapter/chapter3/quiz.dart';
 import 'package:fractastic/ui/chapter/chapter3/tutorial.dart';
@@ -14,6 +15,14 @@ class _Chapter3OptionPageState extends State<Chapter3OptionPage> {
   dynamic status;
   Color cardColor = Colors.red;
   String quizProgress = 'Quiz isn\'t Completed';
+  @override
+  void initState() {
+    if (MyAppState.currentUser.quizCount >= 3) {
+      cardColor = Colors.green;
+      quizProgress = 'Quiz Completed!';
+    }
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
