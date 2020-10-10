@@ -33,9 +33,16 @@ class _SignUpState extends State<SignUpScreenStudent> {
       confirmPassword,
       userType = 'Student';
   bool _showPassword = true;
+  bool _showPassword2 = true;
   void _toggleVisibility() {
     setState(() {
       _showPassword = !_showPassword;
+    });
+  }
+
+  void _toggleVisibility2() {
+    setState(() {
+      _showPassword2 = !_showPassword2;
     });
   }
 
@@ -325,7 +332,7 @@ class _SignUpState extends State<SignUpScreenStudent> {
                 onFieldSubmitted: (_) {
                   _sendToServer();
                 },
-                obscureText: _showPassword,
+                obscureText: _showPassword2,
                 validator: (val) =>
                     validateConfirmPassword(_passwordController.text, val),
                 onSaved: (String val) {
@@ -347,7 +354,7 @@ class _SignUpState extends State<SignUpScreenStudent> {
                     ),
                     suffixIcon: GestureDetector(
                       onTap: () {
-                        _toggleVisibility();
+                        _toggleVisibility2();
                       },
                       child: Icon(
                         _showPassword ? Icons.visibility : Icons.visibility_off,
