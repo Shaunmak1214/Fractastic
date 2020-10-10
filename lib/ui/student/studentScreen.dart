@@ -90,7 +90,7 @@ class _StudentScreenState extends State<StudentScreen> {
               ),
               ListTile(
                   leading: Icon(Icons.person_outline, color: Colors.black),
-                  title: Text('Change Name',
+                  title: Text('Change Username',
                       style: TextStyle(color: Color(Constants.COLOR_WORDING))),
                   onTap: () async {
                     await _asyncNameInputDialog(context);
