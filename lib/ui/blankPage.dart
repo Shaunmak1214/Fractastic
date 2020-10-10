@@ -13,7 +13,7 @@ class BlankPage extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.all(8.0),
-            child: SizedBox(height: 60.0),
+            child: SizedBox(height: 173.0),
           ),
           Padding(
             padding: EdgeInsets.all(8.0),
