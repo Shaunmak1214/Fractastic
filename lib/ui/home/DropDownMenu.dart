@@ -25,6 +25,7 @@ class _DropDownMenuState extends State<DropDownMenu> {
   @override
   void initState() {
     super.initState();
+    //_selectedClass = Class(classCode: '0', name: 'x', teacherId: 'x');
     _selectedClass = classes[0];
   }
 
@@ -58,17 +59,17 @@ class _DropDownMenuState extends State<DropDownMenu> {
     return Scaffold(
       body: Column(
         children: <Widget>[
-          Center(
-            child: Container(
-              child: Text(
-                'Choose Your Class',
-                style: TextStyle(
-                    fontSize: 18.0,
-                    //fontWeight: FontWeight.bold,
-                    color: Color(Constants.COLOR_WORDING)),
-              ),
-            ),
-          ),
+          // Center(
+          //   child: Container(
+          //     child: Text(
+          //       'Choose Your Class',
+          //       style: TextStyle(
+          //           fontSize: 18.0,
+          //           //fontWeight: FontWeight.bold,
+          //           color: Color(Constants.COLOR_WORDING)),
+          //     ),
+          //   ),
+          // ),
           DropdownButton<Class>(
             items: classes.isNotEmpty
                 ? classes.map<DropdownMenuItem<Class>>((Class classroom) {

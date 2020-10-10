@@ -39,8 +39,7 @@ class _Chapter3OptionPageState extends State<Chapter3OptionPage> {
                   gradient: LinearGradient(
                     colors: <Color>[
                       Color(0xFF3D5AFE),
-                      Color(0xFF82B1FF),
-                      Color(0xFF9FA8DA),
+                      Color(0xFF59DDD5),
                     ],
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
@@ -75,9 +74,8 @@ class _Chapter3OptionPageState extends State<Chapter3OptionPage> {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: <Color>[
-                        Color(0xFF76FF03),
-                        Color(0xFFB2FF59),
-                        Color(0xFF69F0AE),
+                        Color(0xFF1B7E79),
+                        Color(0xFFD3F351),
                       ],
                       begin: Alignment.centerLeft,
                       end: Alignment.centerRight,
@@ -119,11 +117,7 @@ class _Chapter3OptionPageState extends State<Chapter3OptionPage> {
                 height: 80,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
-                    colors: <Color>[
-                      Color(0xFFE91E63),
-                      Color(0xFFF48FB1),
-                      Color(0xFFE57373)
-                    ],
+                    colors: <Color>[Color(0xFF1960B5E), Color(0xFFFF7272)],
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
                   ),

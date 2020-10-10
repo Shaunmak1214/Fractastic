@@ -15,7 +15,10 @@ class _StudentListState extends State<StudentList> {
 
   @override
   Widget build(BuildContext context) {
-    List<Class> classes = [];
+    List<Class> classes = [
+      Class(
+          classCode: '000000', name: 'Choose a class', teacherId: 'user.userID')
+    ];
     var prov = Provider.of<List<Class>>(context);
     if (prov != null) {
       prov.forEach((classroom) {
@@ -25,7 +28,7 @@ class _StudentListState extends State<StudentList> {
         }
       });
     }
-    if (prov == null || classes.isEmpty) {
+    if (prov == null) {
       return Center(
         child: SizedBox(
           child: CircularProgressIndicator(),

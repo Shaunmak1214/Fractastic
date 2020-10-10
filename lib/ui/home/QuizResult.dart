@@ -54,7 +54,9 @@ class _QuizResultState extends State<QuizResult> {
                       builder: (BuildContext context) => new AlertDialog(
                         title: new Text("Student Result"),
                         content: new ListTile(
-                          title: Text("$result  Over 5 Marks"),
+                          title: result == null
+                              ? Text('Quiz not attended yet')
+                              : Text("$result  Over 5 Marks"),
                           subtitle: Text("Chap 1 : Introduction to Fraction"),
 
                           /// print result list
@@ -81,7 +83,9 @@ class _QuizResultState extends State<QuizResult> {
                       builder: (BuildContext context) => new AlertDialog(
                         title: new Text("Student Result"),
                         content: new ListTile(
-                          title: Text("$result2  Over 5 Marks"),
+                          title: result2 == null
+                              ? Text('Quiz not attended yet')
+                              : Text("$result2  Over 5 Marks"),
                           subtitle: Text("Chap 2 : Basic of Fraction"),
 
                           /// print result list
@@ -108,7 +112,9 @@ class _QuizResultState extends State<QuizResult> {
                       builder: (BuildContext context) => new AlertDialog(
                         title: new Text("Student Result"),
                         content: new ListTile(
-                          title: Text("$result3  Over 5 Marks"),
+                          title: result3 == null
+                              ? Text('Quiz not attended yet')
+                              : Text("$result3  Over 5 Marks"),
                           subtitle: Text("Chap 3 : Conversion of Fraction"),
 
                           /// print result list
@@ -135,7 +141,9 @@ class _QuizResultState extends State<QuizResult> {
                       builder: (BuildContext context) => new AlertDialog(
                         title: new Text("Student Result"),
                         content: new ListTile(
-                          title: Text("$result4  Over 5 Marks"),
+                          title: result4 == null
+                              ? Text('Quiz not attended yet')
+                              : Text("$result4  Over 5 Marks"),
                           subtitle: Text("Chap 4 : Adding of Fraction"),
 
                           /// print result list
@@ -162,7 +170,9 @@ class _QuizResultState extends State<QuizResult> {
                       builder: (BuildContext context) => new AlertDialog(
                         title: new Text("Student Result"),
                         content: new ListTile(
-                          title: Text("$result4  Over 5 Marks"),
+                          title: result4 == null
+                              ? Text('Quiz not attended yet')
+                              : Text("$result4  Over 5 Marks"),
                           subtitle: Text("Chap 5 : Subtracting of Fraction"),
 
                           /// print result list
@@ -189,7 +199,9 @@ class _QuizResultState extends State<QuizResult> {
                       builder: (BuildContext context) => new AlertDialog(
                         title: new Text("Student Result"),
                         content: new ListTile(
-                          title: Text("$result4  Over 5 Marks"),
+                          title: result4 == null
+                              ? Text('Quiz not attended yet')
+                              : Text("$result4  Over 5 Marks"),
                           subtitle: Text("Chap 6 : Multiplying of Fraction"),
 
                           /// print result list
@@ -216,7 +228,9 @@ class _QuizResultState extends State<QuizResult> {
                       builder: (BuildContext context) => new AlertDialog(
                         title: new Text("Student Result"),
                         content: new ListTile(
-                          title: Text("$result4  Over 5 Marks"),
+                          title: result4 == null
+                              ? Text('Quiz not attended yet')
+                              : Text("$result4  Over 5 Marks"),
                           subtitle: Text("Chap 7 : Dividing of Fraction"),
 
                           /// print result list

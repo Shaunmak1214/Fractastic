@@ -20,7 +20,16 @@ class ClassTile extends StatelessWidget {
           Navigator.push(
               context,
               new MaterialPageRoute(
-                  builder: (_) => ChapterList(classroom: classTile)));
+                  builder: (_) => Scaffold(
+                      appBar: AppBar(
+                        title: Text(
+                          'Classroom',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        backgroundColor: Color(Constants.COLOR_PRIMARY),
+                        centerTitle: true,
+                      ),
+                      body: ChapterList(classroom: classTile))));
         },
       ),
     );

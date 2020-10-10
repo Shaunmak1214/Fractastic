@@ -37,15 +37,10 @@ class _Chapter1OptionPageState extends State<Chapter1OptionPage> {
                 width: double.infinity,
                 height: 80,
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: <Color>[
-                      Color(0xFF3D5AFE),
-                      Color(0xFF82B1FF),
-                      Color(0xFF9FA8DA),
-                    ],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
-                  ),
+                  gradient: LinearGradient(colors: <Color>[
+                    Color(0xFF3D5AFE),
+                    Color(0xFF59DDD5),
+                  ], begin: Alignment.topLeft, end: Alignment.bottomRight),
                   borderRadius: BorderRadius.circular(60),
                 ),
                 child: FlatButton.icon(
@@ -75,12 +70,12 @@ class _Chapter1OptionPageState extends State<Chapter1OptionPage> {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: <Color>[
-                        Color(0xFF76FF03),
-                        Color(0xFFB2FF59),
-                        Color(0xFF69F0AE),
+                        Color(0xFF1B7E79),
+                        //Color(0xFFB2FF59),
+                        Color(0xFFD3F351),
                       ],
-                      begin: Alignment.centerLeft,
-                      end: Alignment.centerRight,
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
                     ),
                     borderRadius: BorderRadius.circular(60),
                   ),
@@ -120,12 +115,12 @@ class _Chapter1OptionPageState extends State<Chapter1OptionPage> {
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
                     colors: <Color>[
-                      Color(0xFFE91E63),
-                      Color(0xFFF48FB1),
-                      Color(0xFFE57373),
+                      Color(0xFF1960B5E),
+                      //Color(0xFFF48FB1),
+                      Color(0xFFFF7272),
                     ],
-                    begin: Alignment.centerLeft,
-                    end: Alignment.centerRight,
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
                   ),
                   borderRadius: BorderRadius.circular(60),
                 ),
