@@ -19,6 +19,7 @@ class _Chapter1OptionPageState extends State<Chapter1OptionPage> {
   String quizProgress = 'Quiz isn\'t Completed';
   @override
   void initState() {
+    MyAppState.currentUser.quizCount = MyAppState.currentUser.quizCount ?? 0;
     if (MyAppState.currentUser.quizCount >= 1) {
       cardColor = Colors.green;
       quizProgress = 'Quiz Completed!';
@@ -136,7 +137,7 @@ class _Chapter1OptionPageState extends State<Chapter1OptionPage> {
                 ),
                 child: FlatButton.icon(
                     label: Text(
-                      ' Game',
+                      'Game',
                       style: TextStyle(
                         fontSize: 30.0,
                         color: Colors.white,

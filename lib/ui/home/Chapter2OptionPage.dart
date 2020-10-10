@@ -19,6 +19,7 @@ class _Chapter2OptionPageState extends State<Chapter2OptionPage> {
   String quizProgress = 'Quiz isn\'t Completed';
   @override
   void initState() {
+    MyAppState.currentUser.quizCount = MyAppState.currentUser.quizCount ?? 0;
     if (MyAppState.currentUser.quizCount >= 2) {
       cardColor = Colors.green;
       quizProgress = 'Quiz Completed!';
