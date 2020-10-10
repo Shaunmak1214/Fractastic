@@ -1,13 +1,19 @@
 # Fractastic
 
-A fraction learning application named Fractastic.
+A fraction learning application for primary school named Fractastic. It is written in Dart with Flutter and the data is stored in Firebase Cloud Firestore. The users are teachers and students.
 
-https://gallery.flutter.dev/#/demo/colors
 <h5>
-# 试图寻找最相像的颜色
+The Main Functions:
 </h5>
-Main color: cyan, #FF00BCD4 <fractastic logo中间的颜色>
 
-Sub color: light blue, #FF0288D1 <fractastic logo上面的颜色>
+Register Account
+Login and Logout System
+View Profile
+View Schedule
+Create Class/Join Class
+View Class List (Teacher)
+View Student List (Teacher)
+View Chapter List (Student)
+View Quiz Results (Student)
 
-Sub color: cyan, #F80DEEA <fractastic logo下面的颜色>
+
