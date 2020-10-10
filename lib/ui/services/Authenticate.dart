@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:fractastic/constants.dart';
 import 'package:fractastic/model/User.dart';
 import 'package:fractastic/model/Class.dart';
+import 'package:fractastic/ui/chapter/chapter1/quiz.dart';
 import 'package:fractastic/ui/utils/helper.dart';
 
 import '../../main.dart';
@@ -50,6 +51,13 @@ class FireStoreUtils {
       print(e);
       showAlertDialog(context, 'Error', 'Failed to Update, Please try again.');
       return null;
+    });
+  }
+
+  Future<void> updateCurrentResult(
+      User user, BuildContext context, String resultstr, int result) async {
+    return await firestore.collection(USERS).document(user.userID).setData({
+      '$resultstr': result,
     });
   }
 

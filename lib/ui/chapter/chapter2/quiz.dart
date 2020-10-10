@@ -561,7 +561,8 @@ class _Chap2QuizState extends State<Chap2Quiz> {
         status = 1;
       });
       showProgress(context, 'Updating result...', false);
-      await _fireStoreUtils.updateCurrentUser(user, context);
+      await _fireStoreUtils.updateCurrentResult(
+          user, context, 'result2', user.result);
       hideProgress();
       Navigator.of(context).pop(status);
     }
