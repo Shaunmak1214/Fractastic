@@ -61,7 +61,25 @@ class _DropDownMenuState extends State<DropDownMenu> {
 
     return Scaffold(
       body: Column(
-        children: [
+        children: <Widget>[
+          Center(
+            child: Container(
+              margin: EdgeInsets.fromLTRB(0.0, 25.0, 0.0, 10.0),
+              padding: EdgeInsets.fromLTRB(15.0, 8.0, 15.0, 8.0),
+              decoration: BoxDecoration(
+                border: Border.all(width: 2, color: Colors.green),
+                borderRadius: BorderRadius.circular(25.0),
+                color: Colors.green,
+              ),
+              child: Text(
+                'Student List',
+                style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
+            ),
+          ),
           DropdownButton<Class>(
             items: classes.isNotEmpty
                 ? classes.map<DropdownMenuItem<Class>>((Class classroom) {
