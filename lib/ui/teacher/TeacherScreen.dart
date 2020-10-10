@@ -251,7 +251,7 @@ class _TeacherScreenState extends State<TeacherScreen> {
           true, // dialog is dismissible with a tap on the barrier
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('Change Name'),
+          title: Text('Change Username'),
           content: Stack(
             overflow: Overflow.visible,
             children: <Widget>[
