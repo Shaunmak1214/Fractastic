@@ -98,7 +98,9 @@ class _TeacherScreenState extends State<TeacherScreen> {
                   user.active = false;
                   user.lastOnlineTimestamp = Timestamp.now();
                   _fireStoreUtils.updateCurrentUser(user, context);
+                  showProgress(context, 'Logging out...', false);
                   await FirebaseAuth.instance.signOut();
+                  hideProgress();
                   MyAppState.currentUser = null;
                   pushAndRemoveUntil(context, AuthScreen(), false);
                 },
@@ -283,7 +285,7 @@ class _TeacherScreenState extends State<TeacherScreen> {
                               EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                         ),
                         validator: validateName,
-                        onChanged: (val) =>
+                        onSaved: (val) =>
                             setState(() => _currentFirstName = val),
                       ),
                     ),
@@ -297,7 +299,7 @@ class _TeacherScreenState extends State<TeacherScreen> {
                               EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                         ),
                         validator: validateName,
-                        onChanged: (val) =>
+                        onSaved: (val) =>
                             setState(() => _currentLastName = val),
                       ),
                     ),
@@ -307,13 +309,17 @@ class _TeacherScreenState extends State<TeacherScreen> {
                         child: Text("Update"),
                         onPressed: () async {
                           if (_formKey.currentState.validate()) {
+                            _formKey.currentState.save();
                             setState(() {
                               user.firstName =
                                   _currentFirstName ?? user.firstName;
                               user.lastName = _currentLastName ?? user.lastName;
                             });
+                            showProgress(
+                                context, 'Updating username...', false);
                             await _fireStoreUtils.updateCurrentUser(
                                 user, context);
+                            hideProgress();
                             Navigator.pop(context);
                           }
                         },
@@ -367,7 +373,7 @@ class _TeacherScreenState extends State<TeacherScreen> {
                               EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
                         ),
                         validator: validatePassword,
-                        onChanged: (val) =>
+                        onSaved: (val) =>
                             setState(() => _currentPassword = val),
                       ),
                     ),
@@ -377,11 +383,15 @@ class _TeacherScreenState extends State<TeacherScreen> {
                         child: Text("Update"),
                         onPressed: () async {
                           if (_formKey.currentState.validate()) {
+                            _formKey.currentState.save();
                             setState(() {
                               user.password = _currentPassword ?? user.password;
                             });
+                            showProgress(
+                                context, 'Updating password...', false);
                             await _fireStoreUtils.updateCurrentUser(
                                 user, context);
+                            hideProgress();
                             Navigator.pop(context);
                           }
                         },
