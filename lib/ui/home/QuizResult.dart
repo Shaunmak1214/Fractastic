@@ -15,17 +15,33 @@ class _QuizResultState extends State<QuizResult> {
   Widget build(BuildContext context) {
     var result4;
     return Scaffold(
-      appBar: AppBar(
-        leading: Icon(Icons.thumbs_up_down),
-        title: Text('View Result'),
-        centerTitle: true,
-        backgroundColor: Colors.redAccent,
-      ),
+      // appBar: AppBar(
+      //   leading: Icon(Icons.thumbs_up_down),
+      //   title: Text('View Result'),
+      //   centerTitle: true,
+      //   backgroundColor: Colors.redAccent,
+      // ),
       body: Container(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            new Padding(
-              padding: const EdgeInsets.all(8.0),
+            Center(
+              child: Container(
+                margin: EdgeInsets.fromLTRB(0.0, 25.0, 0.0, 10.0),
+                padding: EdgeInsets.fromLTRB(15.0, 8.0, 15.0, 8.0),
+                decoration: BoxDecoration(
+                  border: Border.all(width: 2, color: Colors.deepPurpleAccent),
+                  borderRadius: BorderRadius.circular(25.0),
+                  color: Colors.deepPurpleAccent,
+                ),
+                child: Text(
+                  'Quiz Results',
+                  style: TextStyle(
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
+              ),
             ),
             new ListTile(
                 leading: Icon(Icons.receipt),

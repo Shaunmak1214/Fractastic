@@ -72,9 +72,9 @@ class _CalendarPageState extends State<CalendarPage> {
                 margin: EdgeInsets.fromLTRB(0.0, 25.0, 0.0, 10.0),
                 padding: EdgeInsets.fromLTRB(15.0, 8.0, 15.0, 8.0),
                 decoration: BoxDecoration(
-                  border: Border.all(width: 2, color: Colors.red[300]),
+                  border: Border.all(width: 2, color: Colors.deepOrangeAccent),
                   borderRadius: BorderRadius.circular(25.0),
-                  color: Colors.red[400],
+                  color: Colors.deepOrangeAccent,
                 ),
                 child: Text(
                   'Calendar',
@@ -89,7 +89,7 @@ class _CalendarPageState extends State<CalendarPage> {
               events: _events,
               calendarStyle: CalendarStyle(
                   todayColor: Colors.deepOrange[300],
-                  selectedColor: Colors.deepPurple[300],
+                  selectedColor: Colors.blueAccent[100],
                   todayStyle: TextStyle(
                     //fontWeight: FontWeight.bold,
                     fontSize: 18.0,
@@ -98,13 +98,12 @@ class _CalendarPageState extends State<CalendarPage> {
               headerStyle: HeaderStyle(
                 centerHeaderTitle: true,
                 formatButtonDecoration: BoxDecoration(
-                  color: Color(Constants.COLOR_PRIMARY_DARK),
+                  color: Color(Constants.COLOR_ACCENT),
                   borderRadius: BorderRadius.circular(20.0),
                 ),
                 formatButtonTextStyle: TextStyle(color: Colors.white),
                 formatButtonShowsNext: false,
               ),
-              //startingDayOfWeek: StartingDayOfWeek.monday,
               onDaySelected: (date, events) {
                 setState(() {
                   _selectedDate = date;

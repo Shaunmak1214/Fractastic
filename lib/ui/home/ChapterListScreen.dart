@@ -101,7 +101,7 @@ class _MyChapterListState extends State<ChapterList> {
             Card(
               child: ListTile(
                 title: Text('Chapter 4'),
-                subtitle: Text('Conversion of Fraction'),
+                subtitle: Text('Adding of Fraction'),
                 leading: Icon(
                   Icons.collections_bookmark,
                   color: Colors.green,
@@ -123,7 +123,7 @@ class _MyChapterListState extends State<ChapterList> {
             Card(
               child: ListTile(
                 title: Text('Chapter 5'),
-                subtitle: Text('Conversion of Fraction'),
+                subtitle: Text('Subtracting of Fraction'),
                 leading: Icon(
                   Icons.collections_bookmark,
                   color: Colors.blue,
@@ -145,7 +145,7 @@ class _MyChapterListState extends State<ChapterList> {
             Card(
               child: ListTile(
                 title: Text('Chapter 6'),
-                subtitle: Text('Conversion of Fraction'),
+                subtitle: Text('Multiplying of Fraction'),
                 leading: Icon(
                   Icons.collections_bookmark,
                   color: Colors.indigo,
@@ -167,7 +167,7 @@ class _MyChapterListState extends State<ChapterList> {
             Card(
               child: ListTile(
                 title: Text('Chapter 7'),
-                subtitle: Text('Conversion of Fraction'),
+                subtitle: Text('Dividing of Fraction'),
                 leading: Icon(
                   Icons.collections_bookmark,
                   color: Colors.purple,
