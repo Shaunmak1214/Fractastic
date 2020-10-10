@@ -1,15 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fractastic/ui/home/DropDownMenu.dart';
-import 'package:fractastic/ui/student/Wrapper.dart';
 import 'package:provider/provider.dart';
-
-import '../../constants.dart';
 import '../../main.dart';
 import '../../model/Class.dart';
 import '../../model/User.dart';
-import '../services/Authenticate.dart';
-import 'StudentTile.dart';
 
 class StudentList extends StatefulWidget {
   @override

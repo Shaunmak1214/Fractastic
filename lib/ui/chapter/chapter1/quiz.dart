@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:fractastic/main.dart';
-import 'package:fractastic/ui/home/ChapterListScreen.dart';
 import '../../../constants.dart' as Constants;
 
 var result;

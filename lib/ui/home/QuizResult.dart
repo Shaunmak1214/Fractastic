@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import '../../model/User.dart';
 import '../chapter/chapter1/quiz.dart';
 import '../chapter/chapter2/quiz.dart';
 import '../chapter/chapter3/quiz.dart';

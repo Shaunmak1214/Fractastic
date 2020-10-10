@@ -1,9 +1,5 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:fractastic/ui/student/Wrapper.dart';
-import 'package:provider/provider.dart';
-
-import '../../constants.dart';
+import 'package:fractastic/constants.dart' as Constants;
 import '../../main.dart';
 import '../../model/Class.dart';
 import '../../model/User.dart';
@@ -64,19 +60,12 @@ class _DropDownMenuState extends State<DropDownMenu> {
         children: <Widget>[
           Center(
             child: Container(
-              margin: EdgeInsets.fromLTRB(0.0, 25.0, 0.0, 10.0),
-              padding: EdgeInsets.fromLTRB(15.0, 8.0, 15.0, 8.0),
-              decoration: BoxDecoration(
-                border: Border.all(width: 2, color: Colors.green),
-                borderRadius: BorderRadius.circular(25.0),
-                color: Colors.green,
-              ),
               child: Text(
-                'Student List',
+                'Choose Your Class',
                 style: TextStyle(
                     fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white),
+                    //fontWeight: FontWeight.bold,
+                    color: Color(Constants.COLOR_WORDING)),
               ),
             ),
           ),

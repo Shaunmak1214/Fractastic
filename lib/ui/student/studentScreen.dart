@@ -144,7 +144,7 @@ class _StudentScreenState extends State<StudentScreen> {
         ),
         appBar: AppBar(
           title: Text(
-            'Classroom',
+            'Fractastic',
             style: TextStyle(color: Colors.black),
           ),
           iconTheme: IconThemeData(color: Colors.black),

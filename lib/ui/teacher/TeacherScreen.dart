@@ -8,7 +8,6 @@ import 'package:fractastic/constants.dart';
 import 'package:fractastic/model/User.dart';
 import 'package:fractastic/ui/auth/AuthScreen.dart';
 import 'package:fractastic/ui/home/ClassListScreen.dart';
-import 'package:fractastic/ui/home/StudentList.dart';
 import 'package:fractastic/ui/home/StudentListScreen.dart';
 import 'package:fractastic/ui/services/Authenticate.dart';
 import 'package:fractastic/ui/utils/helper.dart';
@@ -17,8 +16,6 @@ import 'package:bottom_navy_bar/bottom_navy_bar.dart';
 import '../../main.dart';
 import '../../constants.dart' as Constants;
 import '../../model/Class.dart';
-import '../../model/Class.dart';
-import '../home/ChapterListScreen.dart';
 import '../scheduleCalendar.dart';
 
 FireStoreUtils _fireStoreUtils = FireStoreUtils();
@@ -122,7 +119,7 @@ class _TeacherScreenState extends State<TeacherScreen> {
         ),
         appBar: AppBar(
           title: Text(
-            'Fractastic Learning App',
+            'Fractastic',
             style: TextStyle(color: Colors.white),
           ),
           iconTheme: IconThemeData(color: Colors.black),
