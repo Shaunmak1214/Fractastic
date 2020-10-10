@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fractastic/constants.dart';
+import 'package:fractastic/model/Class.dart';
 import 'package:fractastic/model/User.dart';
 import 'package:fractastic/ui/auth/AuthScreen.dart';
 import 'package:fractastic/ui/home/LearningProgress.dart';
@@ -53,6 +54,12 @@ class _StudentScreenState extends State<StudentScreen> {
 
   @override
   Widget build(BuildContext context) {
+    FireStoreUtils.classCollection.snapshots().listen((snapshot) {
+      MyAppState.classCodeList = snapshot.documents.map((doc) {
+        return Class.fromJson(doc.data).classCode;
+      }).toList();
+    });
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
