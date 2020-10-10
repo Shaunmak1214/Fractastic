@@ -1,7 +1,18 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fractastic/ui/services/Authenticate.dart';
-import 'package:fractastic/ui/utils/helper.dart';
+import 'package:fractastic/constants.dart';
+import 'package:fractastic/model/Class.dart';
 import 'package:fractastic/model/User.dart';
+import 'package:fractastic/ui/auth/AuthScreen.dart';
+import 'package:fractastic/ui/home/LearningProgress.dart';
+import 'package:fractastic/ui/scheduleCalendar.dart';
+import 'package:fractastic/ui/home/QuizResult.dart';
+import 'package:fractastic/ui/services/Authenticate.dart';
+import 'package:fractastic/ui/student/Wrapper.dart';
+import 'package:fractastic/ui/utils/helper.dart';
+import 'package:image_picker/image_picker.dart';
 
 import '../../main.dart';
 import 'package:fractastic/constants.dart' as Constants;
@@ -17,8 +28,14 @@ class _NoClassPageState extends State<NoClassPage> {
   final _formKey = GlobalKey<FormState>();
   String _currentClassCode;
   User user = MyAppState.currentUser;
+
   @override
   Widget build(BuildContext context) {
+    FireStoreUtils.classCollection.snapshots().listen((snapshot) {
+      MyAppState.classCodeList = snapshot.documents.map((doc) {
+        return Class.fromJson(doc.data).classCode;
+      }).toList();
+    });
     return Scaffold(
       backgroundColor: Colors.grey[300],
       body: Center(

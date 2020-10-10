@@ -54,12 +54,6 @@ class _StudentScreenState extends State<StudentScreen> {
 
   @override
   Widget build(BuildContext context) {
-    FireStoreUtils.classCollection.snapshots().listen((snapshot) {
-      MyAppState.classCodeList = snapshot.documents.map((doc) {
-        return Class.fromJson(doc.data).classCode;
-      }).toList();
-    });
-
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
