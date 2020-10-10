@@ -6,14 +6,22 @@ A fraction learning application for primary school named Fractastic. It is writt
 The Main Functions:
 </h5>
 
-Register Account
-Login and Logout System
-View Profile
-View Schedule
-Create Class/Join Class
-View Class List (Teacher)
-View Student List (Teacher)
-View Chapter List (Student)
-View Quiz Results (Student)
+• Register Account
+
+• Login and Logout System
+
+• View Profile
+
+• View Schedule
+
+• Create Class/Join Class
+
+• View Class List (Teacher)
+
+• View Student List (Teacher)
+
+• View Chapter List (Student)
+
+• View Quiz Results (Student)
 
 
