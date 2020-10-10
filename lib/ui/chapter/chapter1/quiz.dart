@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:fractastic/ui/services/Authenticate.dart';
+import 'package:fractastic/model/User.dart';
 import 'package:fractastic/main.dart';
+import 'package:fractastic/ui/utils/helper.dart';
 import '../../../constants.dart' as Constants;
 
 var result;
+FireStoreUtils _fireStoreUtils = FireStoreUtils();
 
 class Chap1Quiz extends StatefulWidget {
   @override
@@ -11,6 +15,7 @@ class Chap1Quiz extends StatefulWidget {
 }
 
 class _Chap1QuizState extends State<Chap1Quiz> {
+  User user = MyAppState.currentUser;
   int status = 0;
   int _radioValue1 = -1;
   int correctScore = 0;
@@ -526,7 +531,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                 ))));
   }
 
-  void resetSelection() {
+  void resetSelection() async {
     _handleRadioValueChange1(-1);
     _handleRadioValueChange2(-1);
     _handleRadioValueChange3(-1);
@@ -535,7 +540,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
     correctScore = 0;
   }
 
-  void validateAnswers() {
+  void validateAnswers() async {
     correctScore = ansResult.fold(0, (prev, element) => prev + element);
 
     if (_radioValue1 == -1 ||
@@ -550,13 +555,15 @@ class _Chap1QuizState extends State<Chap1Quiz> {
       Fluttertoast.showToast(
           msg: 'Your total score is: $correctScore out of 5',
           toastLength: Toast.LENGTH_LONG);
-      MyAppState.currentUser.result = correctScore;
+      user.result = correctScore;
       setState(() {
-        if (MyAppState.currentUser.quizCount == 0)
-          MyAppState.currentUser.quizCount++;
+        if (user.quizCount == 0) user.quizCount++;
         status = 1;
       });
+      showProgress(context, 'Updating result...', false);
+      await _fireStoreUtils.updateCurrentUser(user, context);
+      hideProgress();
+      Navigator.of(context).pop(status);
     }
-    Navigator.of(context).pop(status);
   }
 }
