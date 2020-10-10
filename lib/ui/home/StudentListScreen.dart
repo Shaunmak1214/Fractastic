@@ -23,11 +23,56 @@ class _StudentListScreenState extends State<StudentListScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return StreamProvider<List<Class>>.value(
-      value: FireStoreUtils().classes,
-      child: Scaffold(
-        body: StudentList(),
+    return Scaffold(
+      appBar: CustomAppBar(
+        height: 100,
+      ),
+      body: StreamProvider<List<Class>>.value(
+        value: FireStoreUtils().classes,
+        child: Scaffold(
+          body: StudentList(),
+        ),
       ),
     );
   }
+}
+
+class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  final double height;
+
+  const CustomAppBar({
+    Key key,
+    @required this.height,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: SingleChildScrollView(
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+          Center(
+            child: Container(
+              margin: EdgeInsets.fromLTRB(0.0, 25.0, 0.0, 10.0),
+              padding: EdgeInsets.fromLTRB(15.0, 8.0, 15.0, 8.0),
+              decoration: BoxDecoration(
+                border: Border.all(width: 2, color: Colors.green[300]),
+                borderRadius: BorderRadius.circular(25.0),
+                color: Colors.green[300],
+              ),
+              child: Text(
+                'Student List',
+                style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white),
+              ),
+            ),
+          ),
+        ])));
+  }
+
+  @override
+  Size get preferredSize => Size.fromHeight(height);
 }

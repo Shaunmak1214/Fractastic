@@ -122,7 +122,7 @@ class _TeacherScreenState extends State<TeacherScreen> {
         ),
         appBar: AppBar(
           title: Text(
-            'Classroom',
+            'Fractastic Learning App',
             style: TextStyle(color: Colors.white),
           ),
           iconTheme: IconThemeData(color: Colors.black),
