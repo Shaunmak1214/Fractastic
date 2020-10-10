@@ -21,17 +21,32 @@ class _MyChapterListState extends State<ChapterList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          classroom.name,
-          style: TextStyle(color: Colors.white),
-        ),
-        centerTitle: true,
-        backgroundColor: Color(Constants.COLOR_PRIMARY),
-      ),
       body: Container(
         child: ListView(
           children: <Widget>[
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Center(
+                  child: Container(
+                    margin: EdgeInsets.fromLTRB(0.0, 25.0, 0.0, 10.0),
+                    padding: EdgeInsets.fromLTRB(15.0, 8.0, 15.0, 8.0),
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 2, color: Colors.red),
+                      borderRadius: BorderRadius.circular(25.0),
+                      color: Colors.red,
+                    ),
+                    child: Text(
+                      'Classroom',
+                      style: TextStyle(
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                  ),
+                ),
+              ],
+            ),
             Card(
               child: ListTile(
                 title: Text('Chapter 1'),
