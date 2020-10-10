@@ -281,8 +281,8 @@ class _SignUpState extends State<SignUpScreenTeacher> {
                         },
                         child: Icon(
                           _showPassword
-                              ? Icons.visibility
-                              : Icons.visibility_off,
+                              ? Icons.visibility_off
+                              : Icons.visibility,
                           color: Colors.blueGrey[300],
                         ),
                       ))),

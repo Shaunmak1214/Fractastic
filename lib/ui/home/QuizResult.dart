@@ -126,7 +126,7 @@ class _QuizResultState extends State<QuizResult> {
                         title: new Text("Student Result"),
                         content: new ListTile(
                           title: Text("$result4  Over 5 Marks"),
-                          subtitle: Text("Chap 4 : Conversion of Fraction"),
+                          subtitle: Text("Chap 4 : Adding of Fraction"),
 
                           /// print result list
                         ),
@@ -150,7 +150,7 @@ class _QuizResultState extends State<QuizResult> {
                         title: new Text("Student Result"),
                         content: new ListTile(
                           title: Text("$result4  Over 5 Marks"),
-                          subtitle: Text("Chap 5 : Conversion of Fraction"),
+                          subtitle: Text("Chap 5 : Subtracting of Fraction"),
 
                           /// print result list
                         ),
@@ -174,7 +174,7 @@ class _QuizResultState extends State<QuizResult> {
                         title: new Text("Student Result"),
                         content: new ListTile(
                           title: Text("$result4  Over 5 Marks"),
-                          subtitle: Text("Chap 6 : Conversion of Fraction"),
+                          subtitle: Text("Chap 6 : Multiplying of Fraction"),
 
                           /// print result list
                         ),
@@ -198,7 +198,7 @@ class _QuizResultState extends State<QuizResult> {
                         title: new Text("Student Result"),
                         content: new ListTile(
                           title: Text("$result4  Over 5 Marks"),
-                          subtitle: Text("Chap 7 : Conversion of Fraction"),
+                          subtitle: Text("Chap 7 : Dividing of Fraction"),
 
                           /// print result list
                         ),
