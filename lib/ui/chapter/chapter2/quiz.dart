@@ -555,9 +555,11 @@ class _Chap2QuizState extends State<Chap2Quiz> {
       Fluttertoast.showToast(
           msg: 'Your total score is: $correctScore out of 5',
           toastLength: Toast.LENGTH_LONG);
+      var temp = user.result2;
       user.result2 = correctScore;
       setState(() {
-        if (user.quizCount == 1) user.quizCount++;
+        //if (user.quizCount == 1) user.quizCount++;
+        if (temp == null) user.quizCount++;
         status = 1;
       });
       showProgress(context, 'Updating result...', false);

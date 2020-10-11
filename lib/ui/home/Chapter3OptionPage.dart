@@ -18,7 +18,7 @@ class _Chapter3OptionPageState extends State<Chapter3OptionPage> {
   @override
   void initState() {
     MyAppState.currentUser.quizCount = MyAppState.currentUser.quizCount ?? 0;
-    if (MyAppState.currentUser.quizCount >= 3) {
+    if (MyAppState.currentUser.result3 != null) {
       cardColor = Colors.green;
       quizProgress = 'Quiz Completed!';
     }
