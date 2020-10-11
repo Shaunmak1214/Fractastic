@@ -152,24 +152,27 @@ class _Chapter3OptionPageState extends State<Chapter3OptionPage> {
             ),
             SizedBox(height: 40),
             Center(
-              child: Container(
-                margin: EdgeInsets.all(10.0),
-                width: 250.0,
-                height: 70.0,
-                child: Card(
-                  color: cardColor,
-                  shape: StadiumBorder(
-                    side: BorderSide(
-                      color: Colors.transparent,
-                      width: 3.0,
-                    ),
-                  ),
-                  child: Center(
-                    child: Text(quizProgress,
-                        style: TextStyle(fontSize: 20, color: Colors.white)),
-                  ),
-                ),
-              ),
+              child: MyAppState.currentUser.userType == 'Student'
+                  ? Container(
+                      margin: EdgeInsets.all(10.0),
+                      width: 250.0,
+                      height: 70.0,
+                      child: Card(
+                        color: cardColor,
+                        shape: StadiumBorder(
+                          side: BorderSide(
+                            color: Colors.transparent,
+                            width: 3.0,
+                          ),
+                        ),
+                        child: Center(
+                          child: Text(quizProgress,
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.white)),
+                        ),
+                      ),
+                    )
+                  : null,
             )
           ],
         ),
