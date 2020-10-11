@@ -149,43 +149,41 @@ class _Chap1QuizState extends State<Chap1Quiz> {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: new Scaffold(
+        home: Scaffold(
             appBar: AppBar(
-              title: new Text('Chapter 1 Quiz'),
+              title: Text('Chapter 1 Quiz'),
               centerTitle: true,
               backgroundColor: Color(Constants.COLOR_PRIMARY),
-              leading: new IconButton(
-                icon: new Icon(Icons.arrow_back),
+              leading: IconButton(
+                icon: Icon(Icons.arrow_back),
                 onPressed: () => Navigator.of(context).pop(),
               ),
             ),
-            body: new Container(
+            body: Container(
                 padding: EdgeInsets.all(8.0),
                 child: SingleChildScrollView(
-                  child: new Column(
+                  child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         Container(
-                          padding:
-                              new EdgeInsets.fromLTRB(10.0, 16.0, 6.0, 8.0),
+                          padding: EdgeInsets.fromLTRB(10.0, 16.0, 6.0, 8.0),
                           color: Colors.red[100],
-                          child: new Text(
+                          child: Text(
                             'Select correct answers from below based on the diagram given:',
-                            style: new TextStyle(
+                            style: TextStyle(
                                 fontSize: 20.0, fontWeight: FontWeight.bold),
                           ),
                         ),
-                        new Padding(
-                          padding:
-                              new EdgeInsets.fromLTRB(10.0, 16.0, 6.0, 8.0),
+                        Padding(
+                          padding: EdgeInsets.fromLTRB(10.0, 16.0, 6.0, 8.0),
                         ),
-                        new Divider(height: 5.0, color: Colors.black),
-                        new Padding(
-                          padding: new EdgeInsets.all(8.0),
+                        Divider(height: 5.0, color: Colors.black),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
                         ),
                         Container(
                           color: Colors.amber[100],
-                          child: new Image(
+                          child: Image(
                               image:
                                   AssetImage('assets/images/ingredient.png')),
                         ),
@@ -196,12 +194,11 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                           ),
                         ),
                         Container(
-                          padding:
-                              new EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
+                          padding: EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
                           color: Colors.amber[100],
-                          child: new Text(
+                          child: Text(
                             '1.  Based on the recipe above, what is the portion needed for vanilla?',
-                            style: new TextStyle(
+                            style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 18.0,
                             ),
@@ -209,10 +206,10 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                         ),
                         Container(
                           color: Colors.amber[100],
-                          child: new Row(
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              new Radio(
+                              Radio(
                                 value: 0,
                                 groupValue: _radioValue1,
                                 onChanged: _handleRadioValueChange1,
@@ -223,7 +220,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                 },
                                 child: Text("A.   1/2"),
                               ),
-                              new Radio(
+                              Radio(
                                 value: 1,
                                 groupValue: _radioValue1,
                                 onChanged: _handleRadioValueChange1,
@@ -234,7 +231,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                 },
                                 child: Text("B.   1/3"),
                               ),
-                              new Radio(
+                              Radio(
                                 value: 2,
                                 groupValue: _radioValue1,
                                 onChanged: _handleRadioValueChange1,
@@ -248,20 +245,19 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                             ],
                           ),
                         ),
-                        new Divider(
+                        Divider(
                           height: 5.0,
                           color: Colors.black,
                         ),
-                        new Padding(
-                          padding: new EdgeInsets.all(8.0),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
                         ),
                         Container(
-                          padding:
-                              new EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
+                          padding: EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
                           color: Colors.yellow,
-                          child: new Text(
+                          child: Text(
                             '2.  Based on the recipe above, how many cup of butter needed?',
-                            style: new TextStyle(
+                            style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 18.0,
                             ),
@@ -269,10 +265,10 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                         ),
                         Container(
                           color: Colors.yellow,
-                          child: new Row(
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              new Radio(
+                              Radio(
                                 value: 0,
                                 groupValue: _radioValue2,
                                 onChanged: _handleRadioValueChange2,
@@ -283,7 +279,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                 },
                                 child: Text("A.   10/9"),
                               ),
-                              new Radio(
+                              Radio(
                                 value: 1,
                                 groupValue: _radioValue2,
                                 onChanged: _handleRadioValueChange2,
@@ -294,7 +290,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                 },
                                 child: Text("B.   1/2"),
                               ),
-                              new Radio(
+                              Radio(
                                 value: 2,
                                 groupValue: _radioValue2,
                                 onChanged: _handleRadioValueChange2,
@@ -308,20 +304,19 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                             ],
                           ),
                         ),
-                        new Divider(
+                        Divider(
                           height: 5.0,
                           color: Colors.black,
                         ),
-                        new Padding(
-                          padding: new EdgeInsets.all(8.0),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
                         ),
                         Container(
-                          padding:
-                              new EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
+                          padding: EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
                           color: Colors.green[200],
-                          child: new Text(
+                          child: Text(
                             '3.  Based on the recipe above, how many teaspoon of baking soda is needed?',
-                            style: new TextStyle(
+                            style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 18.0,
                             ),
@@ -329,10 +324,10 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                         ),
                         Container(
                           color: Colors.green[200],
-                          child: new Row(
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              new Radio(
+                              Radio(
                                 value: 0,
                                 groupValue: _radioValue3,
                                 onChanged: _handleRadioValueChange3,
@@ -343,7 +338,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                 },
                                 child: Text("A.   Half"),
                               ),
-                              new Radio(
+                              Radio(
                                 value: 1,
                                 groupValue: _radioValue3,
                                 onChanged: _handleRadioValueChange3,
@@ -354,7 +349,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                 },
                                 child: Text("B.   One-Fourth"),
                               ),
-                              new Radio(
+                              Radio(
                                 value: 2,
                                 groupValue: _radioValue3,
                                 onChanged: _handleRadioValueChange3,
@@ -368,20 +363,19 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                             ],
                           ),
                         ),
-                        new Divider(
+                        Divider(
                           height: 5.0,
                           color: Colors.black,
                         ),
-                        new Padding(
-                          padding: new EdgeInsets.all(8.0),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
                         ),
                         Container(
-                          padding:
-                              new EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
+                          padding: EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
                           color: Colors.blue[200],
-                          child: new Text(
+                          child: Text(
                             '4.  Based on the recipe above, what is the portion need for multipurpose flour?',
-                            style: new TextStyle(
+                            style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 18.0,
                             ),
@@ -389,10 +383,10 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                         ),
                         Container(
                           color: Colors.blue[200],
-                          child: new Row(
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              new Radio(
+                              Radio(
                                 value: 0,
                                 groupValue: _radioValue4,
                                 onChanged: _handleRadioValueChange4,
@@ -403,7 +397,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                 },
                                 child: Text("A. One and a half"),
                               ),
-                              new Radio(
+                              Radio(
                                 value: 1,
                                 groupValue: _radioValue4,
                                 onChanged: _handleRadioValueChange4,
@@ -414,7 +408,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                 },
                                 child: Text("B. 1/3"),
                               ),
-                              new Radio(
+                              Radio(
                                 value: 2,
                                 groupValue: _radioValue4,
                                 onChanged: _handleRadioValueChange4,
@@ -428,20 +422,19 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                             ],
                           ),
                         ),
-                        new Divider(
+                        Divider(
                           height: 5.0,
                           color: Colors.black,
                         ),
-                        new Padding(
-                          padding: new EdgeInsets.all(8.0),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
                         ),
                         Container(
-                          padding:
-                              new EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
+                          padding: EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
                           color: Colors.indigo[200],
-                          child: new Text(
+                          child: Text(
                             '5.   Which ingredient needs a portion which is a Whole Number (not Fraction)?',
-                            style: new TextStyle(
+                            style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 18.0,
                             ),
@@ -449,10 +442,10 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                         ),
                         Container(
                           color: Colors.indigo[200],
-                          child: new Row(
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              new Radio(
+                              Radio(
                                 value: 0,
                                 groupValue: _radioValue5,
                                 onChanged: _handleRadioValueChange5,
@@ -463,7 +456,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                 },
                                 child: Text("A. Sugar"),
                               ),
-                              new Radio(
+                              Radio(
                                 value: 1,
                                 groupValue: _radioValue5,
                                 onChanged: _handleRadioValueChange5,
@@ -474,7 +467,7 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                                 },
                                 child: Text("B. Vanilla"),
                               ),
-                              new Radio(
+                              Radio(
                                 value: 2,
                                 groupValue: _radioValue5,
                                 onChanged: _handleRadioValueChange5,
@@ -488,41 +481,51 @@ class _Chap1QuizState extends State<Chap1Quiz> {
                             ],
                           ),
                         ),
-                        new Divider(
+                        Divider(
                           height: 5.0,
                           color: Colors.black,
                         ),
-                        new Padding(
-                          padding: new EdgeInsets.all(8.0),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
                         ),
-                        new RaisedButton(
-                          onPressed: validateAnswers,
-                          child: new Text(
-                            'Submit Quiz',
-                            style: new TextStyle(
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white70),
-                          ),
-                          color: Colors.red[300],
-                          shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(20.0)),
+                        Container(
+                          child: MyAppState.currentUser.userType == 'Student'
+                              ? RaisedButton(
+                                  onPressed: validateAnswers,
+                                  child: Text(
+                                    'Submit Quiz',
+                                    style: TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white70),
+                                  ),
+                                  color: Colors.red[300],
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(20.0)),
+                                )
+                              : null,
                         ),
-                        new Padding(
+                        Padding(
                           padding: EdgeInsets.all(4.0),
                         ),
-                        new RaisedButton(
-                          onPressed: resetSelection,
-                          child: new Text(
-                            'Reset Selection',
-                            style: new TextStyle(
-                                fontWeight: FontWeight.normal,
-                                fontSize: 16.0,
-                                color: Colors.white),
-                          ),
-                          color: Colors.green[300],
-                          shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(20.0)),
+                        Container(
+                          child: MyAppState.currentUser.userType == 'Student'
+                              ? RaisedButton(
+                                  onPressed: resetSelection,
+                                  child: Text(
+                                    'Reset Selection',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize: 16.0,
+                                        color: Colors.white),
+                                  ),
+                                  color: Colors.green[300],
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(20.0)),
+                                )
+                              : null,
                         ),
                         SizedBox(
                           height: 20,

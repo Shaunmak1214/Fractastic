@@ -149,47 +149,47 @@ class _Chap3QuizState extends State<Chap3Quiz> {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: new Scaffold(
+        home: Scaffold(
             appBar: AppBar(
-              title: new Text('Chapter 3 Quiz'),
+              title: Text('Chapter 3 Quiz'),
               centerTitle: true,
               backgroundColor: Color(Constants.COLOR_PRIMARY),
-              leading: new IconButton(
-                icon: new Icon(Icons.arrow_back),
+              leading: IconButton(
+                icon: Icon(Icons.arrow_back),
                 onPressed: () => Navigator.of(context).pop(),
               ),
             ),
-            body: new Container(
+            body: Container(
                 padding: EdgeInsets.all(8.0),
                 child: SingleChildScrollView(
-                  child: new Column(
+                  child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        new Text(
+                        Text(
                           'Select correct answers from below:',
-                          style: new TextStyle(
+                          style: TextStyle(
                               fontSize: 20.0, fontWeight: FontWeight.bold),
                         ),
-                        new Padding(
-                          padding: new EdgeInsets.all(8.0),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
                         ),
-                        new Divider(height: 5.0, color: Colors.black),
-                        new Padding(
-                          padding: new EdgeInsets.all(8.0),
+                        Divider(height: 5.0, color: Colors.black),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
                         ),
-                        new Image(
+                        Image(
                             image: AssetImage('assets/images/twoOverFive.png')),
-                        new Text(
+                        Text(
                           '1.   The following segment represents... ',
-                          style: new TextStyle(
+                          style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 18.0,
                           ),
                         ),
-                        new Row(
+                        Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            new Radio(
+                            Radio(
                               value: 0,
                               groupValue: _radioValue1,
                               onChanged: _handleRadioValueChange1,
@@ -200,7 +200,7 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                               },
                               child: Text("A.   2/5"),
                             ),
-                            new Radio(
+                            Radio(
                               value: 1,
                               groupValue: _radioValue1,
                               onChanged: _handleRadioValueChange1,
@@ -211,7 +211,7 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                               },
                               child: Text("B.   1/5"),
                             ),
-                            new Radio(
+                            Radio(
                               value: 2,
                               groupValue: _radioValue1,
                               onChanged: _handleRadioValueChange1,
@@ -224,30 +224,30 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                             ),
                           ],
                         ),
-                        new Divider(
+                        Divider(
                           height: 5.0,
                           color: Colors.black,
                         ),
-                        new Padding(
-                          padding: new EdgeInsets.all(8.0),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
                         ),
-                        new Column(
+                        Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              new Image(
+                              Image(
                                   image: AssetImage(
                                       'assets/images/sevenOverEight.png')),
-                              new Text(
+                              Text(
                                 '2.   How many segment left here? ',
-                                style: new TextStyle(
+                                style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 18.0,
                                 ),
                               ),
-                              new Row(
+                              Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: <Widget>[
-                                  new Radio(
+                                  Radio(
                                     value: 0,
                                     groupValue: _radioValue2,
                                     onChanged: _handleRadioValueChange2,
@@ -258,7 +258,7 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                                     },
                                     child: Text("A.   5/8"),
                                   ),
-                                  new Radio(
+                                  Radio(
                                     value: 1,
                                     groupValue: _radioValue2,
                                     onChanged: _handleRadioValueChange2,
@@ -269,7 +269,7 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                                     },
                                     child: Text("B.   7/8"),
                                   ),
-                                  new Radio(
+                                  Radio(
                                     value: 2,
                                     groupValue: _radioValue2,
                                     onChanged: _handleRadioValueChange2,
@@ -282,31 +282,31 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                                   ),
                                 ],
                               ),
-                              new Divider(
+                              Divider(
                                 height: 5.0,
                                 color: Colors.black,
                               ),
-                              new Padding(
-                                padding: new EdgeInsets.all(8.0),
+                              Padding(
+                                padding: EdgeInsets.all(8.0),
                               ),
-                              new Column(
+                              Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: <Widget>[
-                                    new Image(
+                                    Image(
                                         image: AssetImage(
                                             'assets/images/oneThird.png')),
-                                    new Text(
+                                    Text(
                                       '3.   How do we name this fraction?',
-                                      style: new TextStyle(
+                                      style: TextStyle(
                                         fontWeight: FontWeight.w500,
                                         fontSize: 18.0,
                                       ),
                                     ),
-                                    new Row(
+                                    Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: <Widget>[
-                                        new Radio(
+                                        Radio(
                                           value: 0,
                                           groupValue: _radioValue3,
                                           onChanged: _handleRadioValueChange3,
@@ -317,7 +317,7 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                                           },
                                           child: Text("A.   Half"),
                                         ),
-                                        new Radio(
+                                        Radio(
                                           value: 1,
                                           groupValue: _radioValue3,
                                           onChanged: _handleRadioValueChange3,
@@ -328,7 +328,7 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                                           },
                                           child: Text("B.   One-Third"),
                                         ),
-                                        new Radio(
+                                        Radio(
                                           value: 2,
                                           groupValue: _radioValue3,
                                           onChanged: _handleRadioValueChange3,
@@ -341,32 +341,32 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                                         ),
                                       ],
                                     ),
-                                    new Divider(
+                                    Divider(
                                       height: 5.0,
                                       color: Colors.black,
                                     ),
-                                    new Padding(
-                                      padding: new EdgeInsets.all(8.0),
+                                    Padding(
+                                      padding: EdgeInsets.all(8.0),
                                     ),
-                                    new Column(
+                                    Column(
                                       mainAxisAlignment:
                                           MainAxisAlignment.center,
                                       children: <Widget>[
-                                        new Image(
+                                        Image(
                                             image: AssetImage(
                                                 'assets/images/fourOverFive.png')),
-                                        new Text(
+                                        Text(
                                           '4.   What is the name of this fraction?',
-                                          style: new TextStyle(
+                                          style: TextStyle(
                                             fontWeight: FontWeight.w500,
                                             fontSize: 18.0,
                                           ),
                                         ),
-                                        new Row(
+                                        Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: <Widget>[
-                                            new Radio(
+                                            Radio(
                                               value: 0,
                                               groupValue: _radioValue4,
                                               onChanged:
@@ -379,7 +379,7 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                                               child: Text(
                                                   "A.Forth-Fifths"), //four or forth???
                                             ),
-                                            new Radio(
+                                            Radio(
                                               value: 1,
                                               groupValue: _radioValue4,
                                               onChanged:
@@ -391,7 +391,7 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                                               },
                                               child: Text("B.One-Third"),
                                             ),
-                                            new Radio(
+                                            Radio(
                                               value: 2,
                                               groupValue: _radioValue4,
                                               onChanged:
@@ -405,36 +405,36 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                                             ),
                                           ],
                                         ),
-                                        new Divider(
+                                        Divider(
                                           height: 5.0,
                                           color: Colors.black,
                                         ),
-                                        new Padding(
-                                          padding: new EdgeInsets.all(8.0),
+                                        Padding(
+                                          padding: EdgeInsets.all(8.0),
                                         ),
-                                        new Column(
+                                        Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: <Widget>[
-                                            new Image(
+                                            Image(
                                                 image: AssetImage(
                                                     'assets/images/sevenOverEight.png')),
                                             Container(
-                                              padding: new EdgeInsets.fromLTRB(
+                                              padding: EdgeInsets.fromLTRB(
                                                   20.0, 16.0, 6.0, 8.0),
-                                              child: new Text(
+                                              child: Text(
                                                 '5.   What fraction is missing in the following chart?',
-                                                style: new TextStyle(
+                                                style: TextStyle(
                                                   fontWeight: FontWeight.w500,
                                                   fontSize: 18.0,
                                                 ),
                                               ),
                                             ),
-                                            new Row(
+                                            Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: <Widget>[
-                                                new Radio(
+                                                Radio(
                                                   value: 0,
                                                   groupValue: _radioValue5,
                                                   onChanged:
@@ -446,7 +446,7 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                                                   },
                                                   child: Text("A. One-Fifth"),
                                                 ),
-                                                new Radio(
+                                                Radio(
                                                   value: 1,
                                                   groupValue: _radioValue5,
                                                   onChanged:
@@ -458,7 +458,7 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                                                   },
                                                   child: Text("B. 2/8"),
                                                 ),
-                                                new Radio(
+                                                Radio(
                                                   value: 2,
                                                   groupValue: _radioValue5,
                                                   onChanged:
@@ -473,46 +473,67 @@ class _Chap3QuizState extends State<Chap3Quiz> {
                                                 ),
                                               ],
                                             ),
-                                            new Divider(
+                                            Divider(
                                               height: 5.0,
                                               color: Colors.black,
                                             ),
-                                            new Padding(
-                                              padding: new EdgeInsets.all(8.0),
+                                            Padding(
+                                              padding: EdgeInsets.all(8.0),
                                             ),
-                                            new RaisedButton(
-                                              onPressed: validateAnswers,
-                                              child: new Text(
-                                                'Submit Quiz',
-                                                style: new TextStyle(
-                                                    fontSize: 16.0,
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Colors.white),
-                                              ),
-                                              color: Colors.red[300],
-                                              shape: new RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      new BorderRadius.circular(
-                                                          20.0)),
+                                            Container(
+                                              child: MyAppState.currentUser
+                                                          .userType ==
+                                                      'Student'
+                                                  ? RaisedButton(
+                                                      onPressed:
+                                                          validateAnswers,
+                                                      child: Text(
+                                                        'Submit Quiz',
+                                                        style: TextStyle(
+                                                            fontSize: 16.0,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            color:
+                                                                Colors.white),
+                                                      ),
+                                                      color: Colors.red[300],
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          20.0)),
+                                                    )
+                                                  : null,
                                             ),
-                                            new Padding(
+                                            Padding(
                                               padding: EdgeInsets.all(4.0),
                                             ),
-                                            new RaisedButton(
-                                              onPressed: resetSelection,
-                                              child: new Text(
-                                                'Reset Selection',
-                                                style: new TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.normal,
-                                                    fontSize: 16.0,
-                                                    color: Colors.white),
-                                              ),
-                                              color: Colors.green[300],
-                                              shape: new RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      new BorderRadius.circular(
-                                                          20.0)),
+                                            Container(
+                                              child: MyAppState.currentUser
+                                                          .userType ==
+                                                      'Student'
+                                                  ? RaisedButton(
+                                                      onPressed: resetSelection,
+                                                      child: Text(
+                                                        'Reset Selection',
+                                                        style: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .normal,
+                                                            fontSize: 16.0,
+                                                            color:
+                                                                Colors.white),
+                                                      ),
+                                                      color: Colors.green[300],
+                                                      shape:
+                                                          RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          20.0)),
+                                                    )
+                                                  : null,
                                             ),
                                             SizedBox(
                                               height: 20,

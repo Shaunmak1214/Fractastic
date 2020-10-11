@@ -9,18 +9,18 @@ class Chap3Tutorial extends StatelessWidget {
         title: Text('Chapter 3'),
         centerTitle: true,
         backgroundColor: Color(Constants.COLOR_PRIMARY),
-        leading: new IconButton(
-          icon: new Icon(Icons.arrow_back),
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back),
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
       body: Center(
           child: SingleChildScrollView(
-              child: new Column(
+              child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
-          new Image(image: AssetImage('assets/images/chap3-tutorial1.png')),
-          new Image(image: AssetImage('assets/images/chap3-tutorial2.png')),
+          Image(image: AssetImage('assets/images/chap3-tutorial1.png')),
+          Image(image: AssetImage('assets/images/chap3-tutorial2.png')),
           Padding(
             padding: EdgeInsets.all(15.0),
           )

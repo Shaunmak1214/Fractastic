@@ -149,48 +149,46 @@ class _Chap2QuizState extends State<Chap2Quiz> {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: new Scaffold(
+        home: Scaffold(
             appBar: AppBar(
-              title: new Text('Chapter 2 Quiz'),
+              title: Text('Chapter 2 Quiz'),
               centerTitle: true,
               backgroundColor: Color(Constants.COLOR_PRIMARY),
-              leading: new IconButton(
-                icon: new Icon(Icons.arrow_back),
+              leading: IconButton(
+                icon: Icon(Icons.arrow_back),
                 onPressed: () => Navigator.of(context).pop(),
               ),
             ),
-            body: new Container(
+            body: Container(
                 padding: EdgeInsets.all(8.0),
                 child: SingleChildScrollView(
-                  child: new Column(
+                  child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         Container(
-                          padding:
-                              new EdgeInsets.fromLTRB(10.0, 16.0, 6.0, 8.0),
+                          padding: EdgeInsets.fromLTRB(10.0, 16.0, 6.0, 8.0),
                           color: Colors.red[100],
-                          child: new Text(
+                          child: Text(
                             'Select correct answers based on the picture given:',
-                            style: new TextStyle(
+                            style: TextStyle(
                                 fontSize: 20.0, fontWeight: FontWeight.bold),
                           ),
                         ),
-                        new Padding(
-                          padding: new EdgeInsets.all(8.0),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
                         ),
-                        new Divider(height: 5.0, color: Colors.black),
-                        new Padding(
-                          padding: new EdgeInsets.all(8.0),
+                        Divider(height: 5.0, color: Colors.black),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
                         ),
-                        new Image(
+                        Image(
                             image: AssetImage('assets/images/denominator.png')),
                         Container(
-                          padding:
-                              new EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
+                          padding: EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
                           color: Colors.amber[100],
-                          child: new Text(
+                          child: Text(
                             '1.   Which number is the denominator of this fraction ',
-                            style: new TextStyle(
+                            style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 18.0,
                             ),
@@ -198,10 +196,10 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                         ),
                         Container(
                           color: Colors.amber[100],
-                          child: new Row(
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              new Radio(
+                              Radio(
                                 value: 0,
                                 groupValue: _radioValue1,
                                 onChanged: _handleRadioValueChange1,
@@ -212,7 +210,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                 },
                                 child: Text("A.   5"),
                               ),
-                              new Radio(
+                              Radio(
                                 value: 1,
                                 groupValue: _radioValue1,
                                 onChanged: _handleRadioValueChange1,
@@ -223,7 +221,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                 },
                                 child: Text("B.   2"),
                               ),
-                              new Radio(
+                              Radio(
                                 value: 2,
                                 groupValue: _radioValue1,
                                 onChanged: _handleRadioValueChange1,
@@ -237,22 +235,22 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                             ],
                           ),
                         ),
-                        new Divider(
+                        Divider(
                           height: 5.0,
                           color: Colors.black,
                         ),
-                        new Padding(
-                          padding: new EdgeInsets.all(8.0),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
                         ),
-                        new Image(
+                        Image(
                             image: AssetImage(
                                 'assets/images/improperFraction.png')),
                         Container(
-                          padding: new EdgeInsets.fromLTRB(8.0, 16.0, 6.0, 8.0),
+                          padding: EdgeInsets.fromLTRB(8.0, 16.0, 6.0, 8.0),
                           color: Colors.yellow,
-                          child: new Text(
+                          child: Text(
                             '2.   What type of this fraction is? ',
-                            style: new TextStyle(
+                            style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 18.0,
                             ),
@@ -260,10 +258,10 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                         ),
                         Container(
                           color: Colors.yellow,
-                          child: new Row(
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              new Radio(
+                              Radio(
                                 value: 0,
                                 groupValue: _radioValue2,
                                 onChanged: _handleRadioValueChange2,
@@ -274,7 +272,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                 },
                                 child: Text("A.   Proper"),
                               ),
-                              new Radio(
+                              Radio(
                                 value: 1,
                                 groupValue: _radioValue2,
                                 onChanged: _handleRadioValueChange2,
@@ -285,7 +283,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                 },
                                 child: Text("B.   Improper"),
                               ),
-                              new Radio(
+                              Radio(
                                 value: 2,
                                 groupValue: _radioValue2,
                                 onChanged: _handleRadioValueChange2,
@@ -299,23 +297,22 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                             ],
                           ),
                         ),
-                        new Divider(
+                        Divider(
                           height: 5.0,
                           color: Colors.black,
                         ),
-                        new Padding(
-                          padding: new EdgeInsets.all(8.0),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
                         ),
-                        new Image(
+                        Image(
                             image:
                                 AssetImage('assets/images/likeFraction.png')),
                         Container(
-                          padding:
-                              new EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
+                          padding: EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
                           color: Colors.green[200],
-                          child: new Text(
+                          child: Text(
                             '3.   How do we name the fraction with common denominator?',
-                            style: new TextStyle(
+                            style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 18.0,
                             ),
@@ -323,10 +320,10 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                         ),
                         Container(
                           color: Colors.green[200],
-                          child: new Row(
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              new Radio(
+                              Radio(
                                 value: 0,
                                 groupValue: _radioValue3,
                                 onChanged: _handleRadioValueChange3,
@@ -337,7 +334,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                 },
                                 child: Text("A.   Improper"),
                               ),
-                              new Radio(
+                              Radio(
                                 value: 1,
                                 groupValue: _radioValue3,
                                 onChanged: _handleRadioValueChange3,
@@ -348,7 +345,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                 },
                                 child: Text("B.   Like"),
                               ),
-                              new Radio(
+                              Radio(
                                 value: 2,
                                 groupValue: _radioValue3,
                                 onChanged: _handleRadioValueChange3,
@@ -362,23 +359,22 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                             ],
                           ),
                         ),
-                        new Divider(
+                        Divider(
                           height: 5.0,
                           color: Colors.black,
                         ),
-                        new Padding(
-                          padding: new EdgeInsets.all(8.0),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
                         ),
-                        new Image(
+                        Image(
                             image:
                                 AssetImage('assets/images/mixedFraction.png')),
                         Container(
-                          padding:
-                              new EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
+                          padding: EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
                           color: Colors.indigo[100],
-                          child: new Text(
+                          child: Text(
                             '4.   What type of the fraction given is?',
-                            style: new TextStyle(
+                            style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 18.0,
                             ),
@@ -386,10 +382,10 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                         ),
                         Container(
                           color: Colors.indigo[100],
-                          child: new Row(
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              new Radio(
+                              Radio(
                                 value: 0,
                                 groupValue: _radioValue4,
                                 onChanged: _handleRadioValueChange4,
@@ -400,7 +396,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                 },
                                 child: Text("A.  Mixed"),
                               ),
-                              new Radio(
+                              Radio(
                                 value: 1,
                                 groupValue: _radioValue4,
                                 onChanged: _handleRadioValueChange4,
@@ -411,7 +407,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                 },
                                 child: Text("B.  Proper"),
                               ),
-                              new Radio(
+                              Radio(
                                 value: 2,
                                 groupValue: _radioValue4,
                                 onChanged: _handleRadioValueChange4,
@@ -425,23 +421,22 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                             ],
                           ),
                         ),
-                        new Divider(
+                        Divider(
                           height: 5.0,
                           color: Colors.black,
                         ),
-                        new Padding(
-                          padding: new EdgeInsets.all(8.0),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
                         ),
-                        new Image(
+                        Image(
                             image:
                                 AssetImage('assets/images/wholeFraction.png')),
                         Container(
                           color: Colors.brown[200],
-                          padding:
-                              new EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
-                          child: new Text(
+                          padding: EdgeInsets.fromLTRB(20.0, 16.0, 6.0, 8.0),
+                          child: Text(
                             '5.   Which value is the numerator?',
-                            style: new TextStyle(
+                            style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontSize: 18.0,
                             ),
@@ -449,10 +444,10 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                         ),
                         Container(
                           color: Colors.brown[200],
-                          child: new Row(
+                          child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              new Radio(
+                              Radio(
                                 value: 0,
                                 groupValue: _radioValue5,
                                 onChanged: _handleRadioValueChange5,
@@ -463,7 +458,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                 },
                                 child: Text("A. 2"),
                               ),
-                              new Radio(
+                              Radio(
                                 value: 1,
                                 groupValue: _radioValue5,
                                 onChanged: _handleRadioValueChange5,
@@ -474,7 +469,7 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                                 },
                                 child: Text("B. 7"),
                               ),
-                              new Radio(
+                              Radio(
                                 value: 2,
                                 groupValue: _radioValue5,
                                 onChanged: _handleRadioValueChange5,
@@ -488,41 +483,51 @@ class _Chap2QuizState extends State<Chap2Quiz> {
                             ],
                           ),
                         ),
-                        new Divider(
+                        Divider(
                           height: 5.0,
                           color: Colors.black,
                         ),
-                        new Padding(
-                          padding: new EdgeInsets.all(8.0),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
                         ),
-                        new RaisedButton(
-                          onPressed: validateAnswers,
-                          child: new Text(
-                            'Submit Quiz',
-                            style: new TextStyle(
-                                fontSize: 16.0,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white70),
-                          ),
-                          color: Colors.red[300],
-                          shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(20.0)),
+                        Container(
+                          child: MyAppState.currentUser.userType == 'Student'
+                              ? RaisedButton(
+                                  onPressed: validateAnswers,
+                                  child: Text(
+                                    'Submit Quiz',
+                                    style: TextStyle(
+                                        fontSize: 16.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white70),
+                                  ),
+                                  color: Colors.red[300],
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(20.0)),
+                                )
+                              : null,
                         ),
-                        new Padding(
+                        Padding(
                           padding: EdgeInsets.all(4.0),
                         ),
-                        new RaisedButton(
-                          onPressed: resetSelection,
-                          child: new Text(
-                            'Reset Selection',
-                            style: new TextStyle(
-                                fontWeight: FontWeight.normal,
-                                fontSize: 16.0,
-                                color: Colors.white),
-                          ),
-                          color: Colors.green[300],
-                          shape: new RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(20.0)),
+                        Container(
+                          child: MyAppState.currentUser.userType == 'Student'
+                              ? RaisedButton(
+                                  onPressed: resetSelection,
+                                  child: Text(
+                                    'Reset Selection',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.normal,
+                                        fontSize: 16.0,
+                                        color: Colors.white),
+                                  ),
+                                  color: Colors.green[300],
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(20.0)),
+                                )
+                              : null,
                         ),
                         SizedBox(
                           height: 20,

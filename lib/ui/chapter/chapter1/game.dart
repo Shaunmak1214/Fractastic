@@ -8,15 +8,15 @@ class Chap1game1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: new Text('Welcome to Game Page'),
+          title: Text('Welcome to Game Page'),
           centerTitle: true,
           backgroundColor: Color(Constants.COLOR_PRIMARY),
-          leading: new IconButton(
-            icon: new Icon(Icons.arrow_back),
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back),
             onPressed: () => Navigator.of(context).pop(),
           ),
         ),
-        body: new Column(
+        body: Column(
           children: [
             Padding(
               padding: EdgeInsets.all(8.0),
@@ -24,7 +24,7 @@ class Chap1game1 extends StatelessWidget {
             ),
             Padding(
                 padding: EdgeInsets.all(8.0),
-                child: new Image(
+                child: Image(
                   image: AssetImage('assets/images/game.png'),
                 )
                 // SimpleUrlPreview(
@@ -58,7 +58,7 @@ class Chap1game1 extends StatelessWidget {
                   color: Color(Constants.COLOR_ACCENT),
                   textColor: Colors.white,
                   onPressed: _launchURL,
-                  label: new Text(
+                  label: Text(
                     'Play Game !',
                     style: TextStyle(fontSize: 22.0),
                   ),

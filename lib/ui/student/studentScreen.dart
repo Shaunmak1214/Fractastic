@@ -123,8 +123,8 @@ class _StudentScreenState extends State<StudentScreen> {
                 onTap: () async {
                   user.active = false;
                   user.lastOnlineTimestamp = Timestamp.now();
-                  _fireStoreUtils.updateCurrentUser(user, context);
                   showProgress(context, 'Logging out...', false);
+                  await _fireStoreUtils.updateCurrentUser(user, context);
                   await FirebaseAuth.instance.signOut();
                   hideProgress();
                   MyAppState.currentUser = null;
