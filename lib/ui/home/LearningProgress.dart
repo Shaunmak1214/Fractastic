@@ -11,7 +11,7 @@ class LearningProgress extends StatelessWidget {
   final User user;
   @override
   Widget build(BuildContext context) {
-    int _quizCount = user.quizCount;
+    int _quizCount = user.quizCount ?? 0;
     double percentage = _quizCount / 7.0 * 100.0;
     return Scaffold(
       appBar: AppBar(
