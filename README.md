@@ -28,41 +28,42 @@ A fraction learning application for primary school named Fractastic. It is writt
 ## Screenshots
 
 <p align="center">
-  <img src="https://github.com/estherjq-wls/Fractastic/screenshots/authscreen.PNG?raw=true">
+  <img width="300" src="https://github.com/estherjq-wls/Fractastic/blob/master/screenshots/authscreen.png?raw=true">
 </p>
 
 <p align="center">
-  <img src="https://github.com/estherjq-wls/Fractastic/screenshots/teacherprofile.PNG?raw=true">
+  <img width="300" src="https://github.com/estherjq-wls/Fractastic/blob/master/screenshots/teacherprofile.png?raw=true">
 </p>
 
 <p align="center">
-  <img src="https://github.com/estherjq-wls/Fractastic/screenshots/studentprofile.PNG?raw=true">
+  <img width="300" src="https://github.com/estherjq-wls/Fractastic/blob/master/screenshots/studentprofile.png?raw=true">
 </p>
 
 <p align="center">
-  <img src="https://github.com/estherjq-wls/Fractastic/screenshots/learningprogress.PNG?raw=true">
+  <img width="300" src="https://github.com/estherjq-wls/Fractastic/blob/master/screenshots/learningprogress.png?raw=true">
 </p>
 
 <p align="center">
-  <img src="https://github.com/estherjq-wls/Fractastic/screenshots/classlist.PNG?raw=true">
+  <img width="300" src="https://github.com/estherjq-wls/Fractastic/blob/master/screenshots/classlist.png?raw=true">
 </p>
 
 <p align="center">
-  <img src="https://github.com/estherjq-wls/Fractastic/screenshots/chapterlist.PNG?raw=true">
+  <img width="300" src="https://github.com/estherjq-wls/Fractastic/blob/master/screenshots/chapterlist.png?raw=true">
 </p>
 
 <p align="center">
-  <img src="https://github.com/estherjq-wls/Fractastic/screenshots/contents.PNG?raw=true">
+  <img width="300" src="https://github.com/estherjq-wls/Fractastic/blob/master/screenshots/contents.png?raw=true">
 </p>
 
 <p align="center">
-  <img src="https://github.com/estherjq-wls/Fractastic/screenshots/quizresults.PNG?raw=true">
+  <img width="300" src="https://github.com/estherjq-wls/Fractastic/blob/master/screenshots/quizresults.png?raw=true">
 </p>
 
 <p align="center">
-  <img src="https://github.com/estherjq-wls/Fractastic/screenshots/studentlist.PNG?raw=true">
+  <img width="300" src="https://github.com/estherjq-wls/Fractastic/blob/master/screenshots/studentlist.png?raw=true">
 </p>
 
 <p align="center">
-  <img src="https://github.com/estherjq-wls/Fractastic/screenshots/calendar.PNG?raw=true">
+  <img width="300" src="https://github.com/estherjq-wls/Fractastic/blob/master/screenshots/calendar.png?raw=true">
 </p>
+
