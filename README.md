@@ -3,7 +3,7 @@ TSE2101 - Software Engineering Fundamentals Project Trimester 1 2020/2021 :woman
 
 A fraction learning application for primary school named Fractastic. It is written in Dart with Flutter and the data is stored in Firebase Cloud Firestore. The users are teachers and students.
 
-## The Main Functions:
+## The Main Functions
 
 * Register Account
 
@@ -67,3 +67,9 @@ A fraction learning application for primary school named Fractastic. It is writt
   <img width="300" src="https://github.com/estherjq-wls/Fractastic/blob/master/screenshots/calendar.png?raw=true">
 </p>
 
+## Run the Application
+
+1. Clone this repository
+2. Run `flutter pub get`
+3. Open your android emulator
+4. Compile and run `main.dart`
