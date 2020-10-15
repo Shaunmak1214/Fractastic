@@ -139,8 +139,8 @@ class _LoginScreen extends State<LoginScreen> {
                           },
                           child: Icon(
                             _showPassword
-                                ? Icons.visibility
-                                : Icons.visibility_off,
+                                ? Icons.visibility_off
+                                : Icons.visibility,
                             color: Colors.blueGrey[300],
                           ),
                         ))),

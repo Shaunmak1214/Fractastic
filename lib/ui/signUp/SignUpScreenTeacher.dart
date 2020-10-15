@@ -37,7 +37,6 @@ class _SignUpState extends State<SignUpScreenTeacher> {
       _showPassword = !_showPassword;
     });
   }
-  
 
   @override
   Widget build(BuildContext context) {

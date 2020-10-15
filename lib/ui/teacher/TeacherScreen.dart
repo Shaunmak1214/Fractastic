@@ -391,6 +391,19 @@ class _TeacherScreenState extends State<TeacherScreen> {
                                 context, 'Updating password...', false);
                             await _fireStoreUtils.updateCurrentUser(
                                 user, context);
+
+                            FirebaseUser firebaseUser =
+                                await FirebaseAuth.instance.currentUser();
+                            firebaseUser
+                                .updatePassword(user.password)
+                                .then((_) {
+                              print("Succesfull changed password");
+                            }).catchError((error) {
+                              print("Password can't be changed" +
+                                  error.toString());
+                              //This might happen, when the wrong password is in, the user isn't found, or if the user hasn't logged in recently.
+                            });
+
                             hideProgress();
                             Navigator.pop(context);
                           }
